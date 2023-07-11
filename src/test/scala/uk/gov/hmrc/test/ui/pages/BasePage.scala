@@ -23,14 +23,51 @@ import uk.gov.hmrc.test.ui.driver.BrowserDriver
 trait BasePage extends BrowserDriver with Matchers {
   val continueButton = "continue-button"
 
-  def submitPage(): Unit =
+  def continuePage(): Unit =
     driver.findElement(By.id(continueButton)).click()
+
+  def clickContinueButton(): Unit =
+    driver.findElement(By.xpath("//a[contains(text(),'Continue')]")).click()
+  def submitPage(): Unit          =
+    driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
+  def selectYesOption(): Unit     =
+    driver.findElement(By.id("value")).click()
+
+  def selectNoOption(): Unit =
+    driver.findElement(By.id("value-no")).click()
 
   def onPage(pageTitle: String): Unit =
     if (driver.getTitle != pageTitle)
       throw PageNotFoundException(
         s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
       )
+
+  def isHeader(header: String): Boolean = {
+    var headerText = driver.findElement(By.xpath("//h1")).getText
+    if (driver.findElements(By.xpath("//h1/span")).size() != 0) {
+      headerText = headerText.replaceAll(driver.findElement(By.xpath("(//h1/span)")).getText, "").replaceAll("\n", "")
+      if (headerText != header)
+        throw PageNotFoundException(
+          s"Expected '$header', but found '$headerText'"
+        )
+      else true
+    }
+    if ((driver.findElements(By.xpath("//h1/label/span")).size() != 0)) {
+      headerText =
+        headerText.replaceAll(driver.findElement(By.xpath("(//h1/label/span)")).getText, "").replaceAll("\n", "")
+      if (headerText != header)
+        throw PageNotFoundException(
+          s"Expected '$header', but found '$headerText'"
+        )
+      else true
+    } else {
+      if (headerText != header)
+        throw PageNotFoundException(
+          s"Expected '$header', but found '$headerText'"
+        )
+      else true
+    }
+  }
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)
