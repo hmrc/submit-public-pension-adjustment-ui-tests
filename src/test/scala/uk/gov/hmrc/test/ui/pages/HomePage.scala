@@ -17,21 +17,23 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.constants.PageInformation.{HOME_PAGE_HEADER, HOME_PAGE_TITLE}
 
-object CostOfGoods extends BasePage {
-
-  val costOfGoods      = "Enter your cost of goods - Check your VAT flat rate - GOV.UK"
-  val costOfGoodsInput = "costOfGoods"
-
-  def provideCostOfGoodsAmount(amount: String): this.type = {
-    onPage(costOfGoods)
-    driver.findElement(By.id(costOfGoodsInput)).sendKeys(amount)
+object HomePage extends BasePage {
+  val url: String = TestConfiguration.url("ui-frontend")
+  def loadPage(): this.type = {
+    driver.navigate().to(url)
     this
   }
-
-  def submitVATInformation: CheckYourVATResult.type = {
-    submitPage()
-    CheckYourVATResult
+  def loadHomePage(): Unit = {
+    loadPage()
+    onPage(HOME_PAGE_TITLE)
+    isHeader(HOME_PAGE_HEADER)
   }
 
+  def clickStartButton(): HomePage.type = {
+    driver.findElement(By.xpath("//a[contains(text(),'Start now')]")).click()
+    HomePage
+  }
 }
