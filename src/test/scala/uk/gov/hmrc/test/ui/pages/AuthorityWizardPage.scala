@@ -16,11 +16,18 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{STATUS_OF_USER_PAGE_HEADER, STATUS_OF_USER_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.utils.NINOGenerator
 
-object StatusOfUserPage extends BasePage {
-  def verifyStatusOfUserPage() = {
-    onPage(STATUS_OF_USER_PAGE_TITLE)
-    isHeader(STATUS_OF_USER_PAGE_HEADER)
+object AuthorityWizardPage extends BasePage {
+
+  val authUrl: String = TestConfiguration.url("auth-frontend")
+
+  def authorizedLoginUser(): Unit = {
+    driver.navigate().to(authUrl)
+    driver.findElement(By.id("redirectionUrl")).sendKeys(HomePage.url)
+    driver.findElement(By.id("nino")).sendKeys(NINOGenerator.nino)
+    driver.findElement(By.id("submit-top")).submit()
   }
 }

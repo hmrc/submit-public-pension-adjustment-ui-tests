@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.utils
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{STATUS_OF_USER_PAGE_HEADER, STATUS_OF_USER_PAGE_TITLE}
+import scala.util.Random
 
-object StatusOfUserPage extends BasePage {
-  def verifyStatusOfUserPage() = {
-    onPage(STATUS_OF_USER_PAGE_TITLE)
-    isHeader(STATUS_OF_USER_PAGE_HEADER)
+object NINOGenerator {
+  val nino = {
+    val firstTwoLetters = "ABCEGHJKLMNPRSTWXYZ"
+    val letterPart      = Random.shuffle(firstTwoLetters.toList).take(2).mkString
+    val numberPart      = Random.nextInt(999999).toString.reverse.padTo(6, '0').reverse
+    val lastLetters     = "ABCD"
+    val lastLetterPart  = Random.shuffle(lastLetters.toList).take(1).mkString
+    s"$letterPart$numberPart$lastLetterPart"
   }
 }
