@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.{ClaimOnBehalfPage, HomePage, StatusOfUserPage, SubmissionInfoPage}
+import uk.gov.hmrc.test.ui.pages.{AuthorityWizardPage, ClaimOnBehalfPage, HomePage, StatusOfUserPage, SubmissionInfoPage}
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
 class SubmissionUserJourney extends BaseSpec {
@@ -25,7 +25,8 @@ class SubmissionUserJourney extends BaseSpec {
 
     /** Below journey covers 5.1, 5.2, 5.3 pages in the mural board* */
     Scenario("5.2 Claiming on behalf of yes user journey", ZapTests) {
-      Given("I am on the Public Service Pensions Remediation home page")
+      Given("I'm an authorized User and navigated to Public Service Pensions Remediation home page")
+      AuthorityWizardPage.authorizedLoginUser()
       HomePage.loadHomePage()
 
       When("I click start button")
