@@ -68,6 +68,19 @@ trait BasePage extends BrowserDriver with Matchers {
       else true
     }
   }
+
+  def clearDate() = {
+    driver.findElement(By.id("value.day")).clear()
+    driver.findElement(By.id("value.month")).clear()
+    driver.findElement(By.id("value.year")).clear()
+  }
+
+  def enterDay(day: String)     =
+    driver.findElement(By.id("value.day")).sendKeys(day)
+  def enterMonth(month: String) =
+    driver.findElement(By.id("value.month")).sendKeys(month)
+  def enterYear(year: String)   =
+    driver.findElement(By.id("value.year")).sendKeys(year)
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)

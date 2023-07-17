@@ -17,17 +17,24 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{STATUS_OF_USER_PAGE_HEADER, STATUS_OF_USER_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{WHO_WILL_PAY_PAGE_HEADER, WHO_WILL_PAY_PAGE_TITLE}
 
-object StatusOfUserPage extends BasePage {
-  def verifyStatusOfUserPage() = {
-    onPage(STATUS_OF_USER_PAGE_TITLE)
-    isHeader(STATUS_OF_USER_PAGE_HEADER)
+object WhoWillPayPage extends BasePage {
+  def verifyWhoWillPayPage() = {
+    onPage(WHO_WILL_PAY_PAGE_TITLE)
+    isHeader(WHO_WILL_PAY_PAGE_HEADER)
   }
-  def selectDeputyship() = driver.findElement(By.id("value_0")).click()
-  def verifyPageSelectDeputyshipAndContinue() = {
-    verifyStatusOfUserPage()
-    selectDeputyship()
+  def selectPensionScheme() = driver.findElement(By.id("value_1")).click()
+  def selectYou()           = driver.findElement(By.id("value_0")).click()
+  def verifyPageSelectYouAndContinue() = {
+    verifyWhoWillPayPage()
+    selectYou()
+    submitPage()
+  }
+
+  def verifyPageSelectPensionSchemeAndContinue() = {
+    verifyWhoWillPayPage()
+    selectPensionScheme()
     submitPage()
   }
 }

@@ -16,14 +16,14 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.{AuthorityWizardPage, ClaimOnBehalfPage, HomePage, StatusOfUserPage, SubmissionInfoPage}
+import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
 class SubmissionUserJourney extends BaseSpec {
 
   Feature("Submission user journey tests") {
 
-    /** Below journey covers 5.1, 5.2, 5.3 pages in the mural board* */
+    /** Below journey covers 5.1, 5.2, 5.3, 5.4, 5.5 pages in the mural board* */
     Scenario("5.2 Claiming on behalf of yes user journey", ZapTests) {
       Given("I'm an authorized User and navigated to Public Service Pensions Remediation home page")
       AuthorityWizardPage.authorizedLoginUser()
@@ -38,8 +38,63 @@ class SubmissionUserJourney extends BaseSpec {
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
       ClaimOnBehalfPage.verifyPageSelectYesAndContinue()
 
-      Then("I verify landed to StatusOfUserPage")
-      StatusOfUserPage.verifyStatusOfUserPage()
+      When("I verify StatusOfUserPage select deputyship and continue")
+      StatusOfUserPage.verifyPageSelectDeputyshipAndContinue()
+
+      When("I verify TheirNamePage enter pension scheme name and continue")
+      TheirNamePage.verifyPageEnterPensionSchemeNameAndContinue()
+
+      When("I verify TheirDOBPage enter date of birth and continue")
+      TheirDOBPage.verifyPageEnterBirthdayAndContinue()
+    }
+
+    /** Below journey covers 5.1, 5.2, 5.10, 5.11, 5.11.1 pages in the mural board* */
+    Scenario("5.11 select scheme details - private ps, user journey", ZapTests) {
+      Given("I'm an authorized User and navigated to Public Service Pensions Remediation home page")
+      AuthorityWizardPage.authorizedLoginUser()
+      HomePage.loadHomePage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      When("I verify SubmissionInfoPage and click continue button")
+      SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
+
+      When("I verify ClaimOnBehalfPage, select no and click continue button")
+      ClaimOnBehalfPage.verifyPageSelectNoAndContinue()
+
+      When("I verify WhoWillPayPage, select pension scheme and click continue button")
+      WhoWillPayPage.verifyPageSelectPensionSchemeAndContinue()
+
+      When("I verify WhichPensionSchemeWillPayPage, select private pension scheme and click continue button")
+      WhichPensionSchemeWillPayPage.verifyPageSelectPrivatePSAndContinue()
+
+      When("I verify PensionSchemeDetailsPage, enter pension scheme information and click continue button")
+      PensionSchemeDetailsPage.verifyPageEnterPensionSchemeInformationAndContinue()
+
+    }
+
+    /** Below journey covers 5.1, 5.2, 5.10, 5.15 pages in the mural board* */
+    Scenario("5.10 who's is going to pay new charge you, user journey", ZapTests) {
+      Given("I'm an authorized User and navigated to Public Service Pensions Remediation home page")
+      AuthorityWizardPage.authorizedLoginUser()
+      HomePage.loadHomePage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      When("I verify SubmissionInfoPage and click continue button")
+      SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
+
+      When("I verify ClaimOnBehalfPage, select no and click continue button")
+      ClaimOnBehalfPage.verifyPageSelectNoAndContinue()
+
+      When("I verify WhoWillPayPage, select you and click continue button")
+      WhoWillPayPage.verifyPageSelectYouAndContinue()
+
+      Then("I verify AlternativeNamePage, and verify page")
+      AlternativeNamePage.verifyAlternativeNamePage()
+
     }
   }
 
