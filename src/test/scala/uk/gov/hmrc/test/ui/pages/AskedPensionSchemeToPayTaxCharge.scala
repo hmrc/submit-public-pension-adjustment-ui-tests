@@ -16,22 +16,22 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{VALID_ELECTION_FOR_SCHEME_TO_PAY_HEADER, VALID_ELECTION_FOR_SCHEME_TO_PAY_TITLE}
-object ValidElectionForSchemeToPayPage extends BasePage {
+import uk.gov.hmrc.test.ui.constants.PageInformation.{ASKED_PENSION_SCHEME_TO_PAY_HEADER, ASKED_PENSION_SCHEME_TO_PAY_TITLE}
+object AskedPensionSchemeToPayTaxCharge extends BasePage {
 
-  def verifyValidElectionForSchemeToPayPage() = {
-    onPage(VALID_ELECTION_FOR_SCHEME_TO_PAY_TITLE)
-    isHeader(VALID_ELECTION_FOR_SCHEME_TO_PAY_HEADER)
+  def verifyAskedPensionSchemeToPayTaxCharge() = {
+    onPage(ASKED_PENSION_SCHEME_TO_PAY_TITLE)
+    isHeader(ASKED_PENSION_SCHEME_TO_PAY_HEADER)
   }
 
   def verifyPageSelectYesAndContinue() = {
-    verifyValidElectionForSchemeToPayPage()
+    verifyAskedPensionSchemeToPayTaxCharge()
     selectYesOption()
     submitPage()
   }
 
   def verifyPageSelectNoAndContinue() = {
-    verifyValidElectionForSchemeToPayPage()
+    verifyAskedPensionSchemeToPayTaxCharge()
     selectNoOption()
     submitPage()
   }

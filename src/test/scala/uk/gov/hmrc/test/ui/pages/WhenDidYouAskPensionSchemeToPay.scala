@@ -17,20 +17,26 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{DATE_OF_ELECTION_HEADER, DATE_OF_ELECTION_TITLE, HOME_PAGE_HEADER, HOME_PAGE_TITLE, THEIR_NINO_TRN_HEADER, THEIR_NINO_TRN_TITLE, VALID_ELECTION_FOR_SCHEME_TO_PAY_HEADER, VALID_ELECTION_FOR_SCHEME_TO_PAY_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER, WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE}
 
-object DateOfElectionPage extends BasePage {
+object WhenDidYouAskPensionSchemeToPay extends BasePage {
 
-  def verifyDateOfElectionPage() = {
-    onPage(DATE_OF_ELECTION_TITLE)
-    isHeader(DATE_OF_ELECTION_HEADER)
+  def verifyWhenDidYouAskPensionSchemeToPay() = {
+    onPage(WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE)
+    isHeader(WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER)
   }
 
-  def selectQuarter() = driver.findElement(By.id("value_0")).click()
+  def enterSchemePaymentDate() = {
+    clearDate()
+    enterDay("1")
+    enterMonth("1")
+    enterYear("2022")
+  }
 
-  def verifyDateOfElectionPageSelectQuarterAndContinue() = {
-    verifyDateOfElectionPage()
-    selectQuarter()
+
+  def verifyWhenDidYouAskPensionSchemeToPayPageEnterDateAndContinue() = {
+    verifyWhenDidYouAskPensionSchemeToPay()
+    enterSchemePaymentDate()
     submitPage()
   }
 
