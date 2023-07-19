@@ -73,10 +73,10 @@ class SubmissionUserJourney extends BaseSpec {
       PensionSchemeDetailsPage.verifyPageEnterPensionSchemeInformationAndContinue()
 
       Then("I verify Valid Election for Scheme to pay Page and select yes and click continue")
-      ValidElectionForSchemeToPayPage.verifyPageSelectYesAndContinue()
+      AskedPensionSchemeToPayTaxCharge.verifyPageSelectYesAndContinue()
 
       Then("I verify Date of Election Page and enter date and click continue")
-      DateOfElectionPage.verifyDateOfElectionPageSelectQuarterAndContinue()
+      WhenDidYouAskPensionSchemeToPay.verifyWhenDidYouAskPensionSchemeToPayPageEnterDateAndContinue()
 
     }
 
@@ -105,10 +105,10 @@ class SubmissionUserJourney extends BaseSpec {
       WhichPensionSchemeWillPayPage.verifyPageSelectPSAndContinue("pensionSchemeA")
 
       Then("I verify Valid Election for Scheme to pay Page and select yes and click continue")
-      ValidElectionForSchemeToPayPage.verifyPageSelectNoAndContinue()
+      AskedPensionSchemeToPayTaxCharge.verifyPageSelectNoAndContinue()
 
       Then("I verify Estimated quarter of Election Page and select quarter and click continue")
-      DateOfElectionPage.verifyDateOfElectionPageSelectQuarterAndContinue()
+      WhenWillYouAskPensionSchemeToPay.verifyWhenWillYouAskPensionSchemeToPayPageSelectQuarterAndContinue()
 
     }
 

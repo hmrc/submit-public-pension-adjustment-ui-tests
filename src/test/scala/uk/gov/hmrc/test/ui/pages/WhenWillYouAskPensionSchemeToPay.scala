@@ -17,25 +17,20 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{ESTIMATED_QUARTER_OF_ELECTION_HEADER, ESTIMATED_QUARTER_OF_ELECTION_TITLE, STATUS_OF_USER_PAGE_HEADER, STATUS_OF_USER_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER, WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE}
 
-object EstimatedQuarterOfElectionPage extends BasePage {
+object WhenWillYouAskPensionSchemeToPay extends BasePage {
 
-  def verifyEstimatedQuarterOfElectionPage() = {
-    onPage(ESTIMATED_QUARTER_OF_ELECTION_TITLE)
-    isHeader(ESTIMATED_QUARTER_OF_ELECTION_HEADER)
+  def verifyWhenWillYouAskPensionSchemeToPayPage() = {
+    onPage(WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE)
+    isHeader(WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER)
   }
 
-  def enterSchemePaymentDate() = {
-    clearDate()
-    enterDay("1")
-    enterMonth("1")
-    enterYear("2022")
-  }
+  def selectQuarter() = driver.findElement(By.id("value_0")).click()
 
-  def verifyPageEnterDateAndContinue() = {
-    verifyEstimatedQuarterOfElectionPage()
-    enterSchemePaymentDate()
+  def verifyWhenWillYouAskPensionSchemeToPayPageSelectQuarterAndContinue() = {
+    verifyWhenWillYouAskPensionSchemeToPayPage()
+    selectQuarter()
     submitPage()
   }
 

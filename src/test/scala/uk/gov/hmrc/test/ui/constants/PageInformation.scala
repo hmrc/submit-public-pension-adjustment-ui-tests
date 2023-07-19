@@ -32,24 +32,24 @@ object PageInformation {
   val STATUS_OF_USER_PAGE_HEADER                =
     "Do you have power of attorney or deputyship for this person?"
   val THEIR_NINO_TRN_TITLE                      =
-    "What is their National Insurance or temporary reference number?"
+    "What is their National Insurance or temporary reference number? - Submit Public Pension Adjustment service - GOV.UK"
   val THEIR_NINO_TRN_HEADER                     =
     "What is their National Insurance or temporary reference number?"
   val THEIR_UTR_TITLE                           =
-    "What is their unique tax reference number?"
+    "What is their unique tax reference number? - Submit Public Pension Adjustment service - GOV.UK"
   val THEIR_UTR_HEADER                          =
     "What is their unique tax reference number?"
-  val VALID_ELECTION_FOR_SCHEME_TO_PAY_TITLE    =
+  val ASKED_PENSION_SCHEME_TO_PAY_TITLE    =
+    "Have you asked your pension scheme to pay the tax charge? - Submit Public Pension Adjustment service - GOV.UK"
+  val ASKED_PENSION_SCHEME_TO_PAY_HEADER   =
     "Have you asked your pension scheme to pay the tax charge?"
-  val VALID_ELECTION_FOR_SCHEME_TO_PAY_HEADER   =
-    "Have you asked your pension scheme to pay the tax charge?"
-  val ESTIMATED_QUARTER_OF_ELECTION_TITLE       =
+  val WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE       =
+    "When do you think you will ask your pension scheme to pay? - Submit Public Pension Adjustment service - GOV.UK"
+  val WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER      =
     "When do you think you will ask your pension scheme to pay?"
-  val ESTIMATED_QUARTER_OF_ELECTION_HEADER      =
-    "When do you think you will ask your pension scheme to pay?"
-  val DATE_OF_ELECTION_TITLE                    =
-    "When did you ask your pension scheme to pay?"
-  val DATE_OF_ELECTION_HEADER                   =
+  val WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE                    =
+    "When did you ask your pension scheme to pay? - Submit Public Pension Adjustment service - GOV.UK"
+  val WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER                   =
     "When did you ask your pension scheme to pay?"
   val THEIR_NAME_PAGE_TITLE                     =
     "What is the pension scheme members name? - Submit Public Pension Adjustment service - GOV.UK"
