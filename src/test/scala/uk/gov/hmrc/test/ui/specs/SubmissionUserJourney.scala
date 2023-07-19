@@ -102,7 +102,7 @@ class SubmissionUserJourney extends BaseSpec {
       WhoWillPayPage.verifyPageSelectPensionSchemeAndContinue()
 
       When("I verify WhichPensionSchemeWillPayPage, select public pension scheme and click continue button")
-      WhichPensionSchemeWillPayPage.verifyPageSelectPSAndContinue()
+      WhichPensionSchemeWillPayPage.verifyPageSelectPSAndContinue("pensionSchemeA")
 
       Then("I verify Valid Election for Scheme to pay Page and select yes and click continue")
       ValidElectionForSchemeToPayPage.verifyPageSelectNoAndContinue()
@@ -134,7 +134,6 @@ class SubmissionUserJourney extends BaseSpec {
       AlternativeNamePage.verifyAlternativeNamePage()
 
     }
-
 
   }
 
