@@ -17,9 +17,7 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.constants.PageInformation.{HOME_PAGE_HEADER, HOME_PAGE_TITLE, THEIR_NINO_TRN_HEADER, THEIR_NINO_TRN_TITLE, THEIR_UTR_HEADER, THEIR_UTR_TITLE}
-import uk.gov.hmrc.test.ui.pages.HomePage.{driver, onPage, url}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_UTR_HEADER, THEIR_UTR_TITLE}
 object TheirUTRPage extends BasePage {
 
   def verifyTheirUTRPage() = {
