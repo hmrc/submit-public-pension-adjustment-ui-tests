@@ -17,7 +17,9 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
+import org.scalatest.Assertion
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 trait BasePage extends BrowserDriver with Matchers {
@@ -81,6 +83,11 @@ trait BasePage extends BrowserDriver with Matchers {
     driver.findElement(By.id("value.month")).sendKeys(month)
   def enterYear(year: String)   =
     driver.findElement(By.id("value.year")).sendKeys(year)
+  def verifyPageUrl(name: String): Assertion = {
+    val currentUrl: String = driver.getCurrentUrl
+    val lastPart           = currentUrl.replaceAll(TestConfiguration.url("ui-frontend") + "/", "")
+    lastPart shouldEqual name
+  }
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)

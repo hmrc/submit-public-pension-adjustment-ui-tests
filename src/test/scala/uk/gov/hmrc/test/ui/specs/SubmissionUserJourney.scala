@@ -104,11 +104,22 @@ class SubmissionUserJourney extends BaseSpec {
       When("I verify WhichPensionSchemeWillPayPage, select public pension scheme and click continue button")
       WhichPensionSchemeWillPayPage.verifyPageSelectPSAndContinue("pensionSchemeA")
 
-      Then("I verify Valid Election for Scheme to pay Page and select yes and click continue")
+      When("I verify Valid Election for Scheme to pay Page and select yes and click continue")
       AskedPensionSchemeToPayTaxCharge.verifyPageSelectNoAndContinue()
 
-      Then("I verify Estimated quarter of Election Page and select quarter and click continue")
+      When("I verify Estimated quarter of Election Page and select quarter and click continue")
       WhenWillYouAskPensionSchemeToPay.verifyWhenWillYouAskPensionSchemeToPayPageSelectQuarterAndContinue()
+
+      /** Mock the url to support 5.26 navigation */
+      When("I verify DeclarationsPage Page and click confirm")
+      DeclarationsPage.verifyPageAndConfirm()
+
+      /** Verify the content in check your answers page */
+      When("I verify CheckYourAnswersPage Page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify SubmissionPage")
+      SubmissionPage.verifySubmissionPage()
 
     }
 
