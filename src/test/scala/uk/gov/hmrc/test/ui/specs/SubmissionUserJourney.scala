@@ -48,7 +48,7 @@ class SubmissionUserJourney extends BaseSpec {
       TheirDOBPage.verifyPageEnterBirthdayAndContinue()
     }
 
-    /** Below journey covers 5.1, 5.2, 5.10, 5.11, 5.11.1 pages in the mural board* */
+    /** Below journey covers 5.1, 5.2, 5.10, 5.11, 5.11.1, 5.12, 5.14  pages in the mural board* */
     Scenario("5.11 select scheme details - private ps, user journey", ZapTests) {
       Given("I'm an authorized User and navigated to Public Service Pensions Remediation home page")
       AuthorityWizardPage.authorizedLoginUser()
@@ -71,6 +71,44 @@ class SubmissionUserJourney extends BaseSpec {
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme information and click continue button")
       PensionSchemeDetailsPage.verifyPageEnterPensionSchemeInformationAndContinue()
+
+      Then("I verify Valid Election for Scheme to pay Page and select yes and click continue")
+      ValidElectionForSchemeToPayPage.verifyPageSelectYesAndContinue()
+
+      Then("I verify Date of Election Page and enter date and click continue")
+      DateOfElectionPage.verifyDateOfElectionPageSelectQuarterAndContinue()
+
+    }
+
+    /** Below journey covers 5.1, 5.2, 5.10, 5.11, 5.12, 5.13  pages in the mural board* */
+    Scenario(
+      "5.11 select scheme details - public ps, user journey, not made valid election for the scheme to pay",
+      ZapTests
+    ) {
+      Given("I'm an authorized User and navigated to Public Service Pensions Remediation home page")
+      AuthorityWizardPage.authorizedLoginUser()
+      HomePage.loadHomePage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      When("I verify SubmissionInfoPage and click continue button")
+      SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
+
+      When("I verify ClaimOnBehalfPage, select no and click continue button")
+      ClaimOnBehalfPage.verifyPageSelectNoAndContinue()
+
+      When("I verify WhoWillPayPage, select pension scheme and click continue button")
+      WhoWillPayPage.verifyPageSelectPensionSchemeAndContinue()
+
+      When("I verify WhichPensionSchemeWillPayPage, select public pension scheme and click continue button")
+      WhichPensionSchemeWillPayPage.verifyPageSelectPSAndContinue()
+
+      Then("I verify Valid Election for Scheme to pay Page and select yes and click continue")
+      ValidElectionForSchemeToPayPage.verifyPageSelectNoAndContinue()
+
+      Then("I verify Estimated quarter of Election Page and select quarter and click continue")
+      DateOfElectionPage.verifyDateOfElectionPageSelectQuarterAndContinue()
 
     }
 
@@ -96,6 +134,8 @@ class SubmissionUserJourney extends BaseSpec {
       AlternativeNamePage.verifyAlternativeNamePage()
 
     }
+
+
   }
 
 }
