@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER, WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE}
 
 object WhenDidYouAskPensionSchemeToPay extends BasePage {
@@ -32,7 +31,6 @@ object WhenDidYouAskPensionSchemeToPay extends BasePage {
     enterMonth("1")
     enterYear("2022")
   }
-
 
   def verifyWhenDidYouAskPensionSchemeToPayPageEnterDateAndContinue() = {
     verifyWhenDidYouAskPensionSchemeToPay()
