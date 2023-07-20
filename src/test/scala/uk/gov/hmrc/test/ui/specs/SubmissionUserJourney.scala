@@ -110,6 +110,17 @@ class SubmissionUserJourney extends BaseSpec {
       When("I verify Estimated quarter of Election Page and select quarter and click continue")
       WhenWillYouAskPensionSchemeToPay.verifyPageSelectQuarterAndContinue()
 
+      /** Mock the url to support 5.22 navigation */
+      When("I verify ClaimingAdditionalTaxRateReliefPage Page , select yes and click continue")
+      ClaimingAdditionalTaxRateReliefPage.verifyPageClickYesAndContinue()
+
+      When("I verify TaxReliefAmountPage Page, enter tax relief and click continue")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue()
+
+      /** Need to implement navigation after this step */
+      When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
+      WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Pension Scheme A")
+
       /** Mock the url to support 5.26 navigation */
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
