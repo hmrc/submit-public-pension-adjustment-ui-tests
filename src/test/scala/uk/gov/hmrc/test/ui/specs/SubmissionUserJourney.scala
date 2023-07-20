@@ -76,7 +76,7 @@ class SubmissionUserJourney extends BaseSpec {
       AskedPensionSchemeToPayTaxCharge.verifyPageSelectYesAndContinue()
 
       Then("I verify Date of Election Page and enter date and click continue")
-      WhenDidYouAskPensionSchemeToPay.verifyWhenDidYouAskPensionSchemeToPayPageEnterDateAndContinue()
+      WhenDidYouAskPensionSchemeToPay.verifyPageEnterDateAndContinue()
 
     }
 
@@ -108,7 +108,7 @@ class SubmissionUserJourney extends BaseSpec {
       AskedPensionSchemeToPayTaxCharge.verifyPageSelectNoAndContinue()
 
       When("I verify Estimated quarter of Election Page and select quarter and click continue")
-      WhenWillYouAskPensionSchemeToPay.verifyWhenWillYouAskPensionSchemeToPayPageSelectQuarterAndContinue()
+      WhenWillYouAskPensionSchemeToPay.verifyPageSelectQuarterAndContinue()
 
       /** Mock the url to support 5.26 navigation */
       When("I verify DeclarationsPage Page and click confirm")
