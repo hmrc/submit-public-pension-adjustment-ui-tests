@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.driver
 
 import com.typesafe.scalalogging.LazyLogging
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.chrome.ChromeOptions
 import org.scalatest.concurrent.Eventually
 import uk.gov.hmrc.webdriver.SingletonDriver
 
