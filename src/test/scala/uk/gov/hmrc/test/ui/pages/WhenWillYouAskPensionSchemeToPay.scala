@@ -28,7 +28,7 @@ object WhenWillYouAskPensionSchemeToPay extends BasePage {
 
   def selectQuarter() = driver.findElement(By.id("value_0")).click()
 
-  def verifyWhenWillYouAskPensionSchemeToPayPageSelectQuarterAndContinue() = {
+  def verifyPageSelectQuarterAndContinue() = {
     verifyWhenWillYouAskPensionSchemeToPayPage()
     selectQuarter()
     submitPage()

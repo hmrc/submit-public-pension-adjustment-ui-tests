@@ -32,7 +32,7 @@ object WhenDidYouAskPensionSchemeToPay extends BasePage {
     enterYear("2022")
   }
 
-  def verifyWhenDidYouAskPensionSchemeToPayPageEnterDateAndContinue() = {
+  def verifyPageEnterDateAndContinue() = {
     verifyWhenDidYouAskPensionSchemeToPay()
     enterSchemePaymentDate()
     submitPage()
