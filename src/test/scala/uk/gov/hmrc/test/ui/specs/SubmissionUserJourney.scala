@@ -111,7 +111,7 @@ class SubmissionUserJourney extends BaseSpec {
       WhenWillYouAskPensionSchemeToPay.verifyPageSelectQuarterAndContinue()
 
       /** Mock the url to support 5.22 navigation */
-      When("I verify ClaimingAdditionalTaxRateReliefPage Page , select yes and click continue")
+      When("I verify ClaimingAdditionalTaxRateRelief Page , select yes and click continue")
       ClaimingAdditionalTaxRateReliefPage.verifyPageClickYesAndContinue()
 
       When("I verify TaxReliefAmountPage Page, enter tax relief and click continue")
