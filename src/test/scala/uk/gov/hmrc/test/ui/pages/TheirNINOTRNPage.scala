@@ -14,17 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.chrome.ChromeOptions
-import org.scalatest.concurrent.Eventually
-import uk.gov.hmrc.webdriver.SingletonDriver
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NINO_TRN_HEADER, THEIR_NINO_TRN_TITLE}
+object TheirNINOTRNPage extends BasePage {
+  def verifyTheirNINOTRN(): Boolean = {
+    onPage(THEIR_NINO_TRN_TITLE)
+    isHeader(THEIR_NINO_TRN_HEADER)
+  }
 
-trait BrowserDriver extends LazyLogging with Eventually {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
-  implicit var driver: WebDriver = SingletonDriver.getInstance()
+  def enterNINOTRN(): Unit =
+    driver.findElement(By.id("value")).sendKeys("00348916RT")
+
+  def verifyPageEnterNINOAndContinue(): Unit = {
+    verifyTheirNINOTRN()
+    enterNINOTRN()
+    submitPage()
+  }
 }

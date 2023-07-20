@@ -14,17 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.chrome.ChromeOptions
-import org.scalatest.concurrent.Eventually
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_HEADER, CHECK_YOUR_ANSWERS_PAGE_TITLE}
 
-trait BrowserDriver extends LazyLogging with Eventually {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
-  implicit var driver: WebDriver = SingletonDriver.getInstance()
+object CheckYourAnswersPage extends BasePage {
+  def onCheckYourAnswersPage() = {
+    verifyPageUrl("check-your-answers")
+    onPage(CHECK_YOUR_ANSWERS_PAGE_TITLE)
+    isHeader(CHECK_YOUR_ANSWERS_PAGE_HEADER)
+  }
+
+  def verifyCheckYourAnswersPageAndContinue() = {
+    onCheckYourAnswersPage()
+    //require(DataCollectorMap.checkAnswersGS == returnCheckYourAnswersPageInformation(), "Data not matching")
+    clickContinueButton()
+  }
+
 }

@@ -14,17 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.chrome.ChromeOptions
-import org.scalatest.concurrent.Eventually
-import uk.gov.hmrc.webdriver.SingletonDriver
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_UTR_HEADER, THEIR_UTR_TITLE}
+object TheirUTRPage extends BasePage {
 
-trait BrowserDriver extends LazyLogging with Eventually {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
-  implicit var driver: WebDriver = SingletonDriver.getInstance()
+  def verifyTheirUTRPage() = {
+    onPage(THEIR_UTR_TITLE)
+    isHeader(THEIR_UTR_HEADER)
+  }
+
+  def enterUTR(): Unit =
+    driver.findElement(By.id("value")).sendKeys("00348916RT")
+
+  def verifyPageEnterUTRAndContinue(): Unit = {
+    verifyTheirUTRPage()
+    enterUTR()
+    submitPage()
+  }
 }

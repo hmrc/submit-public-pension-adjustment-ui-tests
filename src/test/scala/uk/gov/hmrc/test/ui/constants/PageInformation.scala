@@ -17,42 +17,74 @@
 package uk.gov.hmrc.test.ui.constants
 
 object PageInformation {
-  val HOME_PAGE_TITLE                           =
+  val HOME_PAGE_TITLE                                =
     "Submit Public Pension Adjustment service - Submit Public Pension Adjustment service - GOV.UK"
-  val HOME_PAGE_HEADER                          = "Submit Public Pension Adjustment service"
-  val SUBMISSION_INFO_PAGE_TITLE                =
+  val HOME_PAGE_HEADER                               = "Submit Public Pension Adjustment service"
+  val SUBMISSION_INFO_PAGE_TITLE                     =
     "Submission service: what you will need - Submit Public Pension Adjustment service - GOV.UK"
-  val SUBMISSION_INFO_PAGE_HEADER               = "Submission service: what you will need"
-  val CLAIM_ON_BEHALF_PAGE_TITLE                =
+  val SUBMISSION_INFO_PAGE_HEADER                    = "Submission service: what you will need"
+  val CLAIM_ON_BEHALF_PAGE_TITLE                     =
     "Are you making a claim on behalf of a member for whom you have a lasting power of attorney or deputyship? - Submit Public Pension Adjustment service - GOV.UK"
-  val CLAIM_ON_BEHALF_PAGE_HEADER               =
+  val CLAIM_ON_BEHALF_PAGE_HEADER                    =
     "Are you making a claim on behalf of a member for whom you have a lasting power of attorney or deputyship?"
-  val STATUS_OF_USER_PAGE_TITLE                 =
+  val STATUS_OF_USER_PAGE_TITLE                      =
     "Do you have power of attorney or deputyship for this person? - Submit Public Pension Adjustment service - GOV.UK"
-  val STATUS_OF_USER_PAGE_HEADER                =
+  val STATUS_OF_USER_PAGE_HEADER                     =
     "Do you have power of attorney or deputyship for this person?"
-  val THEIR_NAME_PAGE_TITLE                     =
+  val THEIR_NINO_TRN_TITLE                           =
+    "What is their National Insurance or temporary reference number? - Submit Public Pension Adjustment service - GOV.UK"
+  val THEIR_NINO_TRN_HEADER                          =
+    "What is their National Insurance or temporary reference number?"
+  val THEIR_UTR_TITLE                                =
+    "What is their unique tax reference number? - Submit Public Pension Adjustment service - GOV.UK"
+  val THEIR_UTR_HEADER                               =
+    "What is their unique tax reference number?"
+  val ASKED_PENSION_SCHEME_TO_PAY_TITLE              =
+    "Have you asked your pension scheme to pay the tax charge? - Submit Public Pension Adjustment service - GOV.UK"
+  val ASKED_PENSION_SCHEME_TO_PAY_HEADER             =
+    "Have you asked your pension scheme to pay the tax charge?"
+  val WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE  =
+    "When do you think you will ask your pension scheme to pay? - Submit Public Pension Adjustment service - GOV.UK"
+  val WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER =
+    "When do you think you will ask your pension scheme to pay?"
+  val WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE   =
+    "When did you ask your pension scheme to pay? - Submit Public Pension Adjustment service - GOV.UK"
+  val WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER  =
+    "When did you ask your pension scheme to pay?"
+  val THEIR_NAME_PAGE_TITLE                          =
     "What is the pension scheme members name? - Submit Public Pension Adjustment service - GOV.UK"
-  val THEIR_NAME_PAGE_HEADER                    =
+  val THEIR_NAME_PAGE_HEADER                         =
     "What is the pension scheme members name?"
-  val THEIR_DOB_PAGE_TITLE                      =
+  val THEIR_DOB_PAGE_TITLE                           =
     "What is the pension scheme members date of birth? - Submit Public Pension Adjustment service - GOV.UK"
-  val THEIR_DOB_PAGE_HEADER                     =
+  val THEIR_DOB_PAGE_HEADER                          =
     "What is the pension scheme members date of birth?"
-  val WHO_WILL_PAY_PAGE_TITLE                   =
+  val WHO_WILL_PAY_PAGE_TITLE                        =
     "Who is going to pay the new tax charge? - Submit Public Pension Adjustment service - GOV.UK"
-  val WHO_WILL_PAY_PAGE_HEADER                  =
+  val WHO_WILL_PAY_PAGE_HEADER                       =
     "Who is going to pay the new tax charge?"
-  val WHICH_PENSION_SCHEME_WILL_PAY_PAGE_TITLE  =
+  val WHICH_PENSION_SCHEME_WILL_PAY_PAGE_TITLE       =
     "Which pension scheme will pay the tax charge? - Submit Public Pension Adjustment service - GOV.UK"
-  val WHICH_PENSION_SCHEME_WILL_PAY_PAGE_HEADER =
+  val WHICH_PENSION_SCHEME_WILL_PAY_PAGE_HEADER      =
     "Which pension scheme will pay the tax charge?"
-  val PENSION_SCHEME_DETAILS_PAGE_TITLE         =
+  val PENSION_SCHEME_DETAILS_PAGE_TITLE              =
     "What is the name and tax reference of the pension scheme? - Submit Public Pension Adjustment service - GOV.UK"
-  val PENSION_SCHEME_DETAILS_PAGE_HEADER        =
+  val PENSION_SCHEME_DETAILS_PAGE_HEADER             =
     "What is the name and tax reference of the pension scheme?"
-  val ALTERNATIVE_NAME_PAGE_TITLE               =
+  val ALTERNATIVE_NAME_PAGE_TITLE                    =
     "alternativeName - Submit Public Pension Adjustment service - GOV.UK"
-  val ALTERNATIVE_NAME_PAGE_HEADER              =
+  val ALTERNATIVE_NAME_PAGE_HEADER                   =
     "alternativeName"
+  val DECLARATION_PAGE_TITLE                         =
+    "Declarations - Submit Public Pension Adjustment service - GOV.UK"
+  val DECLARATION_PAGE_HEADER                        =
+    "Declarations"
+  val CHECK_YOUR_ANSWERS_PAGE_TITLE                  =
+    "Check your answers - Submit Public Pension Adjustment service - GOV.UK"
+  val CHECK_YOUR_ANSWERS_PAGE_HEADER                 =
+    "Check your answers"
+  val SUBMISSION_PAGE_TITLE                          =
+    "Adjustment sent - Submit Public Pension Adjustment service - GOV.UK"
+  val SUBMISSION_PAGE_HEADER                         =
+    "Adjustment sent"
 }
