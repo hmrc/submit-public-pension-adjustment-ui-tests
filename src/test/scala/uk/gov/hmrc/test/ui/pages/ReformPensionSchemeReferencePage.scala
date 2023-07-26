@@ -16,24 +16,19 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER, CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{REFORM_PENSION_SCHEME_REFERENCE_PAGE_HEADER, REFORM_PENSION_SCHEME_REFERENCE_PAGE_TITLE}
 
-object ClaimingAdditionalTaxRateReliefPage extends BasePage {
-  def verifyClaimingAdditionalTaxRateReliefPage() = {
-    verifyPageUrl("claiming-additional-tax-rate-relief")
-    onPage(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE)
-    isHeader(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER)
+object ReformPensionSchemeReferencePage extends BasePage {
+  def verifyReformPensionSchemeReferencePage() = {
+    verifyPageUrl("reform-pension-scheme-reference")
+    onPage(REFORM_PENSION_SCHEME_REFERENCE_PAGE_TITLE)
+    isHeader(REFORM_PENSION_SCHEME_REFERENCE_PAGE_HEADER)
   }
 
-  def verifyPageClickYesAndContinue() = {
-    verifyClaimingAdditionalTaxRateReliefPage()
-    selectYesOption()
-    submitPage()
-  }
-
-  def verifyPageClickNoAndContinue() = {
-    verifyClaimingAdditionalTaxRateReliefPage()
-    selectNoOption()
+  def verifyPageEnterReferenceAndContinue() = {
+    verifyReformPensionSchemeReferencePage()
+    driver.findElement(By.id("value")).sendKeys("TAX00000629RTED")
     submitPage()
   }
 }

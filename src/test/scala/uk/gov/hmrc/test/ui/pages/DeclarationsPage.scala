@@ -30,7 +30,6 @@ object DeclarationsPage extends BasePage {
 
   /** remove navigation to url */
   def verifyPageAndConfirm() = {
-    driver.navigate().to("http://localhost:12805/submit-public-pension-adjustment/declarations")
     verifyDeclarationsPage()
     clickConfirmButton()
   }

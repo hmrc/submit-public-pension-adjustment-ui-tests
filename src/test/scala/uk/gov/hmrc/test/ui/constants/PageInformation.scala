@@ -38,7 +38,7 @@ object PageInformation {
   val THEIR_UTR_TITLE                                      =
     "What is their unique tax reference number? - Submit Public Pension Adjustment service - GOV.UK"
   val THEIR_UTR_HEADER                                     =
-    "What is their unique tax reference number?"
+    "What is their unique tax reference number? (optional)"
   val ASKED_PENSION_SCHEME_TO_PAY_TITLE                    =
     "Have you asked your pension scheme to pay the tax charge? - Submit Public Pension Adjustment service - GOV.UK"
   val ASKED_PENSION_SCHEME_TO_PAY_HEADER                   =
@@ -72,9 +72,9 @@ object PageInformation {
   val PENSION_SCHEME_DETAILS_PAGE_HEADER                   =
     "What is the name and tax reference of the pension scheme?"
   val ALTERNATIVE_NAME_PAGE_TITLE                          =
-    "alternativeName - Submit Public Pension Adjustment service - GOV.UK"
+    "Is your name the same one that your pension scheme has? - Submit Public Pension Adjustment service - GOV.UK"
   val ALTERNATIVE_NAME_PAGE_HEADER                         =
-    "alternativeName"
+    "Is your name the same one that your pension scheme has?"
   val DECLARATION_PAGE_TITLE                               =
     "Declarations - Submit Public Pension Adjustment service - GOV.UK"
   val DECLARATION_PAGE_HEADER                              =
@@ -99,4 +99,51 @@ object PageInformation {
     "How much tax relief are you claiming for? - Submit Public Pension Adjustment service - GOV.UK"
   val TAX_RELIEF_AMOUNT_PAGE_HEADER                        =
     "How much tax relief are you claiming for?"
+  val THEIR_NINO_PAGE_TITLE                                =
+    "What is their National Insurance number? - Submit Public Pension Adjustment service - GOV.UK"
+  val THEIR_NINO_PAGE_HEADER                               =
+    "What is their National Insurance number?"
+  val THEIR_RESIDENCE_PAGE_TITLE                           =
+    "Are they a UK resident? - Submit Public Pension Adjustment service - GOV.UK"
+  val THEIR_RESIDENCE_PAGE_HEADER                          =
+    "Are they a UK resident?"
+  val THEIR_UK_ADDRESS_PAGE_TITLE                          =
+    "What is their address? - Submit Public Pension Adjustment service - GOV.UK"
+  val THEIR_UK_ADDRESS_PAGE_HEADER                         =
+    "What is their address?"
+  val THEIR_INTERNATIONAL_ADDRESS_PAGE_TITLE               =
+    "What is their address? - Submit Public Pension Adjustment service - GOV.UK"
+  val THEIR_INTERNATIONAL_ADDRESS_PAGE_HEADER              =
+    "What is their address?"
+  val ENTER_ALTERNATIVE_NAME_PAGE_TITLE                    =
+    "What is your name? - Submit Public Pension Adjustment service - GOV.UK"
+  val ENTER_ALTERNATIVE_NAME_PAGE_HEADER                   =
+    "What is your name?"
+  val CONTACT_NUMBER_PAGE_TITLE                            =
+    "Enter your contact number - Submit Public Pension Adjustment service - GOV.UK"
+  val CONTACT_NUMBER_PAGE_HEADER                           =
+    "Enter your contact number (optional)"
+  val RESIDENCE_PAGE_TITLE                                 =
+    "Are you a UK resident? - Submit Public Pension Adjustment service - GOV.UK"
+  val RESIDENCE_PAGE_HEADER                                =
+    "Are you a UK resident?"
+  val UK_ADDRESS_PAGE_TITLE                                =
+    "What is your address? - Submit Public Pension Adjustment service - GOV.UK"
+  val UK_ADDRESS_PAGE_HEADER                               =
+    "What is your address?"
+  val INTERNATIONAL_ADDRESS_PAGE_TITLE                     =
+    "What is your address? - Submit Public Pension Adjustment service - GOV.UK"
+  val INTERNATIONAL_ADDRESS_PAGE_HEADER                    =
+    "What is your address?"
+  val LEGACY_PENSION_SCHEME_REFERENCE_PAGE_TITLE           =
+    "What is your legacy individual pension scheme reference?(optional) - Submit Public Pension Adjustment service - GOV.UK"
+  val LEGACY_PENSION_SCHEME_REFERENCE_PAGE_HEADER          =
+    "What is your legacy individual pension scheme reference?(optional)"
+  val REFORM_PENSION_SCHEME_REFERENCE_PAGE_TITLE           =
+    "What is your reform individual pension scheme reference?(optional) - Submit Public Pension Adjustment service - GOV.UK"
+  val REFORM_PENSION_SCHEME_REFERENCE_PAGE_HEADER          =
+    "What is your reform individual pension scheme reference?(optional)"
+  val RESIDENCE_PAGE1_TITLE                                =
+    "Are you a UK resident? - Submit Public Pension Adjustment service - GOV.UK"
+  val RESIDENCE_PAGE1_HEADER                               = "Are you a UK resident?"
 }

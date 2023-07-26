@@ -16,24 +16,19 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER, CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{ENTER_ALTERNATIVE_NAME_PAGE_HEADER, ENTER_ALTERNATIVE_NAME_PAGE_TITLE}
 
-object ClaimingAdditionalTaxRateReliefPage extends BasePage {
-  def verifyClaimingAdditionalTaxRateReliefPage() = {
-    verifyPageUrl("claiming-additional-tax-rate-relief")
-    onPage(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE)
-    isHeader(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER)
+object EnterAlternativeNamePage extends BasePage {
+  def verifyEnterAlternativeNamePage() = {
+    verifyPageUrl("enter-alternative-name")
+    onPage(ENTER_ALTERNATIVE_NAME_PAGE_TITLE)
+    isHeader(ENTER_ALTERNATIVE_NAME_PAGE_HEADER)
   }
 
-  def verifyPageClickYesAndContinue() = {
-    verifyClaimingAdditionalTaxRateReliefPage()
-    selectYesOption()
-    submitPage()
-  }
-
-  def verifyPageClickNoAndContinue() = {
-    verifyClaimingAdditionalTaxRateReliefPage()
-    selectNoOption()
+  def verifyPageEnterNameAndContinue() = {
+    verifyEnterAlternativeNamePage()
+    driver.findElement(By.id("value")).sendKeys("ABC BCDEFGH")
     submitPage()
   }
 }
