@@ -20,7 +20,7 @@ import scala.util.Random
 
 object NINOGenerator {
   val nino = {
-    val firstTwoLetters = "ABCEGHJKLMNPRSTWXYZ"
+    val firstTwoLetters = "ABCEHJKLMPRSTWXY"
     val letterPart      = Random.shuffle(firstTwoLetters.toList).take(2).mkString
     val numberPart      = Random.nextInt(999999).toString.reverse.padTo(6, '0').reverse
     val lastLetters     = "ABCD"

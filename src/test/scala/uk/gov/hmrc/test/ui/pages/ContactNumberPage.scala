@@ -16,24 +16,23 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER, CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{CONTACT_NUMBER_PAGE_HEADER, CONTACT_NUMBER_PAGE_TITLE}
 
-object ClaimingAdditionalTaxRateReliefPage extends BasePage {
-  def verifyClaimingAdditionalTaxRateReliefPage() = {
-    verifyPageUrl("claiming-additional-tax-rate-relief")
-    onPage(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE)
-    isHeader(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER)
+object ContactNumberPage extends BasePage {
+  def verifyContactNumberPage() = {
+    verifyPageUrl("contact-number")
+    onPage(CONTACT_NUMBER_PAGE_TITLE)
+    isHeader(CONTACT_NUMBER_PAGE_HEADER)
   }
-
-  def verifyPageClickYesAndContinue() = {
-    verifyClaimingAdditionalTaxRateReliefPage()
-    selectYesOption()
+  def verifyPageEnterContactNumberAndContinue() = {
+    verifyContactNumberPage()
+    driver.findElement(By.id("value")).sendKeys("+44 808 157 0192")
     submitPage()
   }
 
-  def verifyPageClickNoAndContinue() = {
-    verifyClaimingAdditionalTaxRateReliefPage()
-    selectNoOption()
+  def verifyPageAndContinueWithoutContactNumber() = {
+    verifyContactNumberPage()
     submitPage()
   }
 }

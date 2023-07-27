@@ -21,16 +21,21 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_UTR_HEADER, THEIR_UT
 object TheirUTRPage extends BasePage {
 
   def verifyTheirUTRPage() = {
+    verifyPageUrl("their-UTR")
     onPage(THEIR_UTR_TITLE)
     isHeader(THEIR_UTR_HEADER)
   }
 
   def enterUTR(): Unit =
-    driver.findElement(By.id("value")).sendKeys("00348916RT")
+    driver.findElement(By.id("value")).sendKeys("1234567890")
 
   def verifyPageEnterUTRAndContinue(): Unit = {
     verifyTheirUTRPage()
     enterUTR()
+    submitPage()
+  }
+  def verifyPageContinueWithoutTaxReference(): Unit = {
+    verifyTheirUTRPage()
     submitPage()
   }
 }

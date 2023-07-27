@@ -17,25 +17,19 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NINO_PAGE_HEADER, THEIR_NINO_PAGE_TITLE}
 import uk.gov.hmrc.test.ui.utils.NINOGenerator
 
-object AuthorityWizardPage extends BasePage {
-
-  val authUrl: String = TestConfiguration.url("auth-frontend")
-
-  def authorizedLoginUser(): Unit = {
-    driver.navigate().to(authUrl)
-    driver.findElement(By.id("redirectionUrl")).sendKeys(HomePage.url)
-    driver.findElement(By.id("nino")).sendKeys(NINOGenerator.nino)
-    selectConfidenceLevel("250")
-    driver.findElement(By.id("submit-top")).submit()
+object TheirNinoPage extends BasePage {
+  def verifyTheirNinoPage() = {
+    verifyPageUrl("their-nino")
+    onPage(THEIR_NINO_PAGE_TITLE)
+    isHeader(THEIR_NINO_PAGE_HEADER)
   }
-
-  def selectConfidenceLevel(confidenceLevel: String) = {
-    val selectElement = driver.findElement(By.id("confidenceLevel"))
-    val dropdown      = new Select(selectElement)
-    dropdown.selectByValue(confidenceLevel)
+  def enterNINO() = driver.findElement(By.id("value")).sendKeys(NINOGenerator.nino)
+  def verifyPageEnterNinoAndContinue() = {
+    verifyTheirNinoPage()
+    enterNINO()
+    submitPage()
   }
 }

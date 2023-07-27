@@ -20,7 +20,18 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{ALTERNATIVE_NAME_PAGE_HEAD
 
 object AlternativeNamePage extends BasePage {
   def verifyAlternativeNamePage() = {
+    verifyPageUrl("alternative-name")
     onPage(ALTERNATIVE_NAME_PAGE_TITLE)
     isHeader(ALTERNATIVE_NAME_PAGE_HEADER)
+  }
+  def verifyPageSelectYesAndContinue() = {
+    verifyAlternativeNamePage()
+    selectYesOption()
+    submitPage()
+  }
+  def verifyPageSelectNoAndContinue() = {
+    verifyAlternativeNamePage()
+    selectNoOption()
+    submitPage()
   }
 }
