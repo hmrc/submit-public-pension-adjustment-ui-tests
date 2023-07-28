@@ -145,5 +145,11 @@ object PageInformation {
     "What is your reform individual pension scheme reference?(optional)"
   val RESIDENCE_PAGE1_TITLE                                =
     "Are you a UK resident? - Submit Public Pension Adjustment service - GOV.UK"
-  val RESIDENCE_PAGE1_HEADER                               = "Are you a UK resident?"
+  val RESIDENCE_PAGE1_HEADER                               =
+    "Are you a UK resident?"
+  val BANK_DETAILS_PAGE_TITLE =
+    "Enter Bank Details - Submit Public Pension Adjustment service - GOV.UK"
+  val BANK_DETAILS_PAGE_HEADER =
+    "Enter Bank Details"
+
 }
