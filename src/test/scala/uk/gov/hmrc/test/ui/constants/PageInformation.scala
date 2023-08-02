@@ -147,9 +147,9 @@ object PageInformation {
     "Are you a UK resident? - Submit Public Pension Adjustment service - GOV.UK"
   val RESIDENCE_PAGE1_HEADER                               =
     "Are you a UK resident?"
-  val BANK_DETAILS_PAGE_TITLE =
+  val BANK_DETAILS_PAGE_TITLE                              =
     "Enter Bank Details - Submit Public Pension Adjustment service - GOV.UK"
-  val BANK_DETAILS_PAGE_HEADER =
+  val BANK_DETAILS_PAGE_HEADER                             =
     "Enter Bank Details"
 
 }

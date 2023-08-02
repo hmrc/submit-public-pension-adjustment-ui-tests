@@ -158,6 +158,9 @@ class SubmissionUserJourney extends BaseSpec {
       When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
       WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Pension Scheme A")
 
+      When("I verify Bank Details Page, enter bank details and click continue")
+      BankDetailsPage.verifyPageEnterBankDetailsClickContinue()
+
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
 
@@ -359,8 +362,6 @@ class SubmissionUserJourney extends BaseSpec {
       SubmissionPage.verifySubmissionPage()
 
     }
-
-
 
   }
 
