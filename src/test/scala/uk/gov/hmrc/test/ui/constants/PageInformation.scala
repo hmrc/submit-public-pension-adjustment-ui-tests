@@ -59,6 +59,10 @@ object PageInformation {
     "What is the pension scheme members date of birth? - Submit Public Pension Adjustment service - GOV.UK"
   val THEIR_DOB_PAGE_HEADER                                =
     "What is the pension scheme members date of birth?"
+  val THEIR_DATE_OF_DEATH_PAGE_TITLE                       =
+    "What was their date of death? - Submit Public Pension Adjustment service - GOV.UK"
+  val THEIR_DATE_OF_DEATH_PAGE_HEADER                      =
+    "What was their date of death?"
   val WHO_WILL_PAY_PAGE_TITLE                              =
     "Who is going to pay the new tax charge? - Submit Public Pension Adjustment service - GOV.UK"
   val WHO_WILL_PAY_PAGE_HEADER                             =

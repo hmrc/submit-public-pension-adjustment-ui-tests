@@ -47,6 +47,9 @@ class SubmissionUserJourney extends BaseSpec {
       When("I verify TheirDOBPage enter date of birth and continue")
       TheirDOBPage.verifyPageEnterBirthdayAndContinue()
 
+      When("I verify Their date of death Page enter date of death and continue")
+      TheirDateOfDeathPage.verifyPageEnterDateOfDeathAndContinue()
+
       When("I verify TheirNinoPage enter NINO and continue")
       TheirNinoPage.verifyPageEnterNinoAndContinue()
 
@@ -115,6 +118,9 @@ class SubmissionUserJourney extends BaseSpec {
 
       When("I verify TheirDOBPage enter date of birth and continue")
       TheirDOBPage.verifyPageEnterBirthdayAndContinue()
+
+      When("I verify Their date of death Page enter date of death and continue")
+      TheirDateOfDeathPage.verifyPageEnterDateOfDeathAndContinue()
 
       When("I verify TheirNinoPage enter NINO and continue")
       TheirNinoPage.verifyPageEnterNinoAndContinue()
