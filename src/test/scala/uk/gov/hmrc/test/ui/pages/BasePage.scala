@@ -22,6 +22,8 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
+import java.time.{LocalDateTime, ZoneId}
+
 trait BasePage extends BrowserDriver with Matchers {
   val continueButton = "continue-button"
 
@@ -87,6 +89,14 @@ trait BasePage extends BrowserDriver with Matchers {
     val currentUrl: String = driver.getCurrentUrl
     val lastPart           = currentUrl.replaceAll(TestConfiguration.url("ui-frontend") + "/", "")
     lastPart shouldEqual name
+  }
+
+  def getCurrentDateTime(): (Int, Int, Int) = {
+    val currentDateTime = LocalDateTime.now(ZoneId.of("GMT+1"))
+    val currentDate     = currentDateTime.getDayOfMonth
+    val currentMonth    = currentDateTime.getMonthValue
+    val currentYear     = currentDateTime.getYear
+    (currentMonth, currentDate, currentYear)
   }
 }
 

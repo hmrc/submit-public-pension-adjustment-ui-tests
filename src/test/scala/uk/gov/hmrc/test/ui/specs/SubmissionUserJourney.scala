@@ -47,6 +47,9 @@ class SubmissionUserJourney extends BaseSpec {
       When("I verify TheirDOBPage enter date of birth and continue")
       TheirDOBPage.verifyPageEnterBirthdayAndContinue()
 
+      When("I verify Their date of death Page enter date of death and continue")
+      TheirDateOfDeathPage.verifyPageEnterDateOfDeathAndContinue()
+
       When("I verify TheirNinoPage enter NINO and continue")
       TheirNinoPage.verifyPageEnterNinoAndContinue()
 
@@ -116,6 +119,9 @@ class SubmissionUserJourney extends BaseSpec {
       When("I verify TheirDOBPage enter date of birth and continue")
       TheirDOBPage.verifyPageEnterBirthdayAndContinue()
 
+      When("I verify Their date of death Page enter date of death and continue")
+      TheirDateOfDeathPage.verifyPageEnterDateOfDeathAndContinue()
+
       When("I verify TheirNinoPage enter NINO and continue")
       TheirNinoPage.verifyPageEnterNinoAndContinue()
 
@@ -158,6 +164,9 @@ class SubmissionUserJourney extends BaseSpec {
       When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
       WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Pension Scheme A")
 
+      When("I verify Bank Details Page, enter bank details and click continue")
+      BankDetailsPage.verifyPageEnterBankDetailsClickContinue()
+
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
 
@@ -170,7 +179,7 @@ class SubmissionUserJourney extends BaseSpec {
 
     }
 
-    /** Below journey covers 5.1, 5.2, 5.10, 5.11, 5.11.1, 5.12, 5.14, 5.15, 5.16, 5.17, 5.18(N), 5.20, 5.21, 5.22, 5.23, 5.24,5.26,5.27, 5.28  pages in the mural board* */
+    /** Below journey covers 5.1, 5.2, 5.10, 5.11, 5.11.1, 5.12, 5.14, 5.15, 5.16, 5.17, 5.18(N), 5.20, 5.21, 5.22, 5.23, 5.24,5.25, 5.26,5.27, 5.28  pages in the mural board* */
     Scenario("5.11 select scheme details - private ps, user journey", ZapTests) {
       Given("I'm an authorized User and navigated to Public Service Pensions Remediation home page")
       AuthorityWizardPage.authorizedLoginUser()
@@ -229,6 +238,9 @@ class SubmissionUserJourney extends BaseSpec {
 
       When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
       WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Pension Scheme A")
+
+      When("I verify Bank Details Page, enter bank details and click continue")
+      BankDetailsPage.verifyPageEnterBankDetailsClickContinue()
 
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
