@@ -20,15 +20,18 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NAME_PAGE_HEADER, THEIR_NAME_PAGE_TITLE}
 
 object TheirNamePage extends BasePage {
+
+  val text = "ABC BCDEFGHIJK"
   def verifyTheirNamePage() = {
     onPage(THEIR_NAME_PAGE_TITLE)
     isHeader(THEIR_NAME_PAGE_HEADER)
   }
 
-  def enterPensionSchemeMemberName() = driver.findElement(By.id("value")).sendKeys("ABC BCDEFGHIJK")
+  def enterPensionSchemeMemberName() = driver.findElement(By.id("value")).sendKeys(text)
   def verifyPageEnterPensionSchemeNameAndContinue() = {
     verifyTheirNamePage()
     enterPensionSchemeMemberName()
+    checkYourAnswersCalculationsMap(getHeader(), text)
     submitPage()
   }
 }

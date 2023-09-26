@@ -30,6 +30,7 @@ trait BaseSpec
     extends AnyFeatureSpec
     with GivenWhenThen
     with BeforeAndAfterAll
+    with BeforeAndAfterEach
     with Matchers
     with WebBrowser
     with BrowserDriver

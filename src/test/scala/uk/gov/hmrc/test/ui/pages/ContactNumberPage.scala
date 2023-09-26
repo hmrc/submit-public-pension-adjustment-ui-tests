@@ -20,19 +20,22 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{CONTACT_NUMBER_PAGE_HEADER, CONTACT_NUMBER_PAGE_TITLE}
 
 object ContactNumberPage extends BasePage {
+  val contactNumber = "+44 808 157 0192"
   def verifyContactNumberPage() = {
-    verifyPageUrl("contact-number")
+    verifyPageUrl("submission-service/contact-number")
     onPage(CONTACT_NUMBER_PAGE_TITLE)
     isHeader(CONTACT_NUMBER_PAGE_HEADER)
   }
   def verifyPageEnterContactNumberAndContinue() = {
     verifyContactNumberPage()
-    driver.findElement(By.id("value")).sendKeys("+44 808 157 0192")
+    driver.findElement(By.id("value")).sendKeys(contactNumber)
+    checkYourAnswersCalculationsMap(getHeader(), contactNumber)
     submitPage()
   }
 
   def verifyPageAndContinueWithoutContactNumber() = {
     verifyContactNumberPage()
+    checkYourAnswersCalculationsMap(getHeader(), "")
     submitPage()
   }
 }

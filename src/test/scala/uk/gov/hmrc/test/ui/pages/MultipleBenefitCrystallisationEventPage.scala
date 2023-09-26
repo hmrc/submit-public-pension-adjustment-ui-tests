@@ -14,17 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.utils
+package uk.gov.hmrc.test.ui.pages
 
-import scala.util.Random
+import org.openqa.selenium.By
 
-object NINOGenerator {
-  val nino = {
-    val firstTwoLetters = "ABCEHJKLMPRSTWXY"
-    val letterPart      = Random.shuffle(firstTwoLetters.toList).take(2).mkString
-    val numberPart      = Random.nextInt(999999).toString.reverse.padTo(6, '0').reverse
-    val lastLetters     = "ABCD"
-    val lastLetterPart  = Random.shuffle(lastLetters.toList).take(1).mkString
-    s"$letterPart$numberPart$lastLetterPart"
+object MultipleBenefitCrystallisationEventPage extends BasePage {
+
+  def onMultipleBenefitCrystallisationEventPage() =
+    verifyPageUrl("lifetime-allowance/more-than-one-benefit-crystallisation-event")
+  // TODO Page content validations to be added.
+
+  def selectNoRadioButtonAndContinue(): Unit = {
+    val text = "No"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
+    submitPage()
   }
 }

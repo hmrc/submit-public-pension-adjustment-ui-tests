@@ -20,20 +20,18 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIMING_ADDITIONAL_TAX_RE
 
 object ClaimingAdditionalTaxRateReliefPage extends BasePage {
   def verifyClaimingAdditionalTaxRateReliefPage() = {
-    verifyPageUrl("claiming-additional-tax-rate-relief")
+    verifyPageUrl("submission-service/claiming-higher-additional-tax-rate-relief")
     onPage(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE)
     isHeader(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER)
   }
 
   def verifyPageClickYesAndContinue() = {
     verifyClaimingAdditionalTaxRateReliefPage()
-    selectYesOption()
-    submitPage()
+    selectYesAndContinueCalculationsPage()
   }
 
   def verifyPageClickNoAndContinue() = {
     verifyClaimingAdditionalTaxRateReliefPage()
-    selectNoOption()
-    submitPage()
+    selectNoAndContinueCalculationsPage()
   }
 }

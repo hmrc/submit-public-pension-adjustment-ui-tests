@@ -20,15 +20,17 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{REFORM_PENSION_SCHEME_REFERENCE_PAGE_HEADER, REFORM_PENSION_SCHEME_REFERENCE_PAGE_TITLE}
 
 object ReformPensionSchemeReferencePage extends BasePage {
-  def verifyReformPensionSchemeReferencePage() = {
-    verifyPageUrl("reform-pension-scheme-reference")
+  val pensionRef = "TAX00000629RTED"
+  def verifyReformPensionSchemeReferencePage(taxRef: String) = {
+    verifyPageUrl("submission-service/" + taxRef + "/reform-individual-pension-scheme-reference")
     onPage(REFORM_PENSION_SCHEME_REFERENCE_PAGE_TITLE)
     isHeader(REFORM_PENSION_SCHEME_REFERENCE_PAGE_HEADER)
   }
 
-  def verifyPageEnterReferenceAndContinue() = {
-    verifyReformPensionSchemeReferencePage()
-    driver.findElement(By.id("value")).sendKeys("TAX00000629RTED")
+  def verifyPageEnterReferenceAndContinue(taxRef: String) = {
+    verifyReformPensionSchemeReferencePage(taxRef)
+    driver.findElement(By.id("value")).sendKeys(pensionRef)
+    checkYourAnswersCalculationsMap(getHeader(), pensionRef)
     submitPage()
   }
 }

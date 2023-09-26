@@ -25,5 +25,12 @@ trait BrowserDriver extends LazyLogging with Eventually {
   logger.info(
     s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
   )
-  implicit var driver: WebDriver = SingletonDriver.getInstance()
+
+  implicit var driver: WebDriver = sys.props.get("browser") match {
+    case Some("browserstack")          => SingletonBrowserStackDriver.getBrowserStackInstance()
+    case Some("browserstackMobileWeb") => SingletonBrowserStackDriver.getBrowserStackMobileInstance()
+    case Some("chrome")                => SingletonDriver.getInstance()
+    case _                             => SingletonDriver.getInstance()
+  }
+
 }

@@ -20,17 +20,30 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PENSION_SCHEME_DETAILS_PAGE_HEADER, PENSION_SCHEME_DETAILS_PAGE_TITLE}
 
 object PensionSchemeDetailsPage extends BasePage {
-  def verifyPensionSchemeDetailsPage() = {
+  def onPensionSchemeDetailsPage(period: String, pensionSchemeNumber: String) = {
+    verifyPageUrl(s"annual-allowance/$period/scheme-name-reference/$pensionSchemeNumber")
     onPage(PENSION_SCHEME_DETAILS_PAGE_TITLE)
     isHeader(PENSION_SCHEME_DETAILS_PAGE_HEADER)
   }
-  def enterPensionSchemeName()         = driver.findElement(By.id("pensionSchemeName")).sendKeys("Pension Scheme 1")
-  def enterPensionSchemeTaxReference() = driver.findElement(By.id("pensionSchemeTaxReference")).sendKeys("00348916LR")
-
-  def verifyPageEnterPensionSchemeInformationAndContinue() = {
-    verifyPensionSchemeDetailsPage()
-    enterPensionSchemeName()
-    enterPensionSchemeTaxReference()
+  def enterPensionSchemeName(schemeName: String) = {
+    driver.findElement(By.id("schemeName")).clear()
+    driver.findElement(By.id("schemeName")).sendKeys(schemeName)
+  }
+  def enterSchemeTaxReference(taxReference: String) = {
+    driver.findElement(By.id("schemeTaxRef")).clear()
+    driver.findElement(By.id("schemeTaxRef")).sendKeys(taxReference)
+  }
+  def enterTaxInformationAndContinue(
+    period: String,
+    pensionSchemeNumber: String,
+    schemeName: String,
+    taxReference: String
+  ) = {
+    onPensionSchemeDetailsPage(period, pensionSchemeNumber)
+    enterPensionSchemeName(schemeName)
+    enterSchemeTaxReference(taxReference)
+    checkYourAnswersAAPeriodMap(getHeader(), schemeName + " / " + taxReference)
     submitPage()
   }
+
 }

@@ -20,24 +20,35 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{INTERNATIONAL_ADDRESS_PAGE_HEADER, INTERNATIONAL_ADDRESS_PAGE_TITLE}
 
 object InternationalAddressPage extends BasePage {
+  val addressLine1  = "No 138"
+  val addressLine2  = "Prince ref road"
+  val townOrCity    = "London"
+  val stateOrRegion = "London"
+  val postCode      = "AB1 9ED"
+  val country       = "France"
+
   def verifyTheirUKAddressPage() = {
-    verifyPageUrl("international-address")
+    verifyPageUrl("submission-service/your-international-address")
     onPage(INTERNATIONAL_ADDRESS_PAGE_TITLE)
     isHeader(INTERNATIONAL_ADDRESS_PAGE_HEADER)
   }
 
   def enterAddressInformation() = {
-    driver.findElement(By.id("addressLine1")).sendKeys("No 138")
-    driver.findElement(By.id("addressLine2")).sendKeys("Prince ref road")
-    driver.findElement(By.id("townOrCity")).sendKeys("London")
-    driver.findElement(By.id("stateOrRegion")).sendKeys("London")
-    driver.findElement(By.id("postCode")).sendKeys("AB1 9ED")
-    driver.findElement(By.id("country")).sendKeys("France")
+    driver.findElement(By.id("addressLine1")).sendKeys(addressLine1)
+    driver.findElement(By.id("addressLine2")).sendKeys(addressLine2)
+    driver.findElement(By.id("townOrCity")).sendKeys(townOrCity)
+    driver.findElement(By.id("stateOrRegion")).sendKeys(stateOrRegion)
+    driver.findElement(By.id("postCode")).sendKeys(postCode)
+    driver.findElement(By.id("country")).sendKeys(country)
   }
 
   def verifyPageEnterAddressAndContinue() = {
     verifyTheirUKAddressPage()
     enterAddressInformation()
+    checkYourAnswersCalculationsMap(
+      getHeader(),
+      addressLine1 + " " + addressLine2 + " " + townOrCity + " " + stateOrRegion + " " + postCode + " " + country
+    )
     submitPage()
   }
 }
