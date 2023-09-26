@@ -134,11 +134,6 @@ class CommonCalculationAAandUserPaidLTA extends BaseSpec {
 
     /** Retrieve response information */
 
-    val responseStream =
-      getClass.getResourceAsStream(
-        "/businessCases/response/Scenario_2a_Response.json"
-      )
-
     /** Test */
     Given("I am on the Public Service Pensions Remediation home page")
     HomePage.goToHomepage()

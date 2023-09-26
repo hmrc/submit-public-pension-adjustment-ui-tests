@@ -132,17 +132,6 @@ class CommonCalculationAAandMultipleSchemesPaidLTA extends BaseSpec {
       myObject.getIncomeDetails(postYear, _.incomeAboveThreshold, requestDTOResult).toString
     val adjustedIncome2016post       = myObject.getIncomeDetails(postYear, _.adjustedIncome, requestDTOResult).toString
 
-    /** Retrieve response information */
-
-    val responseStream =
-      getClass.getResourceAsStream(
-        "/businessCases/response/Scenario_2a_Response.json"
-
-        //"/businessCases/response/" + requestArray(index) + "_Response.json"
-      )
-    val jsonResponseString = scala.io.Source.fromInputStream(responseStream).mkString
-    println(" File name : " + fileName)
-
     /** Test */
     Given("I am on the Public Service Pensions Remediation home page")
     HomePage.goToHomepage()

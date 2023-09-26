@@ -137,11 +137,7 @@ class CommonCalculationAAandSchemeUserPaidLTA extends BaseSpec {
     val responseStream =
       getClass.getResourceAsStream(
         "/businessCases/response/Scenario_2a_Response.json"
-
-        //"/businessCases/response/" + requestArray(index) + "_Response.json"
       )
-    val jsonResponseString = scala.io.Source.fromInputStream(responseStream).mkString
-    println(" File name : " + fileName)
 
     /** Test */
     Given("I am on the Public Service Pensions Remediation home page")
