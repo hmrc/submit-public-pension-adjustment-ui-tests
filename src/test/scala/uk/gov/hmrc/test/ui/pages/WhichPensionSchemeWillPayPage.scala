@@ -20,24 +20,25 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_PENSION_SCHEME_WILL_PAY_PAGE_HEADER, WHICH_PENSION_SCHEME_WILL_PAY_PAGE_TITLE}
 
 object WhichPensionSchemeWillPayPage extends BasePage {
-  def verifyWhichPensionSchemeWillPayPage() = {
+  def verifyWhichPensionSchemeWillPayPage(year: Int) = {
+    verifyPageUrl("submission-service/" + year + "/which-pension-scheme-will-pay-tax-charge")
     onPage(WHICH_PENSION_SCHEME_WILL_PAY_PAGE_TITLE)
     isHeader(WHICH_PENSION_SCHEME_WILL_PAY_PAGE_HEADER)
   }
 
-  def selectPrivatePensionScheme() = driver.findElement(By.xpath("//input[@value='privatePensionScheme']")).click()
+  def selectPrivatePensionScheme() = driver.findElement(By.xpath("//input[@value='Private pension scheme']")).click()
 
   def selectPensionScheme(pensionScheme: String) =
-    driver.findElement(By.xpath("//input[@value='" + pensionScheme + "']")).click()
+    driver.findElement(By.xpath("//input[contains(@value,'" + pensionScheme + "')]")).click()
 
-  def verifyPageSelectPrivatePSAndContinue() = {
-    verifyWhichPensionSchemeWillPayPage()
+  def verifyPageSelectPrivatePSAndContinue(year: Int) = {
+    verifyWhichPensionSchemeWillPayPage(year)
     selectPrivatePensionScheme()
     submitPage()
   }
 
-  def verifyPageSelectPSAndContinue(pensionScheme: String) = {
-    verifyWhichPensionSchemeWillPayPage()
+  def verifyPageSelectPSAndContinue(pensionScheme: String, year: Int) = {
+    verifyWhichPensionSchemeWillPayPage(year)
     selectPensionScheme(pensionScheme)
     submitPage()
   }

@@ -32,6 +32,7 @@ object TheirDOBPage extends BasePage {
   def verifyPageEnterBirthdayAndContinue() = {
     verifyTheirDOBPage()
     enterBirthday()
+    checkYourAnswersCalculationsMap(getHeader(), getDate())
     submitPage()
   }
 }

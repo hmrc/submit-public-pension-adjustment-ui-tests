@@ -20,7 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{BANK_DETAILS_PAGE_HEADER, BANK_DETAILS_PAGE_TITLE}
 
 object BankDetailsPage extends BasePage {
-
+  val accountName   = "Teddy Dickson"
+  val sortCode      = "207102"
+  val accountNumber = "44311655"
   def verifyBankDetailsPage() = {
     verifyPageUrl("bank-details")
     onPage(BANK_DETAILS_PAGE_TITLE)
@@ -28,14 +30,15 @@ object BankDetailsPage extends BasePage {
   }
 
   def enterBankDetails() = {
-    driver.findElement(By.id("accountName")).sendKeys("Teddy Dickson")
-    driver.findElement(By.id("sortCode")).sendKeys("207102")
-    driver.findElement(By.id("accountNumber")).sendKeys("44311655")
+    driver.findElement(By.id("accountName")).sendKeys(accountName)
+    driver.findElement(By.id("sortCode")).sendKeys(sortCode)
+    driver.findElement(By.id("accountNumber")).sendKeys(accountNumber)
   }
 
   def verifyPageEnterBankDetailsClickContinue() = {
     verifyBankDetailsPage()
     enterBankDetails()
+    checkYourAnswersCalculationsMap(getHeader(), accountName + " " + sortCode + " " + accountNumber)
     submitPage()
   }
 

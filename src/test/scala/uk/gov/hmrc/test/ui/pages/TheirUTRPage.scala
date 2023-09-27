@@ -19,23 +19,25 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_UTR_HEADER, THEIR_UTR_TITLE}
 object TheirUTRPage extends BasePage {
-
+  val utr = "1234567890"
   def verifyTheirUTRPage() = {
-    verifyPageUrl("their-UTR")
+    verifyPageUrl("submission-service/unique-taxpayer-reference-someone-else")
     onPage(THEIR_UTR_TITLE)
     isHeader(THEIR_UTR_HEADER)
   }
 
   def enterUTR(): Unit =
-    driver.findElement(By.id("value")).sendKeys("1234567890")
+    driver.findElement(By.id("value")).sendKeys(utr)
 
   def verifyPageEnterUTRAndContinue(): Unit = {
     verifyTheirUTRPage()
     enterUTR()
+    checkYourAnswersCalculationsMap(getHeader(), utr)
     submitPage()
   }
   def verifyPageContinueWithoutTaxReference(): Unit = {
     verifyTheirUTRPage()
+    checkYourAnswersCalculationsMap(getHeader(), "")
     submitPage()
   }
 }
