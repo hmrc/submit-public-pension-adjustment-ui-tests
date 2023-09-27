@@ -20,7 +20,7 @@ import org.scalatest.BeforeAndAfter
 import uk.gov.hmrc.test.ui.functions.CommonCalculationAAandSchemeUserPaidLTA
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{BSTests, ZapTests}
+import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
 import scala.collection.mutable
 
