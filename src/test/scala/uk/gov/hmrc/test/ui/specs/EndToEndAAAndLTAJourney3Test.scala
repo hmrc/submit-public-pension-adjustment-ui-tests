@@ -108,6 +108,9 @@ class EndToEndAAAndLTAJourney3Test extends BaseSpec with BeforeAndAfter {
       When("I verify ClaimingAdditionalTaxRateRelief Page , select yes and click continue")
       ClaimingAdditionalTaxRateReliefPage.verifyPageClickNoAndContinue()
 
+      When("I verify Bank Details Page, enter bank details and click continue")
+      BankDetailsPage.verifyPageEnterBankDetailsClickContinue()
+
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
 
