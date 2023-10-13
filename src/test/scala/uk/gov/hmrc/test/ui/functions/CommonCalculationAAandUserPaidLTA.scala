@@ -181,20 +181,15 @@ class CommonCalculationAAandUserPaidLTA extends BaseSpec {
             myObject.getTaxYearInformation(year, _.pensionInputAmount, requestDTOResult).toString
           year match {
             case "2011" =>
-              Registered.onRegisteredPageSelectYesAndContinue("2010", "2011")
-              PiaPreRemedyPage2011.enterAmountAndClickContinue(pensionAmount)
+              Registered.onRegisteredPageSelectNoAndContinue("2010", "2011")
             case "2012" =>
-              Registered.onRegisteredPageSelectYesAndContinue("2011", "2012")
-              PiaPreRemedyPage2012.enterAmountAndClickContinue(pensionAmount)
+              Registered.onRegisteredPageSelectNoAndContinue("2011", "2012")
             case "2013" =>
-              Registered.onRegisteredPageSelectYesAndContinue("2012", "2013")
-              PiaPreRemedyPage2013.enterAmountAndClickContinue(pensionAmount)
+              Registered.onRegisteredPageSelectNoAndContinue("2012", "2013")
             case "2014" =>
-              Registered.onRegisteredPageSelectYesAndContinue("2013", "2014")
-              PiaPreRemedyPage2014.enterAmountAndClickContinue(pensionAmount)
+              Registered.onRegisteredPageSelectNoAndContinue("2013", "2014")
             case "2015" =>
-              Registered.onRegisteredPageSelectYesAndContinue("2014", "2015")
-              PiaPreRemedyPage2015.enterAmountAndClickContinue(pensionAmount)
+              Registered.onRegisteredPageSelectNoAndContinue("2014", "2015")
           }
         }
       }
