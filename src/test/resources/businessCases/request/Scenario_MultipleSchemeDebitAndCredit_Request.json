@@ -55,7 +55,6 @@
             {
                 "definedBenefitInputAmount": 40000,
                 "definedContributionInputAmount": 0,
-                "totalIncome": 60000,
                 "chargePaidByMember": 3200,
                 "taxYearSchemes": [
                     {
