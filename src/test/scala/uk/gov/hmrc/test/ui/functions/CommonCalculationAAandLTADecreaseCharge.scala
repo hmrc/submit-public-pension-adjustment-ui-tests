@@ -27,18 +27,18 @@ import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-class CommonCalculationAAandUserPaidLTA extends BaseSpec {
+class CommonCalculationAAandLTADecreaseCharge extends BaseSpec {
   def createCalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int]) = {
 
     /** Retrieve request information */
-    val requestStream                           =
+    val requestStream    =
       getClass.getResourceAsStream(
         "/businessCases/request/" + fileName + "_Request.json"
       )
-    val jsonString                              = scala.io.Source.fromInputStream(requestStream).mkString
-    val json: JsValue                           = Json.parse(jsonString)
-    val requestDTOResult                        = Json.fromJson[RequestDTO](json)
-    val mutableMap: mutable.Map[String, String] = mutable.Map.empty
+    val jsonString       = scala.io.Source.fromInputStream(requestStream).mkString
+    val json: JsValue    = Json.parse(jsonString)
+    val requestDTOResult = Json.fromJson[RequestDTO](json)
+    val mutableMap       = mutable.LinkedHashMap[String, String]()
     requestDTOResult match {
       case JsSuccess(requestDTO, _) =>
         val allTaxYearSchemes: List[TaxYearSchemes] =
@@ -131,6 +131,11 @@ class CommonCalculationAAandUserPaidLTA extends BaseSpec {
 
     /** Retrieve response information */
 
+    val responseStream =
+      getClass.getResourceAsStream(
+        "/businessCases/response/Scenario_2a_Response.json"
+      )
+
     /** Test */
     Given("I am on the Public Service Pensions Remediation home page")
     HomePage.goToHomepage()
@@ -178,15 +183,20 @@ class CommonCalculationAAandUserPaidLTA extends BaseSpec {
             myObject.getTaxYearInformation(year, _.pensionInputAmount, requestDTOResult).toString
           year match {
             case "2011" =>
-              Registered.onRegisteredPageSelectNoAndContinue("2010", "2011")
+              Registered.onRegisteredPageSelectYesAndContinue("2010", "2011")
+              PiaPreRemedyPage2011.enterAmountAndClickContinue(pensionAmount)
             case "2012" =>
-              Registered.onRegisteredPageSelectNoAndContinue("2011", "2012")
+              Registered.onRegisteredPageSelectYesAndContinue("2011", "2012")
+              PiaPreRemedyPage2012.enterAmountAndClickContinue(pensionAmount)
             case "2013" =>
-              Registered.onRegisteredPageSelectNoAndContinue("2012", "2013")
+              Registered.onRegisteredPageSelectYesAndContinue("2012", "2013")
+              PiaPreRemedyPage2013.enterAmountAndClickContinue(pensionAmount)
             case "2014" =>
-              Registered.onRegisteredPageSelectNoAndContinue("2013", "2014")
+              Registered.onRegisteredPageSelectYesAndContinue("2013", "2014")
+              PiaPreRemedyPage2014.enterAmountAndClickContinue(pensionAmount)
             case "2015" =>
-              Registered.onRegisteredPageSelectNoAndContinue("2014", "2015")
+              Registered.onRegisteredPageSelectYesAndContinue("2014", "2015")
+              PiaPreRemedyPage2015.enterAmountAndClickContinue(pensionAmount)
           }
         }
       }
@@ -422,7 +432,6 @@ class CommonCalculationAAandUserPaidLTA extends BaseSpec {
       * Check your answers page is failing to verify as its failing to save add another scheme page information
       */
     TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", totalIncome2016pre)
-
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
     /** --- 2016 Post --- */
@@ -974,16 +983,27 @@ class CommonCalculationAAandUserPaidLTA extends BaseSpec {
     EnhancementType.selectBothRadioButtonAndContinue()
     InternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
     PensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
-    ProtectionEnhancementChangedPage.selectNoAndClickOnContinue()
-    LtaCharge20152023Page.selectNoAndContinueForLTAPage()
-    NewExcessPaidPage.selectLumpSumRadioButtonAndContinue()
-    NewValueOfLumpSumPage.enterLumpSumAndContinue("1000")
-    WhoPayingExtraLtaChargePage.verifyPageSelectYouAndContinue()
+    ProtectionEnhancementChangedPage.selectBothRadioButtonAndContinue()
+    ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
+    ProtectionChangedNewReferencePage.enterReferenceAndContinue()
+    NewEnhancementTypePage.selectBothRadioButtonAndContinue()
+    NewInternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+    NewPensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+    LtaCharge20152023Page.selectYesAndContinueForLTAPage()
+    HowExcessWasPaidPage.selectRadioButtonBothAndContinue()
+    ValueOfLumpSumPage.enterLumpSumAndContinue("1000")
+    ValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("3000")
+    WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
     val pension_scheme_name =
-      "Scheme 4"
-    val taxRef              = "00348916RC"
-    SchemeNameReferencePage.enterSchemeNameReferenceAndContinue(pension_scheme_name, taxRef)
+      "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
+    val taxRef              = "00348916RX"
     mutableMap += (pension_scheme_name -> taxRef)
+    SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue(pension_scheme_name, taxRef)
+    QuarterChargeWasPaidPage.selectQuarterAndContinue()
+    YearChargeWasPaidPage.selectYearAndContinue()
+    NewExcessPaidPage.selectBothRadioButtonAndContinue()
+    NewValueOfLumpSumPage.enterLumpSumAndContinue("300")
+    NewValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("2000")
     CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
     TaskListPage.clickCalculateButton()
     val debitYearsList: java.util.List[WebElement] = CalculationResultPage.getDebitYears()

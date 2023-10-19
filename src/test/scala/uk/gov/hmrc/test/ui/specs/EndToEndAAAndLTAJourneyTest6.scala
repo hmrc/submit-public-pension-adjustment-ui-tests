@@ -17,14 +17,14 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.BeforeAndAfter
-import uk.gov.hmrc.test.ui.functions.CommonCalculationAAandUserPaidLTA
+import uk.gov.hmrc.test.ui.functions.{CommonCalculationAAandLTAZeroCharge, CommonCalculationAAandUserPaidLTA}
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
 import scala.collection.mutable
 
-class EndToEndAAAndLTAJourneyTest extends BaseSpec with BeforeAndAfter {
+class EndToEndAAAndLTAJourneyTest6 extends BaseSpec with BeforeAndAfter {
   var taxSchemes: mutable.Map[String, String]       = mutable.Map.empty[String, String]
   var inDateYears: mutable.ArrayBuffer[Int]         = mutable.ArrayBuffer.empty[Int]
   var debitYears: mutable.ArrayBuffer[Int]          = mutable.ArrayBuffer.empty[Int]
@@ -34,7 +34,7 @@ class EndToEndAAAndLTAJourneyTest extends BaseSpec with BeforeAndAfter {
     inDateYears.clear()
     debitYears.clear()
 
-    val commonCalculationAAAndLTA                = new CommonCalculationAAandUserPaidLTA()
+    val commonCalculationAAAndLTA                = new CommonCalculationAAandLTAZeroCharge()
     val (taxSchemes1, inDateYears1, debitYears1) =
       commonCalculationAAAndLTA.createCalculationJourney("Scenario_MultipleSchemeDebitAndCredit")
     taxSchemes ++= taxSchemes1
