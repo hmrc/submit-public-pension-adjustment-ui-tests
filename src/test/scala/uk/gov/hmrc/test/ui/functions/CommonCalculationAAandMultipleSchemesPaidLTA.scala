@@ -987,9 +987,9 @@ class CommonCalculationAAandMultipleSchemesPaidLTA extends BaseSpec {
     ValueOfLumpSumPage.enterLumpSumAndContinue("1000")
     ValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("3000")
     WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
-    val pension_scheme_name  =
+    val pension_scheme_name =
       "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
-    val taxRef               = "00348916RX"
+    val taxRef              = "00348916RX"
     SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue(pension_scheme_name, taxRef)
     QuarterChargeWasPaidPage.selectQuarterAndContinue()
     YearChargeWasPaidPage.selectYearAndContinue()
@@ -997,12 +997,8 @@ class CommonCalculationAAandMultipleSchemesPaidLTA extends BaseSpec {
     NewValueOfLumpSumPage.enterLumpSumAndContinue("2300")
     NewValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("2000")
     WhoPayingExtraLtaChargePage.verifyPageSelectPensionSchemeAndContinue()
-    val pension_scheme_name2 =
-      "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsion2"
-    val taxRef2              = "00348916RG"
-    SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue(pension_scheme_name2, taxRef2)
-    mutableMap += (pension_scheme_name  -> taxRef)
-    mutableMap += (pension_scheme_name2 -> taxRef2)
+    SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue(pension_scheme_name, taxRef)
+    mutableMap += (pension_scheme_name -> taxRef)
     CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
     TaskListPage.clickCalculateButton()
     val debitYearsList: java.util.List[WebElement] = CalculationResultPage.getDebitYears()

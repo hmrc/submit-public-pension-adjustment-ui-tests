@@ -27,7 +27,7 @@ import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-class CommonCalculationAAandUserPaidLTA extends BaseSpec {
+class CommonCalculationAAandLTAZeroCharge extends BaseSpec {
   def createCalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int]) = {
 
     /** Retrieve request information */
@@ -977,14 +977,8 @@ class CommonCalculationAAandUserPaidLTA extends BaseSpec {
     ProtectionEnhancementChangedPage.selectNoAndClickOnContinue()
     LtaCharge20152023Page.selectNoAndContinueForLTAPage()
     NewExcessPaidPage.selectLumpSumRadioButtonAndContinue()
-    NewValueOfLumpSumPage.enterLumpSumAndContinue("1000")
-    WhoPayingExtraLtaChargePage.verifyPageSelectYouAndContinue()
-    val pension_scheme_name =
-      "Scheme 4"
-    val taxRef              = "00348916RC"
-    SchemeNameReferencePage.enterSchemeNameReferenceAndContinue(pension_scheme_name, taxRef)
-    mutableMap += (pension_scheme_name -> taxRef)
-    CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
+    NewValueOfLumpSumPage.enterLumpSumAndContinue("0")
+    CannotUseLtaServiceNoChargePage.verifyCannotUseLtaServiceNoChargePageAndContinue()
     TaskListPage.clickCalculateButton()
     val debitYearsList: java.util.List[WebElement] = CalculationResultPage.getDebitYears()
     var debitYears: ArrayBuffer[Int]               = ArrayBuffer()
