@@ -903,12 +903,16 @@ class CommonCalculationAAandUserPaidLTA extends BaseSpec {
               taxFromDate,
               DateUtil.formatDate(flexiAccessDate, 0)
             )
-            PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue(
-              year.toString,
-              postAccessDefinedContributionInputAmount.toString,
-              DateUtil.formatDate(flexiAccessDate, 1),
-              taxToDate
-            )
+            flexiAccessDate match {
+              case "2017-04-05" =>
+              case _            =>
+                PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                  year.toString,
+                  postAccessDefinedContributionInputAmount.toString,
+                  DateUtil.formatDate(flexiAccessDate, 1),
+                  taxToDate
+                )
+            }
             PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
               year.toString,
               definedBenefitInputAmount.toString,
