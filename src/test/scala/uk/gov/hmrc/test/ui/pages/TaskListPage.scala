@@ -117,16 +117,16 @@ object TaskListPage extends BasePage {
   }
 
   def clickAddDetailsFor6AprilTo8July2015() =
-    driver.findElement(By.xpath("//a[contains(text(),'Add details for 6 April to 8 July 2015')]")).click()
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 6 April 2015 to 8 July 2015')]")).click()
 
   def clickChangeDetailsFor6AprilTo8July2015() =
-    driver.findElement(By.xpath("//a[contains(text(),'Change details for 6 April to 8 July 2015')]")).click()
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 6 April 2015 to 8 July 2015')]")).click()
 
   def clickAddDetailsFor9JulyTo8July2016() =
-    driver.findElement(By.xpath("//a[contains(text(),'Add details for 9 July to 5 April 2016')]")).click()
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 9 July 2015 to 5 April 2016')]")).click()
 
   def clickChangeDetailsFor9JulyTo8July2016() =
-    driver.findElement(By.xpath("//a[contains(text(),'Change details for 9 July to 5 April 2016')]")).click()
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 9 July 2015 to 5 April 2016')]")).click()
 
   def clickAddDetailsFor2016To2017() =
     driver.findElement(By.xpath("//a[contains(text(),'Add details for 2016 to 2017')]")).click()
