@@ -6,7 +6,7 @@
     "buildName": "Public Pensions Adjustments web tests",
     "sessionName": "Public Pensions Adjustments session",
     "browserstack_local": true,
-    "browserstack_localIdentifier": "Test124",
+    "browserstack_localIdentifier": "PPA tests",
     "debug": true
   },
   "environments": [
