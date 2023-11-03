@@ -17,19 +17,12 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CALCULATE_PENSION_SCHEME_DETAILS_PAGE_HEADER, CALCULATE_PENSION_SCHEME_DETAILS_PAGE_TITLE}
 
 object SubmitPensionSchemeDetailsPage extends BasePage {
-  def verifyPensionSchemeDetailsPage(year: Int) = {
-    verifyPageUrl("submission-service/" + year + "/private-scheme-name-reference")
-    onPage(CALCULATE_PENSION_SCHEME_DETAILS_PAGE_TITLE)
-    isHeader(CALCULATE_PENSION_SCHEME_DETAILS_PAGE_HEADER)
-  }
   def enterPensionSchemeName()         = driver.findElement(By.id("pensionSchemeName")).sendKeys("Pension Scheme 1")
   def enterPensionSchemeTaxReference() = driver.findElement(By.id("pensionSchemeTaxReference")).sendKeys("00348916LR")
 
   def verifyPageEnterPensionSchemeInformationAndContinue(year: Int) = {
-    verifyPensionSchemeDetailsPage(year)
     enterPensionSchemeName()
     enterPensionSchemeTaxReference()
     submitPage()

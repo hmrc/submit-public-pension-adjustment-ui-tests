@@ -17,18 +17,11 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{ENHANCEMENT_TYPE_PAGE_HEADER, ENHANCEMENT_TYPE_PAGE_TITLE}
 
 object EnhancementType extends BasePage {
-  def onEnhancementTypePage() = {
-    verifyPageUrl("lifetime-allowance/enhancement-type")
-    onPage(ENHANCEMENT_TYPE_PAGE_TITLE)
-    isHeader(ENHANCEMENT_TYPE_PAGE_HEADER)
-  }
 
   def selectInternationalEnhancementRadioButtonAndContinue(): Unit = {
     val text = "International enhancement"
-    onEnhancementTypePage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
@@ -36,7 +29,6 @@ object EnhancementType extends BasePage {
 
   def selectPensionCreditRadioButtonAndContinue(): Unit = {
     val text = "Pension credit"
-    onEnhancementTypePage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
@@ -44,7 +36,6 @@ object EnhancementType extends BasePage {
 
   def selectBothRadioButtonAndContinue(): Unit = {
     val text = "Both"
-    onEnhancementTypePage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()

@@ -19,37 +19,12 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 
 object PiaForDcPensionPage extends BasePage {
-  val PIA_FOR_DC_PENSION_PAGE_TITLE  =
-    "What was your pension input amount for defined contribution pension schemes from fromDayMonthYear to toDayMonthYear? - Calculate your public service pension adjustment - GOV.UK"
-  val PIA_FOR_DC_PENSION_PAGE_HEADER =
-    "What was your pension input amount for defined contribution pension schemes from fromDayMonthYear to toDayMonthYear?"
-  def onPiaForDcPensionPage(
-    year: String,
-    fromDayMonthYear: String,
-    toDayMonthYear: String
-  ) = {
-    verifyPageUrl(s"annual-allowance/$year/pension-input-amount-defined-contribution")
-    onPage(
-      PIA_FOR_DC_PENSION_PAGE_TITLE
-        .replaceAll("fromDayMonthYear", fromDayMonthYear)
-        .replaceAll("toDayMonthYear", toDayMonthYear)
-    )
-    isHeader(
-      PIA_FOR_DC_PENSION_PAGE_HEADER
-        .replaceAll("fromDayMonthYear", fromDayMonthYear)
-        .replaceAll("toDayMonthYear", toDayMonthYear)
-    )
-  }
 
   def enterPensionInputAmountForDC(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
   def verifyPageEnterPensionInputAmountForDCAndContinue(
-    year: String,
-    adjustedIncome: String,
-    fromDayMonthYear: String,
-    toDayMonthYear: String
+    adjustedIncome: String
   ) = {
-    onPiaForDcPensionPage(year, fromDayMonthYear, toDayMonthYear)
     enterPensionInputAmountForDC(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()

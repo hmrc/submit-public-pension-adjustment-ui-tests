@@ -17,19 +17,11 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER, CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER2, CHECK_YOUR_ANSWERS_PAGE_FOR_AA_TITLE}
 import util.DataCollectorMap
 
 import scala.collection.mutable
 
 object CheckYourAnswersAnnualAllowanceSetupPage extends BasePage {
-
-  def onCheckYourAnswersAnnualAllowanceSetupPage() = {
-    verifyPageUrl("annual-allowance/setup-check-answers")
-    onPage(CHECK_YOUR_ANSWERS_PAGE_FOR_AA_TITLE)
-    isHeader(CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER)
-    isHeader2(CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER2)
-  }
 
   def mapKeysToLabels(checkAnswersAAS: mutable.Map[String, Any]) = {
 
@@ -55,8 +47,6 @@ object CheckYourAnswersAnnualAllowanceSetupPage extends BasePage {
   }
 
   def verifyCheckYourAnswersPageAndContinue() = {
-    onCheckYourAnswersAnnualAllowanceSetupPage()
-
     val dataShownOnPage: mutable.Map[String, Any] = returnCheckYourAnswersPageInformation()
     val expectedData: mutable.Map[String, Any]    = mapKeysToLabels(DataCollectorMap.checkAnswersAAS)
 

@@ -17,15 +17,8 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{SCHEME_PAID_LTA_CHARGE_PAGE_HEADER, SCHEME_PAID_LTA_CHARGE_PAGE_TITLE}
 
 object SchemePaidLtaChargePage extends BasePage {
-
-  def onSchemePaidLtaChargePage() = {
-    verifyPageUrl("lifetime-allowance/scheme-paid-charge-amount")
-    onPage(SCHEME_PAID_LTA_CHARGE_PAGE_TITLE)
-    isHeader(SCHEME_PAID_LTA_CHARGE_PAGE_HEADER)
-  }
 
   def enterPensionScheme(pensionName: String) = {
     driver.findElement(By.xpath("//input[@id='name']")).clear()
@@ -41,7 +34,6 @@ object SchemePaidLtaChargePage extends BasePage {
   def getTaxReference()      = driver.findElement(By.xpath("//input[@id='taxRef']")).getAttribute("value")
 
   def enterPensionSchemeInformationAndContinue(taxRef: String, pensionName: String) = {
-    onSchemePaidLtaChargePage()
     enterPensionScheme(taxRef)
     enterPensionSchemeTaxReference(pensionName)
     checkYourAnswersLASMap(getHeader(), getPensionSchemeName() + " / " + getTaxReference())

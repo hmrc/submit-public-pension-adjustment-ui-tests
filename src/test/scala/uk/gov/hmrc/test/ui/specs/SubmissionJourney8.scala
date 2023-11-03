@@ -17,37 +17,21 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.BeforeAndAfter
-import uk.gov.hmrc.test.ui.functions.{CommonCalculationAAandLTAZeroCharge, CommonCalculationAAandUserPaidLTA}
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
-
+import util.CalculationDataUtil
 import scala.collection.mutable
 
-class EndToEndAAAndLTAJourneyTest6 extends BaseSpec with BeforeAndAfter {
-  var taxSchemes: mutable.Map[String, String]       = mutable.Map.empty[String, String]
-  var inDateYears: mutable.ArrayBuffer[Int]         = mutable.ArrayBuffer.empty[Int]
-  var debitYears: mutable.ArrayBuffer[Int]          = mutable.ArrayBuffer.empty[Int]
+class SubmissionJourney8 extends BaseSpec with BeforeAndAfter {
   var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
   before {
-    taxSchemes.clear()
-    inDateYears.clear()
-    debitYears.clear()
+    val calculationData = new CalculationDataUtil()
+    calculationData.submitCalculation("calculationDataSet8")
 
-    val commonCalculationAAAndLTA                = new CommonCalculationAAandLTAZeroCharge()
-    val (taxSchemes1, inDateYears1, debitYears1) =
-      commonCalculationAAAndLTA.createCalculationJourney("Scenario_MultipleSchemeDebitAndCredit")
-    taxSchemes ++= taxSchemes1
-    inDateYears ++= inDateYears1
-    debitYears ++= debitYears1
-
-    var seenValues = Set[String]()
-    uniqueTaxSchemes = taxSchemes.filter {
-      case (_, value) if !seenValues.contains(value) =>
-        seenValues += value
-        true
-      case _                                         => false
-    }
+    /** add scheme details from the test json to below map * */
+    uniqueTaxSchemes += ("Scheme 1" -> "00348916RT")
+    uniqueTaxSchemes += ("Scheme 4" -> "00348916RC")
   }
 
   Feature("Business scenario AA journeys") {
@@ -112,10 +96,7 @@ class EndToEndAAAndLTAJourneyTest6 extends BaseSpec with BeforeAndAfter {
       TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue()
 
       When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
-      WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 2")
-
-      When("I verify Bank Details Page, enter bank details and click continue")
-      BankDetailsPage.verifyPageEnterBankDetailsClickContinue()
+      WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 1")
 
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()

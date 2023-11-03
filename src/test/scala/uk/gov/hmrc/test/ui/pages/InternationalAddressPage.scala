@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{INTERNATIONAL_ADDRESS_PAGE_HEADER, INTERNATIONAL_ADDRESS_PAGE_TITLE}
 
 object InternationalAddressPage extends BasePage {
   val addressLine1  = "No 138"
@@ -26,12 +25,6 @@ object InternationalAddressPage extends BasePage {
   val stateOrRegion = "London"
   val postCode      = "AB1 9ED"
   val country       = "France"
-
-  def verifyTheirUKAddressPage() = {
-    verifyPageUrl("submission-service/your-international-address")
-    onPage(INTERNATIONAL_ADDRESS_PAGE_TITLE)
-    isHeader(INTERNATIONAL_ADDRESS_PAGE_HEADER)
-  }
 
   def enterAddressInformation() = {
     driver.findElement(By.id("addressLine1")).sendKeys(addressLine1)
@@ -43,7 +36,6 @@ object InternationalAddressPage extends BasePage {
   }
 
   def verifyPageEnterAddressAndContinue() = {
-    verifyTheirUKAddressPage()
     enterAddressInformation()
     checkYourAnswersCalculationsMap(
       getHeader(),

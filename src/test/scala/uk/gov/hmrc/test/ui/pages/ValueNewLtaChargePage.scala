@@ -17,14 +17,8 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{VALUE_NEW_LTA_CHARGE_PAGE_HEADER, VALUE_NEW_LTA_CHARGE_PAGE_TITLE}
 
 object ValueNewLtaChargePage extends BasePage {
-  def onValueNewLtaChargePage() = {
-    verifyPageUrl("value-new-lta-charge")
-    onPage(VALUE_NEW_LTA_CHARGE_PAGE_TITLE)
-    isHeader(VALUE_NEW_LTA_CHARGE_PAGE_HEADER)
-  }
 
   def enterNewLTAChargeMoreThanPreviousCharge() = {
     val text = "950000000"
@@ -48,19 +42,16 @@ object ValueNewLtaChargePage extends BasePage {
   }
 
   def verifyPageEnterLTAChargeMoreThanPreviousChargeAndContinue() = {
-    onValueNewLtaChargePage()
     enterNewLTAChargeMoreThanPreviousCharge()
     submitPage()
   }
 
   def verifyPageEnterLTAChargeLessThanPreviousChargeAndContinue() = {
-    onValueNewLtaChargePage()
     enterNewLTAChargeLessThanPreviousCharge()
     submitPage()
   }
 
   def verifyPageEnterLTAChargeAndContinue() = {
-    onValueNewLtaChargePage()
     enterNewLTACharge()
     submitPage()
   }

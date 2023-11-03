@@ -16,23 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{DID_YOU_PAY_A_CHARGE_PAGE_HEADER, DID_YOU_PAY_A_CHARGE_PAGE_TITLE}
-
 object DidYouPayAChargePage extends BasePage {
-  def onPensionSchemeInputAmountsPage(period: String, pensionSchemeNumber: String, pensionSchemeName: String) = {
-    verifyPageUrl(s"annual-allowance/$period/pension-scheme-$pensionSchemeNumber/annual-allowance-charge")
 
-    onPage(DID_YOU_PAY_A_CHARGE_PAGE_TITLE.replaceAll("pensionSchemeNumber", pensionSchemeNumber))
-    isHeader(DID_YOU_PAY_A_CHARGE_PAGE_HEADER + s" $pensionSchemeName?")
-  }
-
-  def verifyPageSelectNoAndContinue(period: String, pensionSchemeNumber: String, pensionSchemeName: String) = {
-    onPensionSchemeInputAmountsPage(period, pensionSchemeNumber, pensionSchemeName)
+  def verifyPageSelectNoAndContinue() =
     selectNoAndContinueForAAPeriodPage()
-  }
 
-  def verifyPageSelectYesAndContinue(period: String, pensionSchemeNumber: String, pensionSchemeName: String) = {
-    onPensionSchemeInputAmountsPage(period, pensionSchemeNumber, pensionSchemeName)
+  def verifyPageSelectYesAndContinue() =
     selectYesAndContinueForAAPeriodPage()
-  }
 }

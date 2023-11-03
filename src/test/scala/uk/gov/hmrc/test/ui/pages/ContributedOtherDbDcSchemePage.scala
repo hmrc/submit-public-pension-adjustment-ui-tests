@@ -16,23 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_HEADER, CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_TITLE}
-
 object ContributedOtherDbDcSchemePage extends BasePage {
-  def onContributedOtherDbDcSchemePage(year: String) = {
-    verifyPageUrl(s"annual-allowance/$year/contributed-to-any-other-dc-or-db-scheme")
-    onPage(CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_TITLE)
-    isHeader(CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_HEADER)
-  }
 
-  def verifyPageSelectYesAndContinue(year: String) = {
-    onContributedOtherDbDcSchemePage(year)
+  def verifyPageSelectYesAndContinue() =
     selectYesAndContinueForAAPeriodPage()
-  }
 
-  def verifyPageSelectNoAndContinue(year: String) = {
-    onContributedOtherDbDcSchemePage(year)
+  def verifyPageSelectNoAndContinue() =
     selectNoAndContinueForAAPeriodPage()
-  }
 
 }

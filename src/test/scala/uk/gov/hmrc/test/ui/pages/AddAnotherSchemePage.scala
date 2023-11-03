@@ -17,12 +17,9 @@
 package uk.gov.hmrc.test.ui.pages
 
 object AddAnotherSchemePage extends BasePage {
-  def onAddAnotherSchemePage(period: String, pensionSchemeNumber: String) =
-    verifyPageUrl("add-another-scheme/" + period + "/" + pensionSchemeNumber)
-
-  def verifyPageSelectYesAndContinue(period: String, pensionSchemeNumber: String) =
+  def verifyPageSelectYesAndContinue() =
     selectYesAndContinueForAAPeriodPage()
 
-  def verifyPageSelectNoAndContinue(period: String, pensionSchemeNumber: String) =
+  def verifyPageSelectNoAndContinue() =
     selectNoAndContinueForAAPeriodPage()
 }

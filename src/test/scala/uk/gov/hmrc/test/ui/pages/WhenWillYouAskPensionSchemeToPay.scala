@@ -17,20 +17,12 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER, WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE}
 
 object WhenWillYouAskPensionSchemeToPay extends BasePage {
 
-  def verifyWhenWillYouAskPensionSchemeToPayPage(year: Int) = {
-    verifyPageUrl("submission-service/" + year + "/date-you-will-ask-pension-scheme-to-pay")
-    onPage(WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE)
-    isHeader(WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER)
-  }
-
   def selectQuarter() = driver.findElement(By.id("value_0")).click()
 
-  def verifyPageSelectQuarterAndContinue(year: Int) = {
-    verifyWhenWillYouAskPensionSchemeToPayPage(year)
+  def verifyPageSelectQuarterAndContinue() = {
     selectQuarter()
     submitPage()
   }

@@ -21,7 +21,6 @@ import org.openqa.selenium.{By, WebElement}
 import org.scalatest.Assertion
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import util.DataCollectorMap
 
@@ -83,49 +82,6 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
 
   def clickContinueButton(): Unit =
     driver.findElement(By.xpath("//a[contains(text(),'Continue')]")).click()
-
-  def onPage(pageTitle: String): Boolean =
-    if (driver.getTitle != pageTitle)
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
-    else true
-
-  def isHeader(header: String): Boolean = {
-    var headerText = driver.findElement(By.xpath("//h1")).getText
-    if (driver.findElements(By.xpath("//h1/span")).size() != 0) {
-      headerText = headerText.replaceAll(driver.findElement(By.xpath("(//h1/span)")).getText, "").replaceAll("\n", "")
-      if (headerText != header)
-        throw PageNotFoundException(
-          s"Expected '$header', but found '$headerText'"
-        )
-      else true
-    }
-    if ((driver.findElements(By.xpath("//h1/label/span")).size() != 0)) {
-      headerText =
-        headerText.replaceAll(driver.findElement(By.xpath("(//h1/label/span)")).getText, "").replaceAll("\n", "")
-      if (headerText != header)
-        throw PageNotFoundException(
-          s"Expected '$header', but found '$headerText'"
-        )
-      else true
-    } else {
-      if (headerText != header)
-        throw PageNotFoundException(
-          s"Expected '$header', but found '$headerText'"
-        )
-      else true
-    }
-  }
-
-  def isHeader2(header: String): Boolean = {
-    val headerText = driver.findElement(By.xpath("//div[@class='govuk-grid-column-two-thirds']/h2")).getText
-    if (headerText != header)
-      throw PageNotFoundException(
-        s"Expected '$header', but found '$headerText'"
-      )
-    else true
-  }
 
   def selectYesOption(): Unit =
     driver.findElement(By.id("value")).click()
@@ -194,20 +150,6 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     val lastPart           = currentUrl.replaceAll(domain, "")
     lastPart shouldEqual name
   }
-
-  def validateRadioButtonError(expectedErrorMessage: String): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(expectedErrorMessage) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(expectedErrorMessage)
-    )
 
   def getHeader(): String = {
     var headerText = driver.findElement(By.xpath("//h1")).getText

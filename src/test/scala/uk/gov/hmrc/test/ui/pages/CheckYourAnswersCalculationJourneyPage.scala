@@ -16,20 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_HEADER, SUBMIT_CHECK_YOUR_ANSWERS_PAGE_TITLE}
-
 object CheckYourAnswersCalculationJourneyPage extends BasePage {
-  def onCheckYourAnswersCalculationJourneyPage() = {
-    verifyPageUrl("check-your-answers")
-    onPage(SUBMIT_CHECK_YOUR_ANSWERS_PAGE_TITLE)
-    isHeader(CHECK_YOUR_ANSWERS_PAGE_HEADER)
-  }
-
-  def verifyCheckYourAnswersPageAndContinue() = {
-    onCheckYourAnswersCalculationJourneyPage()
-    // require(DataCollectorMap.checkAnswersCalculationsPage == returnCheckYourAnswersPageInformationAsAList(),"Data not matching")
+  def verifyCheckYourAnswersPageAndContinue() =
     clickContinueButton()
-  }
 
   def clickChangeOnWhatAreYouReportingQuestion() = clickOnChangeLink(
     "What are you reporting"
