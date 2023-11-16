@@ -25,7 +25,7 @@
         "pensionInputAmount" : 35000,
         "taxYearSchemes" : [ {
           "name" : "Scheme 1",
-          "pensionSchemeTaxReference" : "00348916RT",
+          "pensionSchemeTaxReference" : "00348916RU",
           "originalPensionInputAmount" : 35000,
           "revisedPensionInputAmount" : 35000,
           "chargePaidByScheme" : 0
@@ -39,7 +39,7 @@
         "chargePaidByMember" : 0,
         "taxYearSchemes" : [ {
           "name" : "Scheme 1",
-          "pensionSchemeTaxReference" : "00348916RT",
+          "pensionSchemeTaxReference" : "00348916RU",
           "originalPensionInputAmount" : 36000,
           "revisedPensionInputAmount" : 36000,
           "chargePaidByScheme" : 0
@@ -57,7 +57,7 @@
         "chargePaidByMember" : 0,
         "taxYearSchemes" : [ {
           "name" : "Scheme 1",
-          "pensionSchemeTaxReference" : "00348916RT",
+          "pensionSchemeTaxReference" : "00348916RU",
           "originalPensionInputAmount" : 44000,
           "revisedPensionInputAmount" : 23000,
           "chargePaidByScheme" : 10800
@@ -73,7 +73,7 @@
         "chargePaidByMember" : 0,
         "taxYearSchemes" : [ {
           "name" : "Scheme 1",
-          "pensionSchemeTaxReference" : "00348916RT",
+          "pensionSchemeTaxReference" : "00348916RU",
           "originalPensionInputAmount" : 43000,
           "revisedPensionInputAmount" : 40000,
           "chargePaidByScheme" : 2000
@@ -89,7 +89,7 @@
         "chargePaidByMember" : 0,
         "taxYearSchemes" : [ {
           "name" : "Scheme 1",
-          "pensionSchemeTaxReference" : "00348916RT",
+          "pensionSchemeTaxReference" : "00348916RU",
           "originalPensionInputAmount" : 45000,
           "revisedPensionInputAmount" : 35000,
           "chargePaidByScheme" : 4000
@@ -105,7 +105,7 @@
         "chargePaidByMember" : 0,
         "taxYearSchemes" : [ {
           "name" : "Scheme 1",
-          "pensionSchemeTaxReference" : "00348916RT",
+          "pensionSchemeTaxReference" : "00348916RU",
           "originalPensionInputAmount" : 30000,
           "revisedPensionInputAmount" : 30000,
           "chargePaidByScheme" : 800
@@ -121,7 +121,7 @@
         "chargePaidByMember" : 0,
         "taxYearSchemes" : [ {
           "name" : "Scheme 1",
-          "pensionSchemeTaxReference" : "00348916RT",
+          "pensionSchemeTaxReference" : "00348916RU",
           "originalPensionInputAmount" : 45000,
           "revisedPensionInputAmount" : 45000,
           "chargePaidByScheme" : 800
@@ -174,7 +174,7 @@
       "unusedAnnualAllowance" : 40000,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
-        "pensionSchemeTaxReference" : "00348916RT",
+        "pensionSchemeTaxReference" : "00348916RU",
         "compensation" : 0
       } ]
     }, {
@@ -188,7 +188,7 @@
       "unusedAnnualAllowance" : 4000,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
-        "pensionSchemeTaxReference" : "00348916RT",
+        "pensionSchemeTaxReference" : "00348916RU",
         "compensation" : 0
       } ]
     }, {
@@ -202,7 +202,7 @@
       "unusedAnnualAllowance" : 0,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
-        "pensionSchemeTaxReference" : "00348916RT",
+        "pensionSchemeTaxReference" : "00348916RU",
         "compensation" : 8400
       } ]
     }, {
@@ -216,7 +216,7 @@
       "unusedAnnualAllowance" : 0,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
-        "pensionSchemeTaxReference" : "00348916RT",
+        "pensionSchemeTaxReference" : "00348916RU",
         "compensation" : 1200
       } ]
     }, {
@@ -230,7 +230,7 @@
       "unusedAnnualAllowance" : 1000,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
-        "pensionSchemeTaxReference" : "00348916RT",
+        "pensionSchemeTaxReference" : "00348916RU",
         "compensation" : 3600
       } ]
     } ],
@@ -246,7 +246,7 @@
       "unusedAnnualAllowance" : 7000,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
-        "pensionSchemeTaxReference" : "00348916RT",
+        "pensionSchemeTaxReference" : "00348916RU",
         "chargePaidByScheme" : 800
       } ]
     }, {
@@ -261,7 +261,7 @@
       "unusedAnnualAllowance" : 0,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
-        "pensionSchemeTaxReference" : "00348916RT",
+        "pensionSchemeTaxReference" : "00348916RU",
         "chargePaidByScheme" : 800
       } ]
     } ]

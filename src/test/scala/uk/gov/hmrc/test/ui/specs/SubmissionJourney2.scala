@@ -31,7 +31,7 @@ class SubmissionJourney2 extends BaseSpec with BeforeAndAfter {
     calculationData.submitCalculation("calculationDataSet2")
 
     /** add scheme details from the test json to below map * */
-    uniqueTaxSchemes += ("Scheme 1"                                                                                             -> "00348916RT")
+    uniqueTaxSchemes += ("Scheme 1"                                                                                             -> "00348916RU")
     uniqueTaxSchemes += ("Scheme 2"                                                                                             -> "00348916RG")
     uniqueTaxSchemes += ("Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions" -> "00348916RX")
   }

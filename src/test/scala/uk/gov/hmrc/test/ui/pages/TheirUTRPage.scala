@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 object TheirUTRPage extends BasePage {
-  val utr              = "1234567890"
+  val utr              = "1234567891"
   def enterUTR(): Unit =
     driver.findElement(By.id("value")).sendKeys(utr)
 
