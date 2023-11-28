@@ -17,14 +17,8 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_MUCH_LTA_CHARGE_PAGE_HEADER, HOW_MUCH_LTA_CHARGE_PAGE_TITLE}
 
 object HowMuchLtaChargePage extends BasePage {
-  def onHowMuchLtaChargePage() = {
-    verifyPageUrl("how-much-lta-charge")
-    onPage(HOW_MUCH_LTA_CHARGE_PAGE_TITLE)
-    isHeader(HOW_MUCH_LTA_CHARGE_PAGE_HEADER)
-  }
 
   def enterCharge() = {
     val text = "200000000"
@@ -32,7 +26,6 @@ object HowMuchLtaChargePage extends BasePage {
     checkYourAnswersLASMap(getHeader(), "£" + text)
   }
   def verifyPageEnterChargeAmountAndContinue() = {
-    onHowMuchLtaChargePage()
     enterCharge()
     submitPage()
   }

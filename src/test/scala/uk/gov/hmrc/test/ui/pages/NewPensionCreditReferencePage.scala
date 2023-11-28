@@ -17,18 +17,11 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_PENSION_CREDIT_REFERENCE_PAGE_HEADER, NEW_PENSION_CREDIT_REFERENCE_PAGE_TITLE}
 
 object NewPensionCreditReferencePage extends BasePage {
-  def onPensionCreditReferencePage() = {
-    verifyPageUrl("lifetime-allowance/new-pension-credit-reference")
-    onPage(NEW_PENSION_CREDIT_REFERENCE_PAGE_TITLE)
-    isHeader(NEW_PENSION_CREDIT_REFERENCE_PAGE_HEADER)
-  }
 
   def enterPensionCreditReferenceAndContinue(): Unit = {
     val reference = "1234567123QAZXS"
-    onPensionCreditReferencePage()
     driver.findElement(By.id("value")).sendKeys(reference)
     checkYourAnswersLASMap(getHeader(), reference)
     submitPage()

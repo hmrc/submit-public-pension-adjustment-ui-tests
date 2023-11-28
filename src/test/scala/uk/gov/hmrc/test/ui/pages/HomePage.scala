@@ -28,6 +28,11 @@ object HomePage extends BasePage {
     this
   }
 
+  def loadPage(url: String): this.type = {
+    driver.navigate().to(url)
+    this
+  }
+
   def clickStartButton(): HomePage.type = {
     driver.findElement(By.xpath("//a[contains(text(),'Start now')]")).click()
     HomePage

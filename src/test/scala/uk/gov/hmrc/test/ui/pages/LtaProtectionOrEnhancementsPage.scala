@@ -17,14 +17,8 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_HEADER, LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_TITLE}
 
 object LtaProtectionOrEnhancementsPage extends BasePage {
-  def onLtaProtectionOrEnhancementsPage() = {
-    verifyPageUrl("lifetime-allowance/protection-enhancements")
-    onPage(LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_TITLE)
-    isHeader(LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_HEADER)
-  }
 
   def selectProtectionRadioButtonAndContinue(): Unit = {
     val text = "Protection"

@@ -19,17 +19,6 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 
 object PensionSchemeInputAmountsPage extends BasePage {
-  val PENSION_SCHEME_INPUT_AMOUNTS_PAGE_TITLE  =
-    "Pension input amounts for the pension scheme - Calculate your public service pension adjustment - GOV.UK"
-  val PENSION_SCHEME_INPUT_AMOUNTS_PAGE_HEADER =
-    "Pension input amounts for thePensionSchemeName"
-
-  def onPensionSchemeInputAmountsPage(period: String, pensionSchemeNumber: String, schemeName: String) = {
-    verifyPageUrl(s"annual-allowance/$period/pension-scheme-$pensionSchemeNumber/pension-input-amount")
-    onPage(PENSION_SCHEME_INPUT_AMOUNTS_PAGE_TITLE.replaceAll("thePensionSchemeName", schemeName))
-    isHeader(PENSION_SCHEME_INPUT_AMOUNTS_PAGE_HEADER.replaceAll("thePensionSchemeName", schemeName))
-  }
-
   def enterPensionInputAmount(pensionInputAmount: String) = {
     driver.findElement(By.id("originalPIA")).clear()
     driver.findElement(By.id("originalPIA")).sendKeys(pensionInputAmount)
@@ -40,14 +29,10 @@ object PensionSchemeInputAmountsPage extends BasePage {
     driver.findElement(By.id("revisedPIA")).sendKeys(revisedPensionInputAmount)
   }
 
-  def verifypageEnterPensionAmountsAndContinue(
-    period: String,
-    pensionSchemeNumber: String,
+  def verifyPageEnterPensionAmountsAndContinue(
     pensionInputAmount: String,
-    revisedPensionInputAmount: String,
-    schemeName: String
+    revisedPensionInputAmount: String
   ) = {
-    onPensionSchemeInputAmountsPage(period, pensionSchemeNumber, schemeName)
     enterPensionInputAmount(pensionInputAmount)
     enterRevisedPensionInputAmount(revisedPensionInputAmount)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + pensionInputAmount + " / " + "£" + revisedPensionInputAmount)

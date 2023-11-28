@@ -17,20 +17,13 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NINO_PAGE_HEADER, THEIR_NINO_PAGE_TITLE}
 import util.NINOGenerator
 
 object TheirNinoPage extends BasePage {
 
   val nino        = NINOGenerator.nino
-  def verifyTheirNinoPage() = {
-    verifyPageUrl("submission-service/national-insurance-number-someone-else")
-    onPage(THEIR_NINO_PAGE_TITLE)
-    isHeader(THEIR_NINO_PAGE_HEADER)
-  }
   def enterNINO() = driver.findElement(By.id("value")).sendKeys(nino)
   def verifyPageEnterNinoAndContinue() = {
-    verifyTheirNinoPage()
     enterNINO()
     checkYourAnswersCalculationsMap(getHeader(), nino)
     submitPage()

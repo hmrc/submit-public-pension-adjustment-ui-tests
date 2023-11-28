@@ -17,43 +17,29 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.BeforeAndAfter
-import uk.gov.hmrc.test.ui.functions.CommonCalculationAAandUserPaidLTA
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
-
+import util.CalculationDataUtil
 import scala.collection.mutable
 
-class EndToEndAAAndLTAJourneyTest extends BaseSpec with BeforeAndAfter {
-  var taxSchemes: mutable.Map[String, String]       = mutable.Map.empty[String, String]
-  var inDateYears: mutable.ArrayBuffer[Int]         = mutable.ArrayBuffer.empty[Int]
-  var debitYears: mutable.ArrayBuffer[Int]          = mutable.ArrayBuffer.empty[Int]
+class SubmissionJourney5 extends BaseSpec with BeforeAndAfter {
   var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
   before {
-    taxSchemes.clear()
-    inDateYears.clear()
-    debitYears.clear()
+    val calculationData = new CalculationDataUtil()
+    calculationData.submitCalculation("calculationDataSet5")
 
-    val commonCalculationAAAndLTA                = new CommonCalculationAAandUserPaidLTA()
-    val (taxSchemes1, inDateYears1, debitYears1) =
-      commonCalculationAAAndLTA.createCalculationJourney("Scenario_MultipleSchemeDebitAndCredit")
-    taxSchemes ++= taxSchemes1
-    inDateYears ++= inDateYears1
-    debitYears ++= debitYears1
-
-    var seenValues = Set[String]()
-    uniqueTaxSchemes = taxSchemes.filter {
-      case (_, value) if !seenValues.contains(value) =>
-        seenValues += value
-        true
-      case _                                         => false
-    }
+    /** add scheme details from the test json to below map * */
+    uniqueTaxSchemes += ("Scheme 1"                                                                                             -> "00348916RU")
+    uniqueTaxSchemes += ("Scheme 2"                                                                                             -> "00348916RG")
+    uniqueTaxSchemes += ("Scheme 3"                                                                                             -> "00348916RF")
+    uniqueTaxSchemes += ("Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions" -> "00348916RX")
   }
 
   Feature("Business scenario AA journeys") {
 
     /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.23, 5.24, 5.25, 5.26 */
-    Scenario(s"Calculate Business Journey1", ZapTests) {
+    Scenario(s"Calculate Business Journey5", ZapTests) {
 
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
       ClaimOnBehalfPage.verifyPageSelectYesAndContinue()

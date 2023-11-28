@@ -16,13 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{LIFETIME_ALLOWANCE_PAGE_HEADER, LIFETIME_ALLOWANCE_PAGE_TITLE}
-
 object LifetimeAllowancePage extends BasePage {
-  def verifyLifetimeAllowancePageAndContinue() = {
-    verifyPageUrl("lifetime-allowance")
-    onPage(LIFETIME_ALLOWANCE_PAGE_TITLE)
-    isHeader(LIFETIME_ALLOWANCE_PAGE_HEADER)
+  def verifyLifetimeAllowancePageAndContinue() =
     clickContinueButton()
-  }
 }

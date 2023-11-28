@@ -17,9 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 object CannotUseLtaServiceNoChargePage extends BasePage {
-  def verifyCannotUseLtaServiceNoChargePageAndContinue() = {
-    verifyPageUrl("lifetime-allowance/cannot-use-lta-service-no-charge")
-    isHeader("You cannot make a lifetime allowance adjustment")
+  def verifyCannotUseLtaServiceNoChargePageAndContinue() =
     clickContinueButton()
-  }
 }

@@ -17,38 +17,24 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_CHANGED_PAGE_HEADER, PROTECTION_CHANGED_PAGE_TITLE}
 
 object ProtectionEnhancementChangedPage extends BasePage {
-  def onProtectionEnhancementChangedPage() = {
-    verifyPageUrl("lifetime-allowance/protection-enhancement-changed")
-    onPage(PROTECTION_CHANGED_PAGE_TITLE)
-    isHeader(PROTECTION_CHANGED_PAGE_HEADER)
-  }
 
-  def selectProtectionAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
+  def selectProtectionAndClickOnContinue() =
     selectProtectionRadioButtonAndContinue()
-    // selectYesAndContinueForLTAPage()
-  }
+  // selectYesAndContinueForLTAPage()
 
-  def selectEnhancementAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
+  def selectEnhancementAndClickOnContinue() =
     selectEnhancementsRadioButtonAndContinue()
-    // selectNoAndContinueForLTAPage()
-  }
+  // selectNoAndContinueForLTAPage()
 
-  def selectBothAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
+  def selectBothAndClickOnContinue() =
     selectBothRadioButtonAndContinue()
-    // selectNoAndContinueForLTAPage()
-  }
+  // selectNoAndContinueForLTAPage()
 
-  def selectNoAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
+  def selectNoAndClickOnContinue() =
     selectNoRadioButtonAndContinue()
-    // selectNoAndContinueForLTAPage()
-  }
+  // selectNoAndContinueForLTAPage()
 
   def selectProtectionRadioButtonAndContinue(): Unit = {
     val text = "Protection"

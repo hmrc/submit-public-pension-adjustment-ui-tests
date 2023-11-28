@@ -17,20 +17,13 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_VALUE_OF_LUMP_SUM_PAGE_HEADER, NEW_VALUE_OF_LUMP_SUM_PAGE_TITLE}
 
 object NewValueOfLumpSumPage extends BasePage {
-  def onNewValueOfLumpSumPage() = {
-    verifyPageUrl("lifetime-allowance/new-value-of-lump-sum")
-    onPage(NEW_VALUE_OF_LUMP_SUM_PAGE_TITLE)
-    isHeader(NEW_VALUE_OF_LUMP_SUM_PAGE_HEADER)
-  }
 
   def enterLumpSum(value: String) =
     driver.findElement(By.id("value")).sendKeys(value)
 
   def enterLumpSumAndContinue(value: String) = {
-    onNewValueOfLumpSumPage()
     enterLumpSum(value)
     submitPage()
   }

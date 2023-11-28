@@ -23,7 +23,8 @@ import util.NINOGenerator
 
 object AuthorityWizardPage extends BasePage {
 
-  val authUrl: String = TestConfiguration.url("auth-frontend")
+  val authUrl: String   = TestConfiguration.url("auth-frontend")
+  val submitFrontendUrl = TestConfiguration.url("submit-ui-frontend")
 
   def authorizedLoginUser(): Unit = {
     driver.get(driver.getCurrentUrl)
@@ -35,6 +36,22 @@ object AuthorityWizardPage extends BasePage {
     driver.findElement(By.id("itmp.middleName")).sendKeys("Tharu")
     driver.findElement(By.id("itmp.familyName")).sendKeys("Jonson")
     driver.findElement(By.id("itmp.dateOfBirth")).sendKeys("1948-08-02")
+    driver.findElement(By.id("submit-top")).submit()
+  }
+
+  def authorizedLoginUser(uniqueId: String): Unit = {
+    HomePage.loadPage(authUrl)
+    driver.findElement(By.id("nino")).sendKeys(NINOGenerator.nino)
+    selectConfidenceLevel("250")
+    driver.findElement(By.id("add-preset")).click()
+    driver.findElement(By.id("input-4-0-value")).sendKeys("123456789")
+    driver.findElement(By.id("itmp.givenName")).sendKeys("Lari")
+    driver.findElement(By.id("itmp.middleName")).sendKeys("Tharu")
+    driver.findElement(By.id("itmp.familyName")).sendKeys("Jonson")
+    driver.findElement(By.id("itmp.dateOfBirth")).sendKeys("1948-08-02")
+    driver
+      .findElement(By.id("redirectionUrl"))
+      .sendKeys(submitFrontendUrl + "/landing-page?submissionUniqueId=" + uniqueId)
     driver.findElement(By.id("submit-top")).submit()
   }
 

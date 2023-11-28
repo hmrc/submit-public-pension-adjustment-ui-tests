@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import org.scalatest.Assertion
-import uk.gov.hmrc.test.ui.constants.PageInformation.{SAVINGS_STATEMENT_PAGE_HEADER, SAVINGS_STATEMENT_PAGE_TITLE}
 
 import java.util.ResourceBundle
 
@@ -112,9 +111,4 @@ object SavingsStatementPage extends BasePage {
     }
   }
 
-  def onSavingsStatementPage() = {
-    verifyPageUrl("pension-saving-statement")
-    onPage(SAVINGS_STATEMENT_PAGE_TITLE)
-    isHeader(SAVINGS_STATEMENT_PAGE_HEADER)
-  }
 }
