@@ -81,6 +81,9 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
 
   def clickContinueButton(): Unit =
+    driver.findElement(By.xpath("//a[contains(text(),'Continue')]")).click()
+
+  def clickSubmissionContinueButton(): Unit =
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
 
   def selectYesOption(): Unit =

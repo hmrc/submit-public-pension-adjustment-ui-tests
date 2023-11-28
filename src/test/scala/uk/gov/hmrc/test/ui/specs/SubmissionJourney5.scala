@@ -106,9 +106,7 @@ class SubmissionJourney5 extends BaseSpec with BeforeAndAfter {
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
 
-      /* Then("I verify check your answers page and click continue")
-      CheckYourAnswersCalculationJourneyPage.verifyCheckYourAnswersPageAndContinue()*/
-      CheckYourAnswersCalculationJourneyPage.clickContinueButton()
+      CheckYourAnswersCalculationJourneyPage.clickSubmissionContinueButton()
 
       Then("I verify SubmissionPage Page")
       SubmissionPage.verifySubmissionPage()
