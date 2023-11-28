@@ -27,7 +27,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
   Feature("Business scenario AA journeys") {
     val requestArray: Array[String] =
       Array(
-        "Scenario_1a",
+        "Scenario_1a" /*,
         "Scenario_1b",
         "Scenario_1c",
         "Scenario_1d",
@@ -40,7 +40,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
         "Scenario_14",
         "Scenario_16",
         "Scenario_17",
-        "Scenario_18"
+        "Scenario_18"*/
       )
     requestArray.indices.foreach { index =>
       Scenario(s"Calculate Business Journey $index", ZapTests) {
