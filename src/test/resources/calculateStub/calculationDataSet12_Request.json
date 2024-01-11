@@ -1,0 +1,70 @@
+{
+  "calculationInputs": {
+    "resubmission": {
+      "isResubmission": false
+    },
+    "annualAllowance": {
+      "scottishTaxYears": [],
+      "taxYears": [
+        {
+          "pensionInputAmount": 5,
+          "taxYearSchemes": [
+            {
+              "name": "Scheme1",
+              "pensionSchemeTaxReference": "00348916RU",
+              "originalPensionInputAmount": 1,
+              "revisedPensionInputAmount": 2,
+              "chargePaidByScheme": 0
+            },
+            {
+              "name": "Scheme2",
+              "pensionSchemeTaxReference": "00348916RG",
+              "originalPensionInputAmount": 2,
+              "revisedPensionInputAmount": 3,
+              "chargePaidByScheme": 4
+            }
+          ],
+          "totalIncome": 5,
+          "chargePaidByMember": 3,
+          "period": "2016-pre"
+        }
+      ]
+    }
+  },
+  "calculation": {
+    "resubmission": {
+      "isResubmission": false
+    },
+    "totalAmounts": {
+      "outDatesCompensation": 7,
+      "inDatesDebit": 0,
+      "inDatesCredit": 0
+    },
+    "outDates": [
+      {
+        "period": "2016-pre",
+        "directCompensation": 3,
+        "indirectCompensation": 4,
+        "chargePaidByMember": 3,
+        "chargePaidBySchemes": 4,
+        "revisedChargableAmountBeforeTaxRate": 0,
+        "revisedChargableAmountAfterTaxRate": 0,
+        "unusedAnnualAllowance": 40000,
+        "taxYearSchemes": [
+          {
+            "name": "SCHEME1",
+            "pensionSchemeTaxReference": "00348916RS",
+            "compensation": 0
+          },
+          {
+            "name": "Scheme2",
+            "pensionSchemeTaxReference": "00348916RU",
+            "compensation": 4
+          }
+        ]
+      }
+    ],
+    "inDates": []
+  }
+}
+

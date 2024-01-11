@@ -20,9 +20,9 @@ import org.openqa.selenium.By
 
 object EnterAlternativeNamePage extends BasePage {
 
-  val name = "ABC BCDEFGH"
+//  val name = "ABC BCDEFGH"
 
-  def verifyPageEnterNameAndContinue() = {
+  def verifyPageEnterNameAndContinue(name:String) = {
     driver.findElement(By.id("value")).sendKeys(name)
     checkYourAnswersCalculationsMap(getHeader(), name)
     submitPage()

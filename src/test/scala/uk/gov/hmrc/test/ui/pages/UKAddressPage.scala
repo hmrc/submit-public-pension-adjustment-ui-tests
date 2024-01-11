@@ -28,8 +28,22 @@ object UKAddressPage extends BasePage {
     driver.findElement(By.id("postCode")).sendKeys("AB3 7ED")
   }
 
+  def enterNewAddressInformation(addressLine1:String, addressLine2: String, townOrCity:String, county:String, postCode: String) = {
+    driver.findElement(By.id("addressLine1")).sendKeys(addressLine1)
+    driver.findElement(By.id("addressLine2")).sendKeys(addressLine2)
+    driver.findElement(By.id("townOrCity")).sendKeys(townOrCity)
+    driver.findElement(By.id("county")).sendKeys(county)
+    driver.findElement(By.id("postCode")).sendKeys(postCode)
+  }
+
   def verifyPageEnterAddressAndContinue() = {
     enterAddressInformation()
     submitPage()
   }
+
+  def verifyPageEnterNewAddressAndContinue(addressLine1:String, addressLine2: String, townOrCity:String, county:String, postCode: String) = {
+    enterNewAddressInformation(addressLine1:String, addressLine2: String, townOrCity:String, county:String, postCode: String)
+    submitPage()
+  }
+
 }

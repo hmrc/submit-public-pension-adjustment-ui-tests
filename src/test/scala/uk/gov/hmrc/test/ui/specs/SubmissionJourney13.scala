@@ -21,23 +21,24 @@ import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.CalculationDataUtil
+
 import scala.collection.mutable
 
-class SubmissionJourney8 extends BaseSpec with BeforeAndAfter {
+class SubmissionJourney13 extends BaseSpec with BeforeAndAfter {
   var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
   before {
     val calculationData = new CalculationDataUtil()
-    calculationData.submitCalculation("calculationDataSet8")
+    calculationData.submitCalculation("calculationDataSet13")
 
     /** add scheme details from the test json to below map * */
     uniqueTaxSchemes += ("Scheme 1" -> "00348916RU")
-    uniqueTaxSchemes += ("Scheme 4" -> "00348916RC")
+//    uniqueTaxSchemes += ("Scheme 2" -> "00348916RG")
+//    uniqueTaxSchemes += ("NHS" -> "00348916RX")
   }
 
-  Feature("Business scenario AA journeys") {
+  Feature("PRA Submission Journey 3, Business scenario AA journeys") {
 
-    /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.23, 5.24, 5.25, 5.26 */
-    Scenario(s"Calculate Business Journey1", ZapTests) {
+    Scenario(s"Calculate Business Journey2", ZapTests) {
 
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
       ClaimOnBehalfPage.verifyPageSelectYesAndContinue()
@@ -61,25 +62,22 @@ class SubmissionJourney8 extends BaseSpec with BeforeAndAfter {
       TheirUTRPage.verifyPageEnterUTRAndContinue()
 
       When("I verify TheirResidencePage, select yes and continue")
-      TheirResidencePage.verifyPageSelectYesAnContinue()
+      TheirResidencePage.verifyPageSelectNoAnContinue()
 
-      When("I verify TheirUKAddressPage, Enter Address information and continue")
-      TheirUKAddressPage.verifyPageEnterAddressAndContinue()
+      When("I verify InternationalAddressPage, Enter Address information and continue")
+      TheirInternationalAddressPage.verifyPageEnterAddressAndContinue()
 
       When("I verify AlternativeNamePage, select No and continue")
-      AlternativeNamePage.verifyPageSelectNoAndContinue()
-
-      When("I verify AlternativeNamePage, enter name and continue")
-      EnterAlternativeNamePage.verifyPageEnterNameAndContinue("john")
+      AlternativeNamePage.verifyPageSelectYesAndContinue()
 
       When("I verify ContactNumberPage, enter phone number and continue")
-      ContactNumberPage.verifyPageEnterContactNumberAndContinue("19292")
+      ContactNumberPage.verifyPageEnterContactNumberAndContinue("07884554867")
 
       When("I verify ResidencePage select Yes and Continue")
-      ResidencePage.verifyPageSelectNoAndContinue()
+      ResidencePage.verifyPageSelectYesAndContinue()
 
       When("I verify InternationalAddressPage enter address and Continue")
-      InternationalAddressPage.verifyPageEnterAddressAndContinue()
+      UKAddressPage.verifyPageEnterAddressAndContinue()
 
       uniqueTaxSchemes.foreach { case (key, value) =>
         When("I verify LegacyPensionSchemeReferencePage enter reference and Continue")
@@ -93,10 +91,7 @@ class SubmissionJourney8 extends BaseSpec with BeforeAndAfter {
       ClaimingAdditionalTaxRateReliefPage.verifyPageClickYesAndContinue()
 
       When("I verify TaxReliefAmountPage Page, enter tax relief and click continue")
-      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("1000000000")
-
-      When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
-      WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 1")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("1000")
 
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
@@ -110,3 +105,26 @@ class SubmissionJourney8 extends BaseSpec with BeforeAndAfter {
     }
   }
 }
+
+
+/** Claiming on behalf = Y
+ * PoA/Deputy = Deputyship
+ * Name = John Smith
+ * Their DoB = 1/1/1960
+ * Their DoD = 1/1/2023
+ * Their NINO = AA1234567B
+ * UTR = 123456767890
+ * UK resident = N
+ * Non-UK address = 1 Street, Dublin, Ireland
+ * Alternate name = Y
+ * Contact number = 07884554867
+ * UK resident = Y
+ * UK address = 1 Road, London, AB1 2CD
+ * Legacy ref 1 = 123456789
+ * Reform ref 1 = 123456781
+ * Higher rate = Y
+Value claimed = 1000
+(Single scheme entered)
+
+ */
+/** 5.2(N debit), 5.10(Scheme paid), 5.11(private), ..... */

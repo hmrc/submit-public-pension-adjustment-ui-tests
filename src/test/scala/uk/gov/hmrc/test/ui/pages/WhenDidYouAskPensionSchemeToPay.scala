@@ -21,11 +21,11 @@ object WhenDidYouAskPensionSchemeToPay extends BasePage {
   def enterSchemePaymentDate() = {
     clearDate()
     enterDay("1")
-    enterMonth("1")
-    enterYear("2022")
+    enterMonth("10")
+    enterYear("2023")
   }
 
-  def verifyPageEnterDateAndContinue(year: Int) = {
+  def verifyPageEnterDateAndContinue() = {
     enterSchemePaymentDate()
     submitPage()
   }
