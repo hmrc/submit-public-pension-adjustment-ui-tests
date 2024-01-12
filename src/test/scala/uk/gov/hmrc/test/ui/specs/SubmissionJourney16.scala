@@ -1,3 +1,19 @@
+/*
+ * Copyright 2024 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.BeforeAndAfter
@@ -7,7 +23,7 @@ import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.CalculationDataUtil
 import scala.collection.mutable
 
-class SubmissionJourney16 extends BaseSpec with BeforeAndAfter{
+class SubmissionJourney16 extends BaseSpec with BeforeAndAfter {
 
   var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
   before {
@@ -68,23 +84,22 @@ class SubmissionJourney16 extends BaseSpec with BeforeAndAfter{
     }
   }
 
-
 }
 
 /** User has no debit, no alternate name, UK resident, user claims higher rate relief, multiple schemes, no credit
-Claiming on behalf = N
-(User has no debit)
-Alternate name = Y
-Contact number = 07884554867
-UK resident = Y
-UK address = 1 Road, London, AB1 2CD
-Legacy ref 1 = 123456789
-Reform ref 1 = 123456781
-Legacy ref 2 = 123456782
-Reform ref 2 = 123456783
-Higher rate relief = Y
-Value claimed = 1000
-(Multiple schemes entered)
-Select scheme = NHS
-(User has no credit)
-*/
+  * Claiming on behalf = N
+  * (User has no debit)
+  * Alternate name = Y
+  * Contact number = 07884554867
+  * UK resident = Y
+  * UK address = 1 Road, London, AB1 2CD
+  * Legacy ref 1 = 123456789
+  * Reform ref 1 = 123456781
+  * Legacy ref 2 = 123456782
+  * Reform ref 2 = 123456783
+  * Higher rate relief = Y
+  * Value claimed = 1000
+  * (Multiple schemes entered)
+  * Select scheme = NHS
+  * (User has no credit)
+  */

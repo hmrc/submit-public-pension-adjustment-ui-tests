@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,25 +106,23 @@ class SubmissionJourney13 extends BaseSpec with BeforeAndAfter {
   }
 }
 
-
 /** Claiming on behalf = Y
- * PoA/Deputy = Deputyship
- * Name = John Smith
- * Their DoB = 1/1/1960
- * Their DoD = 1/1/2023
- * Their NINO = AA1234567B
- * UTR = 123456767890
- * UK resident = N
- * Non-UK address = 1 Street, Dublin, Ireland
- * Alternate name = Y
- * Contact number = 07884554867
- * UK resident = Y
- * UK address = 1 Road, London, AB1 2CD
- * Legacy ref 1 = 123456789
- * Reform ref 1 = 123456781
- * Higher rate = Y
-Value claimed = 1000
-(Single scheme entered)
-
- */
+  * PoA/Deputy = Deputyship
+  * Name = John Smith
+  * Their DoB = 1/1/1960
+  * Their DoD = 1/1/2023
+  * Their NINO = AA1234567B
+  * UTR = 123456767890
+  * UK resident = N
+  * Non-UK address = 1 Street, Dublin, Ireland
+  * Alternate name = Y
+  * Contact number = 07884554867
+  * UK resident = Y
+  * UK address = 1 Road, London, AB1 2CD
+  * Legacy ref 1 = 123456789
+  * Reform ref 1 = 123456781
+  * Higher rate = Y
+  * Value claimed = 1000
+  * (Single scheme entered)
+  */
 /** 5.2(N debit), 5.10(Scheme paid), 5.11(private), ..... */

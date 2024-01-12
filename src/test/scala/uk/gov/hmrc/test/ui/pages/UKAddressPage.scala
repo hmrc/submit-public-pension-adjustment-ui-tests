@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,13 @@ object UKAddressPage extends BasePage {
     driver.findElement(By.id("postCode")).sendKeys("AB3 7ED")
   }
 
-  def enterNewAddressInformation(addressLine1:String, addressLine2: String, townOrCity:String, county:String, postCode: String) = {
+  def enterNewAddressInformation(
+    addressLine1: String,
+    addressLine2: String,
+    townOrCity: String,
+    county: String,
+    postCode: String
+  ) = {
     driver.findElement(By.id("addressLine1")).sendKeys(addressLine1)
     driver.findElement(By.id("addressLine2")).sendKeys(addressLine2)
     driver.findElement(By.id("townOrCity")).sendKeys(townOrCity)
@@ -41,8 +47,20 @@ object UKAddressPage extends BasePage {
     submitPage()
   }
 
-  def verifyPageEnterNewAddressAndContinue(addressLine1:String, addressLine2: String, townOrCity:String, county:String, postCode: String) = {
-    enterNewAddressInformation(addressLine1:String, addressLine2: String, townOrCity:String, county:String, postCode: String)
+  def verifyPageEnterNewAddressAndContinue(
+    addressLine1: String,
+    addressLine2: String,
+    townOrCity: String,
+    county: String,
+    postCode: String
+  ) = {
+    enterNewAddressInformation(
+      addressLine1: String,
+      addressLine2: String,
+      townOrCity: String,
+      county: String,
+      postCode: String
+    )
     submitPage()
   }
 

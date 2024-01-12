@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ object EnterAlternativeNamePage extends BasePage {
 
 //  val name = "ABC BCDEFGH"
 
-  def verifyPageEnterNameAndContinue(name:String) = {
+  def verifyPageEnterNameAndContinue(name: String) = {
     driver.findElement(By.id("value")).sendKeys(name)
     checkYourAnswersCalculationsMap(getHeader(), name)
     submitPage()
