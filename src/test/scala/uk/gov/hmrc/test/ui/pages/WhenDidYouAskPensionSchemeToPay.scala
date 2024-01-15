@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,11 @@ object WhenDidYouAskPensionSchemeToPay extends BasePage {
   def enterSchemePaymentDate() = {
     clearDate()
     enterDay("1")
-    enterMonth("1")
-    enterYear("2022")
+    enterMonth("10")
+    enterYear("2023")
   }
 
-  def verifyPageEnterDateAndContinue(year: Int) = {
+  def verifyPageEnterDateAndContinue() = {
     enterSchemePaymentDate()
     submitPage()
   }

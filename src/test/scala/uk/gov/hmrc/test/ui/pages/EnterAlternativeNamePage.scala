@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,9 @@ import org.openqa.selenium.By
 
 object EnterAlternativeNamePage extends BasePage {
 
-  val name = "ABC BCDEFGH"
+//  val name = "ABC BCDEFGH"
 
-  def verifyPageEnterNameAndContinue() = {
+  def verifyPageEnterNameAndContinue(name: String) = {
     driver.findElement(By.id("value")).sendKeys(name)
     checkYourAnswersCalculationsMap(getHeader(), name)
     submitPage()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,10 +72,10 @@ class SubmissionJourney5 extends BaseSpec with BeforeAndAfter {
       AlternativeNamePage.verifyPageSelectNoAndContinue()
 
       When("I verify AlternativeNamePage, enter name and continue")
-      EnterAlternativeNamePage.verifyPageEnterNameAndContinue()
+      EnterAlternativeNamePage.verifyPageEnterNameAndContinue("john")
 
       When("I verify ContactNumberPage, enter phone number and continue")
-      ContactNumberPage.verifyPageEnterContactNumberAndContinue()
+      ContactNumberPage.verifyPageEnterContactNumberAndContinue("09090")
 
       When("I verify ResidencePage select Yes and Continue")
       ResidencePage.verifyPageSelectNoAndContinue()
@@ -95,7 +95,7 @@ class SubmissionJourney5 extends BaseSpec with BeforeAndAfter {
       ClaimingAdditionalTaxRateReliefPage.verifyPageClickYesAndContinue()
 
       When("I verify TaxReliefAmountPage Page, enter tax relief and click continue")
-      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue()
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("10101")
 
       When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
       WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 2")
