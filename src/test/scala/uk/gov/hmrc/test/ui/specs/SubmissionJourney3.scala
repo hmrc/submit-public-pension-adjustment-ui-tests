@@ -75,7 +75,7 @@ class SubmissionJourney3 extends BaseSpec with BeforeAndAfter {
       EnterAlternativeNamePage.verifyPageEnterNameAndContinue("john")
 
       When("I verify ContactNumberPage, enter phone number and continue")
-      ContactNumberPage.verifyPageEnterContactNumberAndContinue("100")
+      ContactNumberPage.verifyPageEnterContactNumberAndContinue("+44 808 157 0192")
 
       When("I verify ResidencePage select Yes and Continue")
       ResidencePage.verifyPageSelectNoAndContinue()

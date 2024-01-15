@@ -74,7 +74,7 @@ class SubmissionJourney7 extends BaseSpec with BeforeAndAfter {
       EnterAlternativeNamePage.verifyPageEnterNameAndContinue("john")
 
       When("I verify ContactNumberPage, enter phone number and continue")
-      ContactNumberPage.verifyPageEnterContactNumberAndContinue("090909")
+      ContactNumberPage.verifyPageEnterContactNumberAndContinue("+44 808 157 0192")
 
       When("I verify ResidencePage select Yes and Continue")
       ResidencePage.verifyPageSelectNoAndContinue()
@@ -94,7 +94,7 @@ class SubmissionJourney7 extends BaseSpec with BeforeAndAfter {
       ClaimingAdditionalTaxRateReliefPage.verifyPageClickYesAndContinue()
 
       When("I verify TaxReliefAmountPage Page, enter tax relief and click continue")
-      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("1000000000000")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("999999999")
 
       When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
       WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 2")
