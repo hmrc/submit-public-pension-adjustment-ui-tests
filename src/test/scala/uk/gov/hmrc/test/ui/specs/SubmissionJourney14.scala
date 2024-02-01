@@ -37,6 +37,8 @@ class SubmissionJourney14 extends BaseSpec with BeforeAndAfter {
 
     Scenario(s"PRA Scenario 4", ZapTests) {
 
+      SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
+
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
       ClaimOnBehalfPage.verifyPageSelectYesAndContinue()
 

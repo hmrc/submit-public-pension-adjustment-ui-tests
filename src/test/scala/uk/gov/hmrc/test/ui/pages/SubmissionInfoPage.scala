@@ -16,7 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.openqa.selenium.By
+
 object SubmissionInfoPage extends BasePage {
   def verifySubmissionInfoPageAndContinue() =
-    clickContinueButton()
+    driver.findElement(By.xpath("//a[contains(text(),'Next')]"))
 }
