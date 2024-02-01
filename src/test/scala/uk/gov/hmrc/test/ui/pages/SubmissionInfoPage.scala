@@ -20,5 +20,5 @@ import org.openqa.selenium.By
 
 object SubmissionInfoPage extends BasePage {
   def verifySubmissionInfoPageAndContinue() =
-    driver.findElement(By.xpath("//a[contains(text(),'Next')]"))
+    driver.findElement(By.xpath("//a[contains(text(),'Next')]")).click()
 }
