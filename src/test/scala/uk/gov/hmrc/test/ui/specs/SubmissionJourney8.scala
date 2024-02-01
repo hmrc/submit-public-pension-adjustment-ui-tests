@@ -39,6 +39,7 @@ class SubmissionJourney8 extends BaseSpec with BeforeAndAfter {
     /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.23, 5.24, 5.25, 5.26 */
     Scenario(s"Calculate Business Journey1", ZapTests) {
 
+      When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
 
       When("I verify ClaimOnBehalfPage, select yes and click continue button")

@@ -45,6 +45,7 @@ class SubmissionJourney15 extends BaseSpec with BeforeAndAfter {
     /** User has debit, member paying debit, no alternate name, UK resident, user not claiming higher rate relief, has credit */
     Scenario(s"PRA Submission Journey 5", ZapTests) {
 
+      When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
 
       When("I verify ClaimOnBehalfPage, select yes and click continue button")

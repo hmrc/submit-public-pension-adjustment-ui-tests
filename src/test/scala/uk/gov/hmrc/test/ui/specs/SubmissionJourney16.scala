@@ -40,6 +40,7 @@ class SubmissionJourney16 extends BaseSpec with BeforeAndAfter {
     /** User has no debit, no alternate name, UK resident, user claims higher rate relief, multiple schemes, no credit */
     Scenario(s"CPRA SUbmission Journey 6", ZapTests) {
 
+      When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
 
       When("I verify ClaimOnBehalfPage, select yes and click continue button")

@@ -46,6 +46,7 @@ class SubmissionJourney10 extends BaseSpec with BeforeAndAfter {
     /** 5.2(N debit), 5.10(Scheme paid), 5.11(public), 5.12(N), 5.13, 5.15, 5.16, 5.17, 5.18(N), 5.20, 5.21, 5.22, 5.23, 5.26 */
     Scenario(s"Calculate Business Journey10", ZapTests) {
 
+      When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
 
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
