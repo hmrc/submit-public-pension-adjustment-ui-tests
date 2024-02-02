@@ -45,21 +45,15 @@ class SubmissionJourney15 extends BaseSpec with BeforeAndAfter {
     /** User has debit, member paying debit, no alternate name, UK resident, user not claiming higher rate relief, has credit */
     Scenario(s"PRA Submission Journey 5", ZapTests) {
 
+      When("User landed to SubmissionInfo page ")
+      SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
+
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
       ClaimOnBehalfPage.verifyPageSelectNoAndContinue()
 
       debitYears.foreach { element =>
         When("I verify WhoWillPayPage, select pension scheme and click continue button")
         WhoWillPayPage.verifyPageSelectYouAndContinue()
-
-//        When("I verify WhichPensionSchemeWillPayPage, select public pension scheme and click continue button")
-//        WhichPensionSchemeWillPayPage.verifyPageSelectPSAndContinue("Scheme 1")
-//
-//        When("I verify Valid Election for Scheme to pay Page and select yes and click continue")
-//        AskedPensionSchemeToPayTaxCharge.verifyPageSelectNoAndContinue()
-//
-//        When("I verify Estimated quarter of Election Page and select quarter and click continue")
-//        WhenWillYouAskPensionSchemeToPay.verifyPageSelectQuarterAndContinue()
       }
 
       When("I verify AlternativeNamePage, select No and continue")

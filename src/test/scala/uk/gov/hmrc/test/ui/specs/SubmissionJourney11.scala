@@ -46,6 +46,9 @@ class SubmissionJourney11 extends BaseSpec with BeforeAndAfter {
 
     Scenario("Calculate PRA Submission Journey 1") {
 
+      When("User landed to SubmissionInfo page ")
+      SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
+
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
       ClaimOnBehalfPage.verifyPageSelectNoAndContinue()
 

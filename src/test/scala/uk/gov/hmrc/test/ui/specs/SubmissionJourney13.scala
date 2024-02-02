@@ -40,6 +40,9 @@ class SubmissionJourney13 extends BaseSpec with BeforeAndAfter {
 
     Scenario(s"Calculate Business Journey2", ZapTests) {
 
+      When("User landed to SubmissionInfo page ")
+      SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
+
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
       ClaimOnBehalfPage.verifyPageSelectYesAndContinue()
 

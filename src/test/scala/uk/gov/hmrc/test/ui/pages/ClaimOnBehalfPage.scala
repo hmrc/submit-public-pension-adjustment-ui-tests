@@ -19,11 +19,11 @@ package uk.gov.hmrc.test.ui.pages
 object ClaimOnBehalfPage extends BasePage {
 
   def verifyPageSelectYesAndContinue() = {
-    Thread.sleep(3000)
+    Thread.sleep(5000)
     selectYesAndContinueCalculationsPage()
   }
   def verifyPageSelectNoAndContinue() = {
-    Thread.sleep(3000)
+    Thread.sleep(5000)
     selectNoAndContinueCalculationsPage()
   }
 }
