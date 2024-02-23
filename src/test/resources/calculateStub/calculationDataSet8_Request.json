@@ -22,29 +22,17 @@
         "pensionInputAmount" : 40000,
         "period" : "2015"
       }, {
-        "pensionInputAmount" : 35000,
+        "pensionInputAmount" : 71000,
         "taxYearSchemes" : [ {
           "name" : "Scheme 1",
           "pensionSchemeTaxReference" : "00348916RU",
-          "originalPensionInputAmount" : 35000,
-          "revisedPensionInputAmount" : 35000,
+          "originalPensionInputAmount" : 71000,
+          "revisedPensionInputAmount" : 71000,
           "chargePaidByScheme" : 0
         } ],
         "totalIncome" : 60000,
         "chargePaidByMember" : 0,
-        "period" : "2016-pre"
-      }, {
-        "pensionInputAmount" : 36000,
-        "totalIncome" : 60000,
-        "chargePaidByMember" : 0,
-        "taxYearSchemes" : [ {
-          "name" : "Scheme 1",
-          "pensionSchemeTaxReference" : "00348916RU",
-          "originalPensionInputAmount" : 36000,
-          "revisedPensionInputAmount" : 36000,
-          "chargePaidByScheme" : 0
-        } ],
-        "period" : "2016-post"
+        "period" : "2016"
       }, {
         "definedBenefitInputAmount" : 0,
         "flexiAccessDate" : "2016-06-09",
@@ -163,34 +151,20 @@
       "inDatesCredit" : 400
     },
     "outDates" : [ {
-      "period" : "2016-pre",
+      "period" : "2016",
       "directCompensation" : 0,
       "indirectCompensation" : 0,
       "chargePaidByMember" : 0,
       "chargePaidBySchemes" : 0,
       "revisedChargableAmountBeforeTaxRate" : 0,
       "revisedChargableAmountAfterTaxRate" : 0,
-      "unusedAnnualAllowance" : 40000,
+      "unusedAnnualAllowance" : 44000,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
         "pensionSchemeTaxReference" : "00348916RU",
         "compensation" : 0
       } ]
-    }, {
-      "period" : "2016-post",
-      "directCompensation" : 0,
-      "indirectCompensation" : 0,
-      "chargePaidByMember" : 0,
-      "chargePaidBySchemes" : 0,
-      "revisedChargableAmountBeforeTaxRate" : 0,
-      "revisedChargableAmountAfterTaxRate" : 0,
-      "unusedAnnualAllowance" : 4000,
-      "taxYearSchemes" : [ {
-        "name" : "Scheme 1",
-        "pensionSchemeTaxReference" : "00348916RU",
-        "compensation" : 0
-      } ]
-    }, {
+    },  {
       "period" : "2017",
       "directCompensation" : 0,
       "indirectCompensation" : 6400,
