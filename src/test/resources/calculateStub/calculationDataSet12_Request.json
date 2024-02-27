@@ -26,7 +26,7 @@
           ],
           "totalIncome": 5,
           "chargePaidByMember": 3,
-          "period": "2016-pre"
+          "period": "2016"
         }
       ]
     }
@@ -42,7 +42,7 @@
     },
     "outDates": [
       {
-        "period": "2016-pre",
+        "period": "2016",
         "directCompensation": 3,
         "indirectCompensation": 4,
         "chargePaidByMember": 3,

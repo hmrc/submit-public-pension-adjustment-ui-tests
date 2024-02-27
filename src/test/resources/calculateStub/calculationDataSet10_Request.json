@@ -29,34 +29,19 @@
           "period": "2015"
         },
         {
-          "pensionInputAmount": 20000,
+          "pensionInputAmount": 42000,
           "taxYearSchemes": [
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 30000,
-              "revisedPensionInputAmount": 20000,
-              "chargePaidByScheme": 0
-            }
-          ],
-          "totalIncome": 60000,
-          "chargePaidByMember": 0,
-          "period": "2016-pre"
-        },
-        {
-          "pensionInputAmount": 22000,
-          "totalIncome": 60000,
-          "chargePaidByMember": 3600,
-          "taxYearSchemes": [
-            {
-              "name": "Scheme 1",
-              "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 30000,
-              "revisedPensionInputAmount": 22000,
+              "originalPensionInputAmount": 60000,
+              "revisedPensionInputAmount": 42000,
               "chargePaidByScheme": 3600
             }
           ],
-          "period": "2016-post"
+          "totalIncome": 60000,
+          "chargePaidByMember": 3600,
+          "period": "2016"
         },
         {
           "pensionInputAmount": 45000,
@@ -199,31 +184,14 @@
     },
     "outDates": [
       {
-        "period": "2016-pre",
-        "directCompensation": 0,
-        "indirectCompensation": 0,
-        "chargePaidByMember": 0,
-        "chargePaidBySchemes": 0,
-        "revisedChargableAmountBeforeTaxRate": 0,
-        "revisedChargableAmountAfterTaxRate": 0,
-        "unusedAnnualAllowance": 50000,
-        "taxYearSchemes": [
-          {
-            "name": "Scheme 1",
-            "pensionSchemeTaxReference": "00348916RU",
-            "compensation": 0
-          }
-        ]
-      },
-      {
-        "period": "2016-post",
+        "period": "2016",
         "directCompensation": 3600,
         "indirectCompensation": 3600,
         "chargePaidByMember": 3600,
         "chargePaidBySchemes": 3600,
         "revisedChargableAmountBeforeTaxRate": 0,
         "revisedChargableAmountAfterTaxRate": 0,
-        "unusedAnnualAllowance": 18000,
+        "unusedAnnualAllowance": 68000,
         "taxYearSchemes": [
           {
             "name": "Scheme 1",
