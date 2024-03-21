@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.specs
 import org.scalatest.BeforeAndAfter
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.CalculationDataUtil
+
 import scala.collection.mutable
 
 class SubmissionJourney11 extends BaseSpec with BeforeAndAfter {
