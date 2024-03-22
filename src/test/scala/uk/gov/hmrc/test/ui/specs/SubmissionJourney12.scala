@@ -26,17 +26,13 @@ import scala.collection.mutable
 class SubmissionJourney12 extends BaseSpec with BeforeAndAfter {
   var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
   var debitYears: mutable.ArrayBuffer[Int]          = mutable.ArrayBuffer.empty[Int]
-  before {
-    val calculationData = new CalculationDataUtil()
-    calculationData.submitCalculation("calculationDataSet11")
 
-    /** add scheme details from the test json to below map * */
-    uniqueTaxSchemes += ("Scheme 1" -> "00348916RU")
-    uniqueTaxSchemes += ("Scheme 2" -> "00348916RG")
+  /** add scheme details from the test json to below map * */
+  uniqueTaxSchemes += ("Scheme 1" -> "00348916RU")
+  uniqueTaxSchemes += ("Scheme 2" -> "00348916RG")
 
-    /** add all the debit years(debit amount > 0) from the "calculate" section in the test json* */
-    debitYears += 2020
-  }
+  /** add all the debit years(debit amount > 0) from the "calculate" section in the test json* */
+  debitYears += 2020
 
   Feature("PRA Submission Journey 2, Business scenario AA journeys") {
 
@@ -45,6 +41,9 @@ class SubmissionJourney12 extends BaseSpec with BeforeAndAfter {
     /** 5.2(N debit), 5.10(Scheme paid), 5.11(public), ..... */
 
     Scenario("Calculate PRA Submission Journey 2") {
+
+      val calculationData = new CalculationDataUtil()
+      calculationData.submitCalculation("calculationDataSet11")
 
       When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()

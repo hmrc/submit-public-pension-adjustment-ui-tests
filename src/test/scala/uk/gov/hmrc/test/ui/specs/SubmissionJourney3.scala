@@ -26,20 +26,19 @@ import scala.collection.mutable
 
 class SubmissionJourney3 extends BaseSpec with BeforeAndAfter {
   var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
-  before {
-    val calculationData = new CalculationDataUtil()
-    calculationData.submitCalculation("calculationDataSet3")
 
-    /** add scheme details from the test json to below map * */
-    uniqueTaxSchemes += ("Scheme 1" -> "00348916RU")
-    uniqueTaxSchemes += ("Scheme 2" -> "00348916RG")
-    uniqueTaxSchemes += ("Scheme 4" -> "00348916RC")
-  }
+  /** add scheme details from the test json to below map * */
+  uniqueTaxSchemes += ("Scheme 1" -> "00348916RU")
+  uniqueTaxSchemes += ("Scheme 2" -> "00348916RG")
+  uniqueTaxSchemes += ("Scheme 4" -> "00348916RC")
 
   Feature("Business scenario AA journeys") {
 
     /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.26 */
     Scenario(s"Calculate Business Journey3", ZapTests) {
+
+      val calculationData = new CalculationDataUtil()
+      calculationData.submitCalculation("calculationDataSet3")
 
       When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
