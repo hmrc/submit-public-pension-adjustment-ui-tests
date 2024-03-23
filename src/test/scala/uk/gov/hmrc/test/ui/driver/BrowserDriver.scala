@@ -22,13 +22,6 @@ import org.scalatest.concurrent.Eventually
 import uk.gov.hmrc.selenium.webdriver.Driver
 
 trait BrowserDriver extends LazyLogging with Eventually {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
 
-  implicit def driver: RemoteWebDriver = sys.props.get("browser") match {
-    case Some("chrome") => Driver.instance
-    case _              => Driver.instance
-  }
-
+  implicit def driver: RemoteWebDriver = Driver.instance
 }
