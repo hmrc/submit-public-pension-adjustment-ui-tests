@@ -24,20 +24,18 @@ import util.CalculationDataUtil
 import scala.collection.mutable
 
 class SubmissionJourney8 extends BaseSpec with BeforeAndAfter {
-  var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
-  before {
-    val calculationData = new CalculationDataUtil()
-    calculationData.submitCalculation("calculationDataSet8")
-
+  var uniqueTaxSchemes: Map[String, String] = Map(
     /** add scheme details from the test json to below map * */
-    uniqueTaxSchemes += ("Scheme 1" -> "003 48916ed")
-    uniqueTaxSchemes += ("Scheme 4" -> "00348916 uC")
-  }
+    ("Scheme 1" -> "003 48916ed"),
+    ("Scheme 4" -> "00348916 uC")
+  )
 
   Feature("Business scenario AA journeys") {
 
     /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.23, 5.24, 5.25, 5.26 */
     Scenario(s"Calculate Business Journey1", ZapTests) {
+      val calculationData = new CalculationDataUtil()
+      calculationData.submitCalculation("calculationDataSet8")
 
       When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()

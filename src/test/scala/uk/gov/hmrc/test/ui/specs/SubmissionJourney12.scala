@@ -22,21 +22,14 @@ import uk.gov.hmrc.test.ui.pages._
 import util.CalculationDataUtil
 
 import scala.collection.mutable
+import scala.collection.mutable.ArrayBuffer
 
 class SubmissionJourney12 extends BaseSpec with BeforeAndAfter {
-  var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
-  var debitYears: mutable.ArrayBuffer[Int]          = mutable.ArrayBuffer.empty[Int]
-  before {
-    val calculationData = new CalculationDataUtil()
-    calculationData.submitCalculation("calculationDataSet11")
-
-    /** add scheme details from the test json to below map * */
-    uniqueTaxSchemes += ("Scheme 1" -> "00348916RU")
-    uniqueTaxSchemes += ("Scheme 2" -> "00348916RG")
-
-    /** add all the debit years(debit amount > 0) from the "calculate" section in the test json* */
-    debitYears += 2020
-  }
+  var uniqueTaxSchemes: Map[String, String] = Map(
+    ("Scheme 1" -> "00348916RU"),
+    ("Scheme 2" -> "00348916RG")
+  )
+  var debitYears: ArrayBuffer[Int]          = ArrayBuffer(2020)
 
   Feature("PRA Submission Journey 2, Business scenario AA journeys") {
 

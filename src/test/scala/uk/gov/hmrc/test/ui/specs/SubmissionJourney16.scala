@@ -25,20 +25,18 @@ import scala.collection.mutable
 
 class SubmissionJourney16 extends BaseSpec with BeforeAndAfter {
 
-  var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
-  before {
-    val calculationData = new CalculationDataUtil()
-    calculationData.submitCalculation("calculationDataSet12")
-
+  var uniqueTaxSchemes: Map[String, String] = Map(
     /** add scheme details from the test json to below map * */
-    uniqueTaxSchemes += ("Scheme 1" -> "123456789")
-    uniqueTaxSchemes += ("Scheme 2" -> "123456789")
-  }
+    ("Scheme 1" -> "123456789"),
+    ("Scheme 2" -> "123456789")
+  )
 
   Feature("PRA SUbmission Journey 6") {
 
     /** User has no debit, no alternate name, UK resident, user claims higher rate relief, multiple schemes, no credit */
     Scenario(s"CPRA SUbmission Journey 6", ZapTests) {
+      val calculationData = new CalculationDataUtil()
+      calculationData.submitCalculation("calculationDataSet12")
 
       When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
