@@ -31,13 +31,9 @@ trait BaseSpec
     with Browser
     with ScreenshotOnFailure {
 
-  override def beforeEach(): Unit = {
-    super.beforeEach()
+  override def beforeEach(): Unit =
     startBrowser()
-  }
 
-  override def afterEach(): Unit = {
+  override def afterEach(): Unit =
     quitBrowser()
-    super.afterEach()
-  }
 }
