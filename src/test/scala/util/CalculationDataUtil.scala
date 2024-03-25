@@ -47,6 +47,7 @@ class CalculationDataUtil extends HttpClient {
     uniqueId match {
       case JsSuccess(name, _) =>
         submissionId = name
+        println("########## " + submissionId)
       case JsError(errors)    =>
         println("Error parsing JSON")
     }
