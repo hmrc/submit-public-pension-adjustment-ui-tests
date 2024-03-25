@@ -38,6 +38,8 @@ class SubmissionJourney12 extends BaseSpec with BeforeAndAfter {
     /** 5.2(N debit), 5.10(Scheme paid), 5.11(public), ..... */
 
     Scenario("Calculate PRA Submission Journey 2") {
+      val calculationData = new CalculationDataUtil()
+      calculationData.submitCalculation("calculationDataSet11")
 
       When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
