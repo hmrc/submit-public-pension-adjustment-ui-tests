@@ -19,24 +19,17 @@ package uk.gov.hmrc.test.ui.specs
 import org.scalatest.BeforeAndAfter
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.CalculationDataUtil
+
 import scala.collection.mutable
+import scala.collection.mutable.ArrayBuffer
 
 class SubmissionJourney11 extends BaseSpec with BeforeAndAfter {
-  var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
-  var debitYears: mutable.ArrayBuffer[Int]          = mutable.ArrayBuffer.empty[Int]
-  before {
-    val calculationData = new CalculationDataUtil()
-    calculationData.submitCalculation("calculationDataSet14")
-
-    /** add scheme details from the test json to below map * */
-    uniqueTaxSchemes += ("Scheme 1" -> "00348916RU")
-    uniqueTaxSchemes += ("Scheme 2" -> "00348916RG")
-
-    /** add all the debit years(debit amount > 0) from the "calculate" section in the test json* */
-    debitYears += 2022
-  }
+  var uniqueTaxSchemes: Map[String, String] = Map(
+    ("Scheme 1" -> "00348916RU"),
+    ("Scheme 2" -> "00348916RG")
+  )
+  var debitYears: ArrayBuffer[Int]          = ArrayBuffer(2022)
 
   Feature("PRA Submission Journey 1, Business scenario AA journeys") {
 
@@ -45,6 +38,8 @@ class SubmissionJourney11 extends BaseSpec with BeforeAndAfter {
     /** 5.2(N debit), 5.10(Scheme paid), 5.11(private), ..... */
 
     Scenario("Calculate PRA Submission Journey 1") {
+      val calculationData = new CalculationDataUtil()
+      calculationData.submitCalculation("calculationDataSet14")
 
       When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()

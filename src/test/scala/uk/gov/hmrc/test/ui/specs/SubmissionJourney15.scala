@@ -23,27 +23,26 @@ import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.CalculationDataUtil
 
 import scala.collection.mutable
+import scala.collection.mutable.ArrayBuffer
 class SubmissionJourney15 extends BaseSpec with BeforeAndAfter {
-  var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
-  var debitYears: mutable.ArrayBuffer[Int]          = mutable.ArrayBuffer.empty[Int]
-  before {
-    val calculationData = new CalculationDataUtil()
-    calculationData.submitCalculation("calculationDataSet10")
-
+  var uniqueTaxSchemes: Map[String, String] = Map(
     /** add scheme details from the test json to below map * */
-    uniqueTaxSchemes += ("Scheme 1" -> "00348916RU")
-    uniqueTaxSchemes += ("Scheme 4" -> "00348916RC")
-
+    ("Scheme 1" -> "00348916RU"),
+    ("Scheme 4" -> "00348916RC")
+  )
+  var debitYears: ArrayBuffer[Int]          = ArrayBuffer(
     /** add all the debit years(debit amount > 0) from the "calculate" section in the test json* */
-    debitYears += 2020
-    debitYears += 2022
-    debitYears += 2023
-  }
+    2020,
+    2022,
+    2023
+  )
 
   Feature("PRA Submission Journey 5") {
 
     /** User has debit, member paying debit, no alternate name, UK resident, user not claiming higher rate relief, has credit */
     Scenario(s"PRA Submission Journey 5", ZapTests) {
+      val calculationData = new CalculationDataUtil()
+      calculationData.submitCalculation("calculationDataSet10")
 
       When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()

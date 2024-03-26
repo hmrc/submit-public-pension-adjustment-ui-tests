@@ -16,9 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
-import util.DataCollectorMap
-
 object CheckYourAnswersPage extends BasePage {
 
   def verifyCheckYourAnswersPageAndContinue() =
