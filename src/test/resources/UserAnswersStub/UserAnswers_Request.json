@@ -1,0 +1,51 @@
+{
+  "_id": "calculationSessionId",
+  "data": {
+    "savingsStatement": true,
+    "navigation": {
+      "setupSection": "/public-pension-adjustment/check-your-answers-setup",
+      "preAASection": "/public-pension-adjustment/annual-allowance/setup-check-answers",
+      "aaSection2016": "/public-pension-adjustment/annual-allowance/2016/check-answers"
+    },
+    "resubmittingAdjustment": false,
+    "reportingChange": [
+      "annualAllowance"
+    ],
+    "scottishTaxpayerFrom2016": false,
+    "payingPublicPensionScheme": false,
+    "stopPayingPublicPension": "2015-07-01",
+    "definedContributionPensionScheme": false,
+    "payTaxCharge1415": true,
+    "aa": {
+      "years": {
+        "2016": {
+          "memberMoreThanOnePension": false,
+          "schemes": {
+            "0": {
+              "pensionSchemeDetails": {
+                "schemeName": "S1",
+                "schemeTaxRef": "00348916RO"
+              },
+              "PensionSchemeInput2016preAmounts": {
+                "originalPIA": 1,
+                "revisedPIA": 2
+              },
+              "payACharge": true,
+              "whoPaidAACharge": "you",
+              "howMuchAAChargeYouPaid": 8
+            }
+          },
+          "totalIncome": 9
+        }
+      }
+    }
+  },
+  "uniqueId": "calculationUniqueId",
+  "lastUpdated": {
+    "$date": {
+      "$numberLong": "1713000152270"
+    }
+  },
+  "authenticated": true,
+  "submissionStarted": false
+}
