@@ -441,5 +441,7 @@
         ]
       }
     ]
-  }
+  },
+  "sessionId":"calculationSessionId",
+  "uniqueId":"calculationUniqueId"
 }

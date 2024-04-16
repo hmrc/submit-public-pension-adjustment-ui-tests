@@ -53,6 +53,7 @@ object AuthorityWizardPage extends BasePage {
       .findElement(By.id("redirectionUrl"))
       .sendKeys(submitFrontendUrl + "/landing-page?submissionUniqueId=" + uniqueId)
     driver.findElement(By.id("submit-top")).submit()
+    Thread.sleep(2000)
   }
 
   def selectConfidenceLevel(confidenceLevel: String) = {

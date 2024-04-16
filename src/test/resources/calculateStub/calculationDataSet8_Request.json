@@ -238,5 +238,7 @@
         "chargePaidByScheme" : 800
       } ]
     } ]
-  }
+  },
+  "sessionId":"calculationSessionId",
+  "uniqueId":"calculationUniqueId"
 }

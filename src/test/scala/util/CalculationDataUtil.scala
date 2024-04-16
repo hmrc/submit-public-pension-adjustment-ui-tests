@@ -21,6 +21,8 @@ import play.api.libs.ws.StandaloneWSResponse
 import uk.gov.hmrc.test.ui.client.HttpClient
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
+
+import java.util.UUID
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
 
@@ -38,10 +40,35 @@ class CalculationDataUtil extends HttpClient {
       ),
       10.seconds
     )
+
+  def submitUserAnswersPostRequest(jsonBody: String): StandaloneWSResponse =
+    Await.result(
+      post(
+        calculateBackendUrl + "/test-only/user-answers",
+        jsonBody,
+        ("Content-Type", "application/json"),
+        ("CorrelationId", "12345671"),
+        ("Accept", "application/vnd.hmrc.P1.0+json")
+      ),
+      10.seconds
+    )
   def submitCalculation(fileName: String) = {
+    val calculationSessionId = "Int-" + UUID.randomUUID().toString
+    val calculationUniqueId  = UUID.randomUUID().toString
+
+    val userAnswersStream           = getClass.getResourceAsStream("/UserAnswersStub/UserAnswers_Request.json")
+    val userAnswersString           = scala.io.Source.fromInputStream(userAnswersStream).mkString
+    val userAnswersCompletedRequest = userAnswersString
+      .replaceAll("calculationSessionId", calculationSessionId)
+      .replaceAll("calculationUniqueId", calculationUniqueId)
+    submitUserAnswersPostRequest(userAnswersCompletedRequest)
+
     val requestStream              = getClass.getResourceAsStream("/calculateStub/" + fileName + "_Request.json")
     val jsonString                 = scala.io.Source.fromInputStream(requestStream).mkString
-    val json                       = Json.parse(calculateSubmissionPostRequest(jsonString).body)
+    val completedRequest           = jsonString
+      .replaceAll("calculationSessionId", calculationSessionId)
+      .replaceAll("calculationUniqueId", calculationUniqueId)
+    val json                       = Json.parse(calculateSubmissionPostRequest(completedRequest).body)
     val uniqueId: JsResult[String] = (json \ "uniqueId").validate[String]
     var submissionId               = ""
     uniqueId match {

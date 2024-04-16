@@ -395,5 +395,7 @@
         "chargePaidByScheme" : 0
       } ]
     } ]
-  }
+  },
+  "sessionId":"calculationSessionId",
+  "uniqueId":"calculationUniqueId"
 }
