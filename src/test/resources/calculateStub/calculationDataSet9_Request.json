@@ -240,6 +240,6 @@
       } ]
     } ]
   },
-  "sessionId":"calculationSessionId",
+  "userId":"calculationSessionId",
   "uniqueId":"calculationUniqueId"
 }
