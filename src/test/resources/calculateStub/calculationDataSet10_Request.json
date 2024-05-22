@@ -34,7 +34,6 @@
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 60000,
               "revisedPensionInputAmount": 42000,
               "chargePaidByScheme": 3600
             }
@@ -54,7 +53,6 @@
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 38000,
               "revisedPensionInputAmount": 45000,
               "chargePaidByScheme": 0
             }
@@ -72,7 +70,6 @@
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 43000,
               "revisedPensionInputAmount": 38000,
               "chargePaidByScheme": 200
             }
@@ -90,7 +87,6 @@
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 48000,
               "revisedPensionInputAmount": 43000,
               "chargePaidByScheme": 0
             }
@@ -108,7 +104,6 @@
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 37500,
               "revisedPensionInputAmount": 43000,
               "chargePaidByScheme": 0
             }
@@ -126,7 +121,6 @@
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 38000,
               "revisedPensionInputAmount": 39000,
               "chargePaidByScheme": 0
             }
@@ -145,7 +139,6 @@
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 36000,
               "revisedPensionInputAmount": 44000,
               "chargePaidByScheme": 0
             }
@@ -163,7 +156,6 @@
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 38000,
               "revisedPensionInputAmount": 42000,
               "chargePaidByScheme": 0
             }
@@ -327,6 +319,6 @@
       }
     ]
   },
-  "userId":"calculationSessionId",
-  "uniqueId":"calculationUniqueId"
+  "userId": "calculationSessionId",
+  "uniqueId": "calculationUniqueId"
 }
