@@ -12,14 +12,12 @@
             {
               "name": "Scheme1",
               "pensionSchemeTaxReference": "00348916RU",
-              "originalPensionInputAmount": 1,
               "revisedPensionInputAmount": 2,
               "chargePaidByScheme": 0
             },
             {
               "name": "Scheme2",
               "pensionSchemeTaxReference": "00348916RG",
-              "originalPensionInputAmount": 2,
               "revisedPensionInputAmount": 3,
               "chargePaidByScheme": 4
             }
@@ -66,7 +64,7 @@
     ],
     "inDates": []
   },
-  "userId":"calculationSessionId",
-  "uniqueId":"calculationUniqueId"
+  "userId": "calculationSessionId",
+  "uniqueId": "calculationUniqueId"
 }
 
