@@ -368,6 +368,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
 
   def signOutPage(): this.type = {
     driver.manage.deleteAllCookies()
+    driver.findElement(By.xpath("//nav/a[contains(text(),'Sign out')]")).click()
     this
   }
 
