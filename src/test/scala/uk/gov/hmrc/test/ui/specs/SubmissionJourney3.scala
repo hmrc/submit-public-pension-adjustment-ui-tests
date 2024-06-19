@@ -22,8 +22,6 @@ import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.CalculationDataUtil
 
-import scala.collection.mutable
-
 class SubmissionJourney3 extends BaseSpec with BeforeAndAfter {
   var uniqueTaxSchemes: Map[String, String] = Map(
     /** add scheme details from the test json to below map * */

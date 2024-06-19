@@ -21,7 +21,7 @@ import util.NINOGenerator
 
 object TheirNinoPage extends BasePage {
 
-  val nino        = NINOGenerator.nino
+  val nino        = NINOGenerator.generateNINO
   def enterNINO() = driver.findElement(By.id("value")).sendKeys(nino)
   def verifyPageEnterNinoAndContinue() = {
     enterNINO()
