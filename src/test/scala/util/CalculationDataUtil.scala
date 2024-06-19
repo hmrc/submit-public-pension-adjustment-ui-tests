@@ -63,16 +63,11 @@ class CalculationDataUtil extends HttpClient {
       .replaceAll("calculationUniqueId", calculationUniqueId)
     submitUserAnswersPostRequest(userAnswersCompletedRequest)
 
-    val requestStream    = getClass.getResourceAsStream("/calculateStub/" + fileName + "_Request.json")
-    val jsonString       = scala.io.Source.fromInputStream(requestStream).mkString
-    val completedRequest = jsonString
+    val requestStream              = getClass.getResourceAsStream("/calculateStub/" + fileName + "_Request.json")
+    val jsonString                 = scala.io.Source.fromInputStream(requestStream).mkString
+    val completedRequest           = jsonString
       .replaceAll("calculationSessionId", calculationSessionId)
       .replaceAll("calculationUniqueId", calculationUniqueId)
-    println("####################################")
-
-    println(completedRequest)
-
-    println("####################################")
     val json                       = Json.parse(calculateSubmissionPostRequest(completedRequest).body)
     val uniqueId: JsResult[String] = (json \ "uniqueId").validate[String]
     var submissionId               = ""
