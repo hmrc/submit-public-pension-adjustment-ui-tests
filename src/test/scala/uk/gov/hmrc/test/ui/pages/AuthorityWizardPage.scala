@@ -28,7 +28,7 @@ object AuthorityWizardPage extends BasePage {
 
   def authorizedLoginUser(): Unit = {
     driver.get(driver.getCurrentUrl)
-    driver.findElement(By.id("nino")).sendKeys(NINOGenerator.nino)
+    driver.findElement(By.id("nino")).sendKeys(NINOGenerator.generateNINO)
     selectConfidenceLevel("250")
     driver.findElement(By.id("add-preset")).click()
     driver.findElement(By.id("input-4-0-value")).sendKeys("123456789")
@@ -41,7 +41,7 @@ object AuthorityWizardPage extends BasePage {
 
   def authorizedLoginUser(uniqueId: String): Unit = {
     HomePage.loadPage(authUrl)
-    driver.findElement(By.id("nino")).sendKeys(NINOGenerator.nino)
+    driver.findElement(By.id("nino")).sendKeys(NINOGenerator.generateNINO)
     selectConfidenceLevel("250")
     driver.findElement(By.id("add-preset")).click()
     driver.findElement(By.id("input-4-0-value")).sendKeys("123456789")
