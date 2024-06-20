@@ -21,7 +21,6 @@ import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import util.CalculationDataUtil
 
-import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 
 class SubmissionJourney11 extends BaseSpec with BeforeAndAfter {

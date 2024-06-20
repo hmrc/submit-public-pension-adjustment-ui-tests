@@ -53,7 +53,7 @@ class CalculationDataUtil extends HttpClient {
       10.seconds
     )
   def submitCalculation(fileName: String) = {
-    val calculationSessionId = NINOGenerator.nino
+    val calculationSessionId = NINOGenerator.generateNINO
     val calculationUniqueId  = UUID.randomUUID().toString
 
     val userAnswersStream           = getClass.getResourceAsStream("/UserAnswersStub/UserAnswers_Request.json")
