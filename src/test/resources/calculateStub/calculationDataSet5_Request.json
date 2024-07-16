@@ -47,6 +47,11 @@
             }
           ],
           "totalIncome": 60000,
+          "incomeSubJourney" : {
+            "isAboveThreshold" : true,
+            "personalAllowanceAmount" : 2030,
+            "blindPersonsAllowanceAmount" : 2290
+          },
           "chargePaidByMember": 3200,
           "period": "2016"
         },

@@ -180,7 +180,7 @@
           },
           "income" : {
             "incomeAboveThreshold" : true,
-            "adjustedIncome" : 326000
+            "adjustedIncome" : 226000
           },
           "totalIncome": 300000,
           "chargePaidByMember": 800,
@@ -311,14 +311,14 @@
       }
     }
   },
-  "calculation": {
+  "calculation":{
     "resubmission": {
       "isResubmission": false
     },
     "totalAmounts": {
       "outDatesCompensation": 3200,
-      "inDatesDebit": 59260,
-      "inDatesCredit": 0
+      "inDatesDebit": 43500,
+      "inDatesCredit": 800
     },
     "outDates": [
       {
@@ -436,13 +436,13 @@
       },
       {
         "period": "2021",
-        "memberCredit": 0,
+        "memberCredit": 800,
         "schemeCredit": 0,
-        "debit": 15760,
+        "debit": 0,
         "chargePaidByMember": 800,
         "chargePaidBySchemes": 0,
-        "revisedChargableAmountBeforeTaxRate": 36000,
-        "revisedChargableAmountAfterTaxRate": 16560,
+        "revisedChargableAmountBeforeTaxRate": 0,
+        "revisedChargableAmountAfterTaxRate": 0,
         "unusedAnnualAllowance": 0,
         "taxYearSchemes": [
           {

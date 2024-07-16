@@ -27,6 +27,11 @@
             }
           ],
           "totalIncome": 60000,
+          "incomeSubJourney" : {
+            "isAboveThreshold" : false,
+            "giftAidAmount" : 3000,
+            "blindPersonsAllowanceAmount" : 2290
+          },
           "chargePaidByMember": 3200,
           "period": "2016"
         },
