@@ -77,6 +77,9 @@ class SubmissionJourney15 extends BaseSpec with BeforeAndAfter {
       When("I verify ClaimingAdditionalTaxRateRelief Page , select No and click continue")
       ClaimingAdditionalTaxRateReliefPage.verifyPageClickNoAndContinue()
 
+      When("I verify Bank Details Page, enter bank details and click continue")
+      BankDetailsPage.verifyPageEnterBankDetailsClickContinue()
+
       CheckYourAnswersCalculationJourneyPage.clickSubmissionContinueButton()
 
       When("I verify DeclarationsPage Page and click confirm")
