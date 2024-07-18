@@ -82,6 +82,7 @@
         {
           "definedBenefitInputAmount": 0,
           "definedContributionInputAmount": 2000,
+          "pensionInputAmount": 40000,
           "income": {
             "incomeAboveThreshold": true,
             "adjustedIncome": 326750
@@ -110,6 +111,7 @@
         {
           "definedBenefitInputAmount": 0,
           "definedContributionInputAmount": 5000,
+          "pensionInputAmount": 40000,
           "incomeSubJourney": {
             "isAboveThreshold": true,
             "personalContributionsAmount": 5000,
@@ -136,6 +138,7 @@
         {
           "definedBenefitInputAmount": 0,
           "definedContributionInputAmount": 6000,
+          "pensionInputAmount": 40000,
           "incomeSubJourney": {
             "rASContributionsAmount": 550,
             "isAboveThreshold": true,
@@ -148,7 +151,7 @@
             "adjustedIncome": 331450
           },
           "totalIncome": 300000,
-          "chargePaidByMember": 800,
+          "chargePaidByMember": 0,
           "taxYearSchemes": [
             {
               "name": "Scheme 1",
@@ -162,6 +165,7 @@
         {
           "definedBenefitInputAmount": 0,
           "definedContributionInputAmount": 3000,
+          "pensionInputAmount": 40000,
           "incomeSubJourney": {
             "lumpsumDeathBenefitsAmount": 6000,
             "isAboveThreshold": true,
@@ -175,7 +179,7 @@
             "adjustedIncome": 226000
           },
           "totalIncome": 300000,
-          "chargePaidByMember": 800,
+          "chargePaidByMember": 0,
           "taxYearSchemes": [
             {
               "name": "Scheme 1",
@@ -218,8 +222,8 @@
     },
     "totalAmounts": {
       "outDatesCompensation": 3200,
-      "inDatesDebit": 12100,
-      "inDatesCredit": 0
+      "inDatesDebit": 12700,
+      "inDatesCredit": 800
     },
     "outDates": [
       {
@@ -262,8 +266,8 @@
         "indirectCompensation": 0,
         "chargePaidByMember": 0,
         "chargePaidBySchemes": 2000,
-        "revisedChargableAmountBeforeTaxRate": 32000,
-        "revisedChargableAmountAfterTaxRate": 14400,
+        "revisedChargableAmountBeforeTaxRate": 30000,
+        "revisedChargableAmountAfterTaxRate": 13500,
         "unusedAnnualAllowance": 0,
         "taxYearSchemes": [
           {
@@ -296,11 +300,11 @@
         "period": "2020",
         "memberCredit": 0,
         "schemeCredit": 0,
-        "debit": 10100,
-        "chargePaidByMember": 800,
+        "debit": 12700,
+        "chargePaidByMember": 0,
         "chargePaidBySchemes": 800,
-        "revisedChargableAmountBeforeTaxRate": 26000,
-        "revisedChargableAmountAfterTaxRate": 11700,
+        "revisedChargableAmountBeforeTaxRate": 30000,
+        "revisedChargableAmountAfterTaxRate": 13500,
         "unusedAnnualAllowance": 0,
         "taxYearSchemes": [
           {
@@ -313,12 +317,12 @@
       {
         "period": "2021",
         "memberCredit": 0,
-        "schemeCredit": 0,
-        "debit": 2000,
-        "chargePaidByMember": 800,
+        "schemeCredit": 800,
+        "debit": 0,
+        "chargePaidByMember": 0,
         "chargePaidBySchemes": 800,
-        "revisedChargableAmountBeforeTaxRate": 8000,
-        "revisedChargableAmountAfterTaxRate": 3600,
+        "revisedChargableAmountBeforeTaxRate": 0,
+        "revisedChargableAmountAfterTaxRate": 0,
         "unusedAnnualAllowance": 0,
         "taxYearSchemes": [
           {

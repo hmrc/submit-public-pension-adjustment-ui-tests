@@ -98,12 +98,9 @@ class SubmissionJourney8 extends BaseSpec with BeforeAndAfter {
       When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
       WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 1")
 
-      When("I verify Bank Details Page, enter bank details and click continue")
-      BankDetailsPage.verifyPageEnterBankDetailsClickContinue()
-
       CheckYourAnswersCalculationJourneyPage.clickSubmissionContinueButton()
 
-      When("I verify SchemeCreditConsentPage Page select Agree and continue")
+      When("I verify SchemeCreditConsentPage Page select agree and continue")
       SchemeCreditConsentPage.verifyPageSelectAgreeAndContinue()
 
       When("I verify DeclarationsPage Page and click confirm")

@@ -46,12 +46,13 @@
               "chargePaidByScheme": 0
             }
           ],
-          "totalIncome": 42386,
-          "incomeSubJourney": {
-            "isAboveThreshold": false,
-            "taxReliefAmount": 100,
-            "giftAidAmount": 3000,
-            "personalAllowanceAmount": 2000
+          "totalIncome": 60000,
+          "incomeSubJourney" : {
+            "isAboveThreshold" : false,
+            "giftAidAmount" : 3000,
+            "payeCodeAdjustment" : "decrease",
+            "codeAdjustmentAmount" : 3000,
+            "blindPersonsAllowanceAmount" : 2290
           },
           "chargePaidByMember": 3200,
           "period": "2016"

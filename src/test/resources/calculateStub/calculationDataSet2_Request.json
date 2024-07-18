@@ -26,33 +26,36 @@
               "chargePaidByScheme": 0
             }
           ],
-          "totalIncome": 42386,
-          "incomeSubJourney": {
-            "isAboveThreshold": false,
-            "taxReliefAmount": 100,
-            "giftAidAmount": 3000,
-            "personalAllowanceAmount": 2000
+          "totalIncome":42386 ,
+          "incomeSubJourney" : {
+            "isAboveThreshold" : false,
+            "taxReliefAmount" : 100,
+            "giftAidAmount" : 3000,
+            "personalAllowanceAmount" : 2000
           },
           "chargePaidByMember": 3200,
           "period": "2016"
         },
         {
-          "pensionInputAmount": 38000,
+          "pensionInputAmount": 300000,
           "income": {
-            "incomeAboveThreshold": false
+            "incomeAboveThreshold" : true,
+            "adjustedIncome" : 325300
+
           },
           "totalIncome": 60000,
-          "incomeSubJourney": {
-            "salarySacrificeAmount": 1000,
-            "flexibleRemunerationAmount": 2000,
-            "rASContributionsAmount": 2000,
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 3000,
-            "reliefClaimedOnOverseasPensionsAmount": 1300,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "incomeSubJourney" : {
+            "salarySacrificeAmount" : 1000,
+            "flexibleRemunerationAmount" : 2000,
+            "rASContributionsAmount" : 2000,
+            "lumpsumDeathBenefitsAmount" : 6000,
+            "isAboveThreshold" : true,
+            "personalContributionsAmount" : 3000,
+            "reliefClaimedOnOverseasPensionsAmount" : 1300,
+            "personalAllowanceAmount" : 2130,
+            "blindPersonsAllowanceAmount" : 2290
           },
+
           "chargePaidByMember": 1200,
           "taxYearSchemes": [
             {
@@ -73,18 +76,18 @@
         {
           "pensionInputAmount": 25000,
           "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 326750
+            "incomeAboveThreshold" : true,
+            "adjustedIncome" : 326750
           },
           "totalIncome": 300000,
-          "incomeSubJourney": {
-            "rASContributionsAmount": 550,
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 5000,
-            "reliefClaimedOnOverseasPensionsAmount": 1300,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "incomeSubJourney" : {
+            "rASContributionsAmount" : 550,
+            "lumpsumDeathBenefitsAmount" : 6000,
+            "isAboveThreshold" : true,
+            "personalContributionsAmount" : 5000,
+            "reliefClaimedOnOverseasPensionsAmount" : 1300,
+            "personalAllowanceAmount" : 2130,
+            "blindPersonsAllowanceAmount" : 2290
           },
           "chargePaidByMember": 0,
           "taxYearSchemes": [
@@ -105,16 +108,16 @@
         },
         {
           "pensionInputAmount": 43000,
-          "incomeSubJourney": {
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 5000,
-            "reliefClaimedOnOverseasPensionsAmount": 1300,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "incomeSubJourney" : {
+            "isAboveThreshold" : true,
+            "personalContributionsAmount" : 5000,
+            "reliefClaimedOnOverseasPensionsAmount" : 1300,
+            "personalAllowanceAmount" : 2130,
+            "blindPersonsAllowanceAmount" : 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 333300
+          "income" : {
+            "incomeAboveThreshold" : true,
+            "adjustedIncome" : 333300
           },
           "totalIncome": 300000,
           "chargePaidByMember": 3280,
@@ -136,16 +139,16 @@
         },
         {
           "pensionInputAmount": 40000,
-          "incomeSubJourney": {
-            "rASContributionsAmount": 550,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 5000,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "incomeSubJourney" : {
+            "rASContributionsAmount" : 550,
+            "isAboveThreshold" : true,
+            "personalContributionsAmount" : 5000,
+            "personalAllowanceAmount" : 2130,
+            "blindPersonsAllowanceAmount" : 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 331450
+          "income" : {
+            "incomeAboveThreshold" : true,
+            "adjustedIncome" : 331450
           },
           "totalIncome": 300000,
           "chargePaidByMember": 800,
@@ -167,17 +170,17 @@
         },
         {
           "pensionInputAmount": 40000,
-          "incomeSubJourney": {
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 5000,
-            "giftAidAmount": 3000,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "incomeSubJourney" : {
+            "lumpsumDeathBenefitsAmount" : 6000,
+            "isAboveThreshold" : true,
+            "personalContributionsAmount" : 5000,
+            "giftAidAmount" : 3000,
+            "personalAllowanceAmount" : 2130,
+            "blindPersonsAllowanceAmount" : 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 226000
+          "income" : {
+            "incomeAboveThreshold" : true,
+            "adjustedIncome" : 226000
           },
           "totalIncome": 300000,
           "chargePaidByMember": 800,
@@ -199,20 +202,21 @@
         },
         {
           "pensionInputAmount": 40000,
-          "incomeSubJourney": {
-            "salarySacrificeAmount": 1000,
-            "flexibleRemunerationAmount": 2000,
-            "rASContributionsAmount": 2000,
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 3000,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "incomeSubJourney" : {
+            "salarySacrificeAmount" : 1000,
+            "flexibleRemunerationAmount" : 2000,
+            "rASContributionsAmount" : 2000,
+            "lumpsumDeathBenefitsAmount" : 6000,
+            "isAboveThreshold" : true,
+            "personalContributionsAmount" : 3000,
+            "personalAllowanceAmount" : 2130,
+            "blindPersonsAllowanceAmount" : 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 324000
+          "income" : {
+            "incomeAboveThreshold" : true,
+            "adjustedIncome" : 324000
           },
+
           "totalIncome": 300000,
           "chargePaidByMember": 800,
           "taxYearSchemes": [
@@ -233,20 +237,20 @@
         },
         {
           "pensionInputAmount": 40000,
-          "incomeSubJourney": {
-            "salarySacrificeAmount": 1000,
-            "flexibleRemunerationAmount": 2000,
-            "rASContributionsAmount": 2000,
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 3000,
-            "giftAidAmount": 3000,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "incomeSubJourney" : {
+            "salarySacrificeAmount" : 1000,
+            "flexibleRemunerationAmount" : 2000,
+            "rASContributionsAmount" : 2000,
+            "lumpsumDeathBenefitsAmount" : 6000,
+            "isAboveThreshold" : true,
+            "personalContributionsAmount" : 3000,
+            "giftAidAmount" : 3000,
+            "personalAllowanceAmount" : 2130,
+            "blindPersonsAllowanceAmount" : 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 324000
+          "income" : {
+            "incomeAboveThreshold" : true,
+            "adjustedIncome" : 324000
           },
           "totalIncome": 300000,
           "chargePaidByMember": 800,
@@ -307,7 +311,7 @@
       }
     }
   },
-  "calculation": {
+  "calculation":{
     "resubmission": {
       "isResubmission": false
     },

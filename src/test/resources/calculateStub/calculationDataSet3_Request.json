@@ -26,33 +26,26 @@
               "chargePaidByScheme": 0
             }
           ],
-          "totalIncome": 42386,
-          "incomeSubJourney": {
-            "isAboveThreshold": false,
-            "taxReliefAmount": 100,
-            "giftAidAmount": 3000,
-            "personalAllowanceAmount": 2000
+          "totalIncome": 10000,
+          "incomeSubJourney" : {
+            "isAboveThreshold" : false,
+            "payeCodeAdjustment" : "increase",
+            "codeAdjustmentAmount" : 3000,
+            "blindPersonsAllowanceAmount" : 2290
           },
           "chargePaidByMember": 3200,
           "period": "2016"
         },
         {
           "pensionInputAmount": 38000,
-          "income": {
-            "incomeAboveThreshold": false
+          "incomeSubJourney" : {
+            "isAboveThreshold" : false,
+            "blindPersonsAllowanceAmount" : 2290
           },
-          "totalIncome": 60000,
-          "incomeSubJourney": {
-            "salarySacrificeAmount": 1000,
-            "flexibleRemunerationAmount": 2000,
-            "rASContributionsAmount": 2000,
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 3000,
-            "reliefClaimedOnOverseasPensionsAmount": 1300,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "income" : {
+            "incomeAboveThreshold" : false
           },
+          "totalIncome": 10000,
           "chargePaidByMember": 1200,
           "taxYearSchemes": [
             {
@@ -72,20 +65,16 @@
         },
         {
           "pensionInputAmount": 25000,
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 326750
+          "incomeSubJourney" : {
+            "isAboveThreshold" : false,
+            "taxReliefAmount" : 200000,
+            "personalAllowanceAmount" : 2030,
+            "blindPersonsAllowanceAmount" : 2290
           },
-          "totalIncome": 300000,
-          "incomeSubJourney": {
-            "rASContributionsAmount": 550,
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 5000,
-            "reliefClaimedOnOverseasPensionsAmount": 1300,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "income" : {
+            "incomeAboveThreshold" : false
           },
+          "totalIncome": 1000,
           "chargePaidByMember": 0,
           "taxYearSchemes": [
             {
@@ -105,18 +94,18 @@
         },
         {
           "pensionInputAmount": 43000,
-          "incomeSubJourney": {
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 5000,
-            "reliefClaimedOnOverseasPensionsAmount": 1300,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "incomeSubJourney" : {
+            "salarySacrificeAmount" : 1000,
+            "rASContributionsAmount" : 2000,
+            "lumpsumDeathBenefitsAmount" : 5000,
+            "isAboveThreshold" : false,
+            "personalAllowanceAmount" : 2130,
+            "blindPersonsAllowanceAmount" : 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 333300
+          "income" : {
+            "incomeAboveThreshold" : false
           },
-          "totalIncome": 300000,
+          "totalIncome": 1000,
           "chargePaidByMember": 3280,
           "taxYearSchemes": [
             {
@@ -135,19 +124,19 @@
           "period": "2019"
         },
         {
-          "pensionInputAmount": 40000,
-          "incomeSubJourney": {
-            "rASContributionsAmount": 550,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 5000,
-            "personalAllowanceAmount": 2130,
-            "blindPersonsAllowanceAmount": 2290
+          "pensionInputAmount": 43000,
+          "incomeSubJourney" : {
+            "salarySacrificeAmount" : 1000,
+            "flexibleRemunerationAmount" : 2000,
+            "lumpsumDeathBenefitsAmount" : 5000,
+            "isAboveThreshold" : false,
+            "taxReliefAmount" : 200000,
+            "blindPersonsAllowanceAmount" : 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 331450
+          "income" : {
+            "incomeAboveThreshold" : false
           },
-          "totalIncome": 300000,
+          "totalIncome": 43001,
           "chargePaidByMember": 800,
           "taxYearSchemes": [
             {
@@ -159,27 +148,23 @@
             {
               "name": "Scheme 2",
               "pensionSchemeTaxReference": "00348916RG",
-              "revisedPensionInputAmount": 40000,
+              "revisedPensionInputAmount": 43000,
               "chargePaidByScheme": 0
             }
           ],
           "period": "2020"
         },
         {
-          "pensionInputAmount": 40000,
+          "pensionInputAmount": 43000,
+          "income": {
+            "incomeAboveThreshold": false
+          },
+          "totalIncome": 10000,
           "incomeSubJourney": {
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 5000,
+            "isAboveThreshold": false,
             "giftAidAmount": 3000,
-            "personalAllowanceAmount": 2130,
             "blindPersonsAllowanceAmount": 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 226000
-          },
-          "totalIncome": 300000,
           "chargePaidByMember": 800,
           "taxYearSchemes": [
             {
@@ -191,29 +176,23 @@
             {
               "name": "Scheme 2",
               "pensionSchemeTaxReference": "00348916RG",
-              "revisedPensionInputAmount": 40000,
+              "revisedPensionInputAmount": 43000,
               "chargePaidByScheme": 0
             }
           ],
           "period": "2021"
         },
         {
-          "pensionInputAmount": 40000,
+          "pensionInputAmount": 43000,
+          "income": {
+            "incomeAboveThreshold": false
+          },
+          "totalIncome": 10000,
           "incomeSubJourney": {
-            "salarySacrificeAmount": 1000,
-            "flexibleRemunerationAmount": 2000,
-            "rASContributionsAmount": 2000,
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 3000,
-            "personalAllowanceAmount": 2130,
+            "isAboveThreshold": false,
+            "giftAidAmount": 3000,
             "blindPersonsAllowanceAmount": 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 324000
-          },
-          "totalIncome": 300000,
           "chargePaidByMember": 800,
           "taxYearSchemes": [
             {
@@ -225,42 +204,35 @@
             {
               "name": "Scheme 2",
               "pensionSchemeTaxReference": "00348916RG",
-              "revisedPensionInputAmount": 40000,
+              "revisedPensionInputAmount": 43000,
               "chargePaidByScheme": 0
             }
           ],
           "period": "2022"
         },
         {
-          "pensionInputAmount": 40000,
+          "pensionInputAmount": 83000,
+          "income": {
+            "incomeAboveThreshold": false
+          },
+          "totalIncome": 10000,
           "incomeSubJourney": {
-            "salarySacrificeAmount": 1000,
-            "flexibleRemunerationAmount": 2000,
-            "rASContributionsAmount": 2000,
-            "lumpsumDeathBenefitsAmount": 6000,
-            "isAboveThreshold": true,
-            "personalContributionsAmount": 3000,
+            "isAboveThreshold": false,
             "giftAidAmount": 3000,
-            "personalAllowanceAmount": 2130,
             "blindPersonsAllowanceAmount": 2290
           },
-          "income": {
-            "incomeAboveThreshold": true,
-            "adjustedIncome": 324000
-          },
-          "totalIncome": 300000,
           "chargePaidByMember": 800,
           "taxYearSchemes": [
             {
               "name": "Scheme 1",
               "pensionSchemeTaxReference": "00348916RU",
-              "revisedPensionInputAmount": 0,
+              "revisedPensionInputAmount": 40000,
               "chargePaidByScheme": 0
             },
             {
               "name": "Scheme 2",
               "pensionSchemeTaxReference": "00348916RG",
-              "revisedPensionInputAmount": 40000,
+              "revisedPensionInputAmount": 43000,
               "chargePaidByScheme": 0
             }
           ],
@@ -274,36 +246,20 @@
       "changeInLifetimeAllowancePercentageInformedFlag": true,
       "changeInTaxCharge": "newCharge",
       "lifetimeAllowanceProtectionOrEnhancements": "enhancements",
-      "protectionTypeEnhancementChanged": "both",
-      "newProtectionTypeOrEnhancement": "enhancedProtection",
-      "newProtectionTypeOrEnhancementReference": "R41AB5678TR2335",
-      "previousLifetimeAllowanceChargeFlag": true,
-      "previousLifetimeAllowanceChargePaymentMethod": "both",
-      "previousLifetimeAllowanceChargePaidBy": "pensionScheme",
-      "previousLifetimeAllowanceChargeSchemeNameAndTaxRef": {
-        "name": "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions",
-        "taxRef": "00348916RX"
-      },
-      "newLifetimeAllowanceChargeWillBePaidBy": "pensionScheme",
-      "newLifetimeAllowanceChargeSchemeNameAndTaxRef": {
-        "name": "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions",
-        "taxRef": "00348916RX"
-      },
+      "protectionTypeEnhancementChanged": "no",
+      "previousLifetimeAllowanceChargeFlag": false,
+      "newLifetimeAllowanceChargeWillBePaidBy": "you",
       "newLifeTimeAllowanceAdditions": {
         "multipleBenefitCrystallisationEventFlag": false,
         "enhancementType": "both",
         "internationalEnhancementReference": "1234567890ASDFG",
         "pensionCreditReference": "1234567890ZXCVB",
-        "newEnhancementType": "both",
-        "newInternationalEnhancementReference": "1234567891QWERT",
-        "newPensionCreditReference": "1234567123QAZXS",
-        "lumpSumValue": 1000,
-        "annualPaymentValue": 3000,
-        "quarterChargePaid": "janToApr",
-        "yearChargePaid": "2021To2022",
-        "newExcessLifetimeAllowancePaid": "both",
-        "newLumpSumValue": 2300,
-        "newAnnualPaymentValue": 2000
+        "userSchemeDetails": {
+          "name": "Scheme 4",
+          "taxRef": "00348916RC"
+        },
+        "newExcessLifetimeAllowancePaid": "lumpSum",
+        "newLumpSumValue": 1000
       }
     }
   },
@@ -312,9 +268,9 @@
       "isResubmission": false
     },
     "totalAmounts": {
-      "outDatesCompensation": 3200,
-      "inDatesDebit": 43500,
-      "inDatesCredit": 800
+      "outDatesCompensation": 7680,
+      "inDatesDebit": 7832,
+      "inDatesCredit": 2314
     },
     "outDates": [
       {
@@ -341,13 +297,13 @@
       },
       {
         "period": "2017",
-        "directCompensation": 0,
+        "directCompensation": 1200,
         "indirectCompensation": 0,
         "chargePaidByMember": 1200,
         "chargePaidBySchemes": 0,
-        "revisedChargableAmountBeforeTaxRate": 283000,
-        "revisedChargableAmountAfterTaxRate": 122850,
-        "unusedAnnualAllowance": 0,
+        "revisedChargableAmountBeforeTaxRate": 0,
+        "revisedChargableAmountAfterTaxRate": 0,
+        "unusedAnnualAllowance": 9000,
         "taxYearSchemes": [
           {
             "name": "Scheme 1",
@@ -367,9 +323,9 @@
         "indirectCompensation": 0,
         "chargePaidByMember": 0,
         "chargePaidBySchemes": 0,
-        "revisedChargableAmountBeforeTaxRate": 15000,
-        "revisedChargableAmountAfterTaxRate": 6750,
-        "unusedAnnualAllowance": 0,
+        "revisedChargableAmountBeforeTaxRate": 0,
+        "revisedChargableAmountAfterTaxRate": 0,
+        "unusedAnnualAllowance": 24000,
         "taxYearSchemes": [
           {
             "name": "Scheme 1",
@@ -385,13 +341,13 @@
       },
       {
         "period": "2019",
-        "directCompensation": 0,
+        "directCompensation": 3280,
         "indirectCompensation": 0,
         "chargePaidByMember": 3280,
         "chargePaidBySchemes": 0,
-        "revisedChargableAmountBeforeTaxRate": 33000,
-        "revisedChargableAmountAfterTaxRate": 15180,
-        "unusedAnnualAllowance": 0,
+        "revisedChargableAmountBeforeTaxRate": 0,
+        "revisedChargableAmountAfterTaxRate": 0,
+        "unusedAnnualAllowance": 17000,
         "taxYearSchemes": [
           {
             "name": "Scheme 1",
@@ -409,14 +365,14 @@
     "inDates": [
       {
         "period": "2020",
-        "memberCredit": 0,
+        "memberCredit": 800,
         "schemeCredit": 0,
-        "debit": 12700,
+        "debit": 0,
         "chargePaidByMember": 800,
         "chargePaidBySchemes": 0,
-        "revisedChargableAmountBeforeTaxRate": 30000,
-        "revisedChargableAmountAfterTaxRate": 13500,
-        "unusedAnnualAllowance": 0,
+        "revisedChargableAmountBeforeTaxRate": 0,
+        "revisedChargableAmountAfterTaxRate": 0,
+        "unusedAnnualAllowance": 14000,
         "taxYearSchemes": [
           {
             "name": "Scheme 1",
@@ -455,13 +411,13 @@
       },
       {
         "period": "2022",
-        "memberCredit": 0,
+        "memberCredit": 714,
         "schemeCredit": 0,
-        "debit": 15400,
+        "debit": 0,
         "chargePaidByMember": 800,
         "chargePaidBySchemes": 0,
-        "revisedChargableAmountBeforeTaxRate": 36000,
-        "revisedChargableAmountAfterTaxRate": 16200,
+        "revisedChargableAmountBeforeTaxRate": 3000,
+        "revisedChargableAmountAfterTaxRate": 86,
         "unusedAnnualAllowance": 0,
         "taxYearSchemes": [
           {
@@ -480,11 +436,11 @@
         "period": "2023",
         "memberCredit": 0,
         "schemeCredit": 0,
-        "debit": 15400,
+        "debit": 7832,
         "chargePaidByMember": 800,
         "chargePaidBySchemes": 0,
-        "revisedChargableAmountBeforeTaxRate": 36000,
-        "revisedChargableAmountAfterTaxRate": 16200,
+        "revisedChargableAmountBeforeTaxRate": 43000,
+        "revisedChargableAmountAfterTaxRate": 8632,
         "unusedAnnualAllowance": 0,
         "taxYearSchemes": [
           {
