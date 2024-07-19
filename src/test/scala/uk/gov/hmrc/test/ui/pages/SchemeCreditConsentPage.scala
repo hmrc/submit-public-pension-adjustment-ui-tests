@@ -17,8 +17,19 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.SubmissionInfoPage.driver
 
 object SchemeCreditConsentPage extends BasePage {
+<<<<<<< HEAD
   def verifyPageAgreeAndContinue() =
     driver.findElement(By.xpath("//button[contains(text(),'Agree and continue')]")).click()
+=======
+  def verifyPageSelectYesAndContinue() = {
+    driver.findElement(By.id("value_0")).click()
+    submitPage()
+  }
+  def verifyPageSelectAgreeAndContinue() = {
+    driver.findElement(By.xpath("//*[contains(text(),'Agree and continue')]")).click()
+  }
+>>>>>>> d1c9bb7 (all latest changes)
 }
