@@ -17,15 +17,15 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import util.NINOGenerator
 
-object TheirNinoPage extends BasePage {
+object SchemeCreditConsent extends BasePage {
 
-  val nino        = NINOGenerator.generateNINO
-  def enterNINO() = driver.findElement(By.id("value")).sendKeys(nino)
-  def verifyPageEnterNinoAndContinue() = {
-    enterNINO()
-    checkYourAnswersCalculationsMap(getHeader(), nino)
+  def selectYesCheckbox() =
+  driver.findElement(By.xpath("//input[@id='value_0']")).click()
+
+  def selectYesAndContinue() = {
+    selectYesCheckbox()
     submitPage()
   }
+
 }

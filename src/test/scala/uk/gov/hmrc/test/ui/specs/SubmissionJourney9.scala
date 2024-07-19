@@ -21,7 +21,6 @@ import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.CalculationDataUtil
-import scala.collection.mutable
 
 class SubmissionJourney9 extends BaseSpec with BeforeAndAfter {
   var uniqueTaxSchemes: Map[String, String] = Map(
@@ -100,6 +99,9 @@ class SubmissionJourney9 extends BaseSpec with BeforeAndAfter {
       WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 1")
 
       CheckYourAnswersCalculationJourneyPage.clickSubmissionContinueButton()
+
+      When("I verify SchemeCreditConsentPage Page select Agree and continue")
+      SchemeCreditConsentPage.verifyPageSelectAgreeAndContinue()
 
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
