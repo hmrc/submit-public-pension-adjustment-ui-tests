@@ -22,8 +22,14 @@
               "chargePaidByScheme": 4
             }
           ],
-          "totalIncome": 5,
-          "chargePaidByMember": 3,
+          "totalIncome": 42386,
+          "incomeSubJourney": {
+            "isAboveThreshold": false,
+            "taxReliefAmount": 100,
+            "giftAidAmount": 3000,
+            "personalAllowanceAmount": 2000
+          },
+          "chargePaidByMember": 3200,
           "period": "2016"
         }
       ]
@@ -34,29 +40,29 @@
       "isResubmission": false
     },
     "totalAmounts": {
-      "outDatesCompensation": 7,
+      "outDatesCompensation": 3204,
       "inDatesDebit": 0,
       "inDatesCredit": 0
     },
     "outDates": [
       {
         "period": "2016",
-        "directCompensation": 3,
+        "directCompensation": 3200,
         "indirectCompensation": 4,
-        "chargePaidByMember": 3,
+        "chargePaidByMember": 3200,
         "chargePaidBySchemes": 4,
         "revisedChargableAmountBeforeTaxRate": 0,
         "revisedChargableAmountAfterTaxRate": 0,
         "unusedAnnualAllowance": 40000,
         "taxYearSchemes": [
           {
-            "name": "SCHEME1",
-            "pensionSchemeTaxReference": "00348916RS",
+            "name": "Scheme1",
+            "pensionSchemeTaxReference": "00348916RU",
             "compensation": 0
           },
           {
             "name": "Scheme2",
-            "pensionSchemeTaxReference": "00348916RU",
+            "pensionSchemeTaxReference": "00348916RG",
             "compensation": 4
           }
         ]
@@ -67,4 +73,3 @@
   "userId": "calculationSessionId",
   "uniqueId": "calculationUniqueId"
 }
-
