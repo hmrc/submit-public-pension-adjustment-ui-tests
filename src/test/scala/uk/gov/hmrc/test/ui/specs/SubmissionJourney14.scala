@@ -85,7 +85,7 @@ class SubmissionJourney14 extends BaseSpec with BeforeAndAfter {
 
       CheckYourAnswersCalculationJourneyPage.clickSubmissionContinueButton()
 
-      When("I verify SchemeCreditConsent, click yes and click continue")
+      When("I verify SchemeCreditConsent, click agree and click continue")
       SchemeCreditConsentPage.verifyPageSelectAgreeAndContinue()
 
       When("I verify DeclarationsPage Page and click confirm")
