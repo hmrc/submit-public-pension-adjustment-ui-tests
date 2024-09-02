@@ -4,6 +4,15 @@
       "isResubmission": true,
       "reason": "Some(Change in amounts)"
     },
+    "setup": {
+      "annualAllowanceSetup": {
+        "savingsStatement": true
+      },
+      "lifetimeAllowanceSetup": {
+        "benefitCrystallisationEventFlag": true,
+        "changeInLifetimeAllowancePercentageInformedFlag": true
+      }
+    },
     "annualAllowance": {
       "scottishTaxYears": [],
       "taxYears": [
@@ -190,9 +199,7 @@
       ]
     },
     "lifeTimeAllowance": {
-      "benefitCrystallisationEventFlag": true,
       "benefitCrystallisationEventDate": "2017-06-25",
-      "changeInLifetimeAllowancePercentageInformedFlag": true,
       "changeInTaxCharge": "newCharge",
       "lifetimeAllowanceProtectionOrEnhancements": "enhancements",
       "protectionTypeEnhancementChanged": "no",

@@ -4,6 +4,16 @@
       "isResubmission": true,
       "reason": "Some(Change in amounts)"
     },
+    "setup": {
+      "annualAllowanceSetup": {
+        "savingsStatement": true
+      },
+      "lifetimeAllowanceSetup": {
+        "benefitCrystallisationEventFlag": true,
+        "changeInLifetimeAllowancePercentageInformedFlag": true,
+        "multipleBenefitCrystallisationEventFlag": false
+      }
+    },
     "annualAllowance": {
       "scottishTaxYears": [],
       "taxYears": [
@@ -193,16 +203,13 @@
       ]
     },
     "lifeTimeAllowance": {
-      "benefitCrystallisationEventFlag": true,
       "benefitCrystallisationEventDate": "2017-06-25",
-      "changeInLifetimeAllowancePercentageInformedFlag": true,
       "changeInTaxCharge": "newCharge",
       "lifetimeAllowanceProtectionOrEnhancements": "enhancements",
       "protectionTypeEnhancementChanged": "no",
       "previousLifetimeAllowanceChargeFlag": false,
       "newLifetimeAllowanceChargeWillBePaidBy": "you",
       "newLifeTimeAllowanceAdditions": {
-        "multipleBenefitCrystallisationEventFlag": false,
         "enhancementType": "both",
         "internationalEnhancementReference": "1234567890ASDFG",
         "pensionCreditReference": "1234567890ZXCVB",
