@@ -46,7 +46,7 @@ class SubmissionJourney10 extends BaseSpec with BeforeAndAfter {
       When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
 
-      When("I verify ClaimOnBehalfPage, select yes and click continue button")
+      When("I verify ClaimOnBehalfPage, select no and click continue button")
       ClaimOnBehalfPage.verifyPageSelectNoAndContinue()
 
       debitYears.foreach { element =>
@@ -56,11 +56,12 @@ class SubmissionJourney10 extends BaseSpec with BeforeAndAfter {
         When("I verify WhichPensionSchemeWillPayPage, select public pension scheme and click continue button")
         WhichPensionSchemeWillPayPage.verifyPageSelectPSAndContinue("Scheme 1")
 
-        When("I verify Valid Election for Scheme to pay Page and select yes and click continue")
+        When("I verify Valid Election for Scheme to pay Page and select no and click continue")
         AskedPensionSchemeToPayTaxCharge.verifyPageSelectNoAndContinue()
 
-        When("I verify Estimated quarter of Election Page and select quarter and click continue")
-        WhenWillYouAskPensionSchemeToPay.verifyPageSelectQuarterAndContinue()
+        When("I verify SchemeElectionConsent Page, click Agree and Continue")
+        SchemeElectionConsentPage.verifySchemeElectionConsentPageClickAgreeAndContinue()
+
       }
 
       When("I verify AlternativeNamePage, select No and continue")
