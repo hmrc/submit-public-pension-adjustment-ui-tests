@@ -71,6 +71,8 @@ class CalculationDataUtil extends HttpClient {
     val json                       = Json.parse(calculateSubmissionPostRequest(completedRequest).body)
     val uniqueId: JsResult[String] = (json \ "uniqueId").validate[String]
     var submissionId               = ""
+    println("NINO : " + calculationSessionId)
+    println("calculationUniqueId : " + calculationUniqueId)
     uniqueId match {
       case JsSuccess(name, _) =>
         submissionId = name

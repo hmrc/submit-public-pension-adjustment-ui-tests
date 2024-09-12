@@ -5,7 +5,16 @@
     },
     "setup": {
       "annualAllowanceSetup": {
-        "savingsStatement": true
+        "savingsStatement": true,
+        "pensionProtectedMember": false,
+        "hadAACharge": false,
+        "contributionRefunds": false,
+        "maybePIAIncrease": "idk",
+        "maybePIAUnchangedOrDecreased": "yes",
+        "pIAAboveAnnualAllowanceIn2023": false,
+        "netIncomeAbove190KIn2023": false,
+        "flexibleAccessDcScheme": true,
+        "contribution4000ToDirectContributionScheme": true
       }
     },
     "annualAllowance": {
