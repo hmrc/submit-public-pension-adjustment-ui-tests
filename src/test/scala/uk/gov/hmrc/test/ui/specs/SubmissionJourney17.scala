@@ -16,37 +16,27 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import org.scalatest.BeforeAndAfter
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.CalculationDataUtil
 
-import scala.collection.mutable.ArrayBuffer
-
-class SubmissionJourney4 extends BaseSpec with BeforeAndAfter {
+class SubmissionJourney17 extends BaseSpec {
   var uniqueTaxSchemes: Map[String, String] = Map(
     /** add scheme details from the test json to below map * */
     ("Scheme 1"                                                                                              -> "00348916RU"),
     ("Scheme 2"                                                                                              -> "00348916RG"),
-    ("Scheme 3"                                                                                              -> "00348916RF"),
     (
       "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions" -> "00348916RX"
     )
   )
 
-  var debitYears: ArrayBuffer[Int] = ArrayBuffer(
-    2020,
-    2022,
-    2023
-  )
-
   Feature("Business scenario AA journeys") {
 
     /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.23, 5.24, 5.25, 5.26 */
-    Scenario(s"Calculate Business Journey4", ZapTests) {
+    Scenario(s"Calculate Business Journey1", ZapTests) {
       val calculationData = new CalculationDataUtil()
-      calculationData.submitCalculation("calculationDataSet4")
+      calculationData.submitCalculation("calculationDataSet15")
 
       When("User landed to SubmissionInfo page ")
       SubmissionInfoPage.verifySubmissionInfoPageAndContinue()
@@ -78,29 +68,14 @@ class SubmissionJourney4 extends BaseSpec with BeforeAndAfter {
       When("I verify TheirUKAddressPage, Enter Address information and continue")
       TheirUKAddressPage.verifyPageEnterAddressAndContinue()
 
-      debitYears.foreach { element =>
-        When("I verify WhoWillPayPage, select pension scheme and click continue button")
-        WhoWillPayPage.verifyPageSelectPensionSchemeAndContinue()
-
-        When("I verify WhichPensionSchemeWillPayPage, select public pension scheme and click continue button")
-        WhichPensionSchemeWillPayPage.verifyPageSelectPSAndContinue("Scheme 1")
-
-        When("I verify Valid Election for Scheme to pay Page and select no and click continue")
-        AskedPensionSchemeToPayTaxCharge.verifyPageSelectNoAndContinue()
-
-        When("I verify SchemeElectionConsent Page, click Agree and Continue")
-        SchemeElectionConsentPage.verifySchemeElectionConsentPageClickAgreeAndContinue()
-
-      }
-
       When("I verify AlternativeNamePage, select No and continue")
       AlternativeNamePage.verifyPageSelectNoAndContinue()
 
       When("I verify AlternativeNamePage, enter name and continue")
-      EnterAlternativeNamePage.verifyPageEnterNameAndContinue("john")
+      EnterAlternativeNamePage.verifyPageEnterNameAndContinue("John SMith")
 
       When("I verify ContactNumberPage, enter phone number and continue")
-      ContactNumberPage.verifyPageEnterContactNumberAndContinue("20202")
+      ContactNumberPage.verifyPageEnterContactNumberAndContinue("07791111111")
 
       When("I verify ResidencePage select Yes and Continue")
       ResidencePage.verifyPageSelectNoAndContinue()
@@ -120,7 +95,7 @@ class SubmissionJourney4 extends BaseSpec with BeforeAndAfter {
       ClaimingAdditionalTaxRateReliefPage.verifyPageClickYesAndContinue()
 
       When("I verify TaxReliefAmountPage Page, enter tax relief and click continue")
-      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("20202")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("101010")
 
       When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
       WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 2")

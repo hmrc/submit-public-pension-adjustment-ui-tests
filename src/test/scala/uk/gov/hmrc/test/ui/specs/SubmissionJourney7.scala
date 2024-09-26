@@ -22,6 +22,8 @@ import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.CalculationDataUtil
 
+import scala.collection.mutable.ArrayBuffer
+
 class SubmissionJourney7 extends BaseSpec with BeforeAndAfter {
   var uniqueTaxSchemes: Map[String, String] = Map(
     /** add scheme details from the test json to below map * */
@@ -32,6 +34,13 @@ class SubmissionJourney7 extends BaseSpec with BeforeAndAfter {
       "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions" -> "00348916RX"
     )
   )
+
+  var debitYears: ArrayBuffer[Int] = ArrayBuffer(
+    2020,
+    2022,
+    2023
+  )
+
   Feature("Business scenario AA journeys") {
 
     /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.23, 5.24, 5.25, 5.26 */
@@ -68,6 +77,21 @@ class SubmissionJourney7 extends BaseSpec with BeforeAndAfter {
 
       When("I verify TheirUKAddressPage, Enter Address information and continue")
       TheirUKAddressPage.verifyPageEnterAddressAndContinue()
+
+      debitYears.foreach { element =>
+        When("I verify WhoWillPayPage, select pension scheme and click continue button")
+        WhoWillPayPage.verifyPageSelectPensionSchemeAndContinue()
+
+        When("I verify WhichPensionSchemeWillPayPage, select public pension scheme and click continue button")
+        WhichPensionSchemeWillPayPage.verifyPageSelectPSAndContinue("Scheme 1")
+
+        When("I verify Valid Election for Scheme to pay Page and select no and click continue")
+        AskedPensionSchemeToPayTaxCharge.verifyPageSelectNoAndContinue()
+
+        When("I verify SchemeElectionConsent Page, click Agree and Continue")
+        SchemeElectionConsentPage.verifySchemeElectionConsentPageClickAgreeAndContinue()
+
+      }
 
       When("I verify AlternativeNamePage, select No and continue")
       AlternativeNamePage.verifyPageSelectNoAndContinue()
