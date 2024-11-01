@@ -17,11 +17,12 @@
 package uk.gov.hmrc.test.ui.driver
 
 import com.typesafe.scalalogging.LazyLogging
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.remote.RemoteWebDriver
 import org.scalatest.concurrent.Eventually
 import uk.gov.hmrc.selenium.webdriver.Driver
 
 trait BrowserDriver extends LazyLogging with Eventually {
 
-  implicit def driver: RemoteWebDriver = Driver.instance
+  implicit def driver: WebDriver = Driver.instance
 }
