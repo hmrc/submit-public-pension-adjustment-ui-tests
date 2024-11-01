@@ -21,7 +21,7 @@ import org.openqa.selenium.By
 object SchemeCreditConsent extends BasePage {
 
   def selectYesCheckbox() =
-  driver.findElement(By.xpath("//input[@id='value_0']")).click()
+    driver.findElement(By.xpath("//input[@id='value_0']")).click()
 
   def selectYesAndContinue() = {
     selectYesCheckbox()
