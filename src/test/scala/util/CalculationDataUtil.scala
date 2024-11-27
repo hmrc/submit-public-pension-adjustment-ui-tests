@@ -81,4 +81,34 @@ class CalculationDataUtil extends HttpClient {
     }
     AuthorityWizardPage.authorizedLoginUser(submissionId)
   }
+
+  def submitCalculationAuthenticatedUser(fileName: String) = {
+    val calculationSessionId = NINOGenerator.generateNINO
+    val calculationUniqueId  = UUID.randomUUID().toString
+
+    val userAnswersStream           = getClass.getResourceAsStream("/UserAnswersStub/UserAnswers_Request.json")
+    val userAnswersString           = scala.io.Source.fromInputStream(userAnswersStream).mkString
+    val userAnswersCompletedRequest = userAnswersString
+      .replaceAll("calculationSessionId", calculationSessionId)
+      .replaceAll("calculationUniqueId", calculationUniqueId)
+    submitUserAnswersPostRequest(userAnswersCompletedRequest)
+
+    val requestStream              = getClass.getResourceAsStream("/calculateStub/" + fileName + "_Request.json")
+    val jsonString                 = scala.io.Source.fromInputStream(requestStream).mkString
+    val completedRequest           = jsonString
+      .replaceAll("calculationSessionId", calculationSessionId)
+      .replaceAll("calculationUniqueId", calculationUniqueId)
+    val json                       = Json.parse(calculateSubmissionPostRequest(completedRequest).body)
+    val uniqueId: JsResult[String] = (json \ "uniqueId").validate[String]
+    var submissionId               = ""
+    println("NINO : " + calculationSessionId)
+    println("calculationUniqueId : " + calculationUniqueId)
+    uniqueId match {
+      case JsSuccess(name, _) =>
+        submissionId = name
+      case JsError(errors)    =>
+        println("Error parsing JSON")
+    }
+    AuthorityWizardPage.authorizedLoginUserSignOutAndSignInBack(submissionId)
+  }
 }
