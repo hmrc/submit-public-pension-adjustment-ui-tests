@@ -51,7 +51,7 @@ object AuthorityWizardPage extends BasePage {
     driver.findElement(By.id("itmp.dateOfBirth")).sendKeys("1948-08-02")
     driver
       .findElement(By.id("redirectionUrl"))
-      .sendKeys("http://localhost:12804/public-pension-adjustment/maybe-previous-claim-continue")
+      .sendKeys(submitFrontendUrl + "/landing-page?submissionUniqueId=" + uniqueId)
     driver.findElement(By.id("submit-top")).submit()
     Thread.sleep(2000)
   }
