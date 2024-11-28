@@ -56,6 +56,9 @@ object CalculationResultPage extends BasePage {
     tableDataMap.toMap
   }
 
+  def getCalcResultsPageHeading() =
+    driver.findElement(By.className("govuk-heading-xl")).getText
+
   def getTotCompensation(): Int =
     driver
       .findElement(By.xpath("//th[contains(text(),'Total amount of compensation')]//following-sibling::td"))
